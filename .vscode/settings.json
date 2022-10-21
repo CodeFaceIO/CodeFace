@@ -1,0 +1,21 @@
+{
+    "workbench.colorCustomizations": {
+        "editor.lineHighlightBackground": "#1073cf2d",
+        "editor.lineHighlightBorder": "#9fced11f",
+        "titleBar.activeForeground": "#EEB879",
+        "titleBar.activeBackground": "#000000",
+        "titleBar.inactiveForeground": "#EC9733",
+        "titleBar.inactiveBackground": "#000000",
+        "statusBar.noFolderForeground": "#D0DEFC",
+        "statusBar.noFolderBackground": "#9fced11f"
+    },
+    "gitlens.keymap": "none",
+    "editor.cursorSmoothCaretAnimation": true,
+    "git.enableSmartCommit": true,
+    "githubPullRequests.remotes": [
+        "origin",
+        "upstream",
+        "main"
+    ],
+    "explorer.excludeGitIgnore": false
+}

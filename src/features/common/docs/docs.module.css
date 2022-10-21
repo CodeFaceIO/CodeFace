@@ -1,0 +1,370 @@
+.docs_container_styles_grid {
+    min-height: 100vh;
+    background-color: #0e1217;
+    display: grid;
+    grid-template-columns: 310px 1fr;
+}
+
+.grid_navigation_side {
+    border-right: 1px solid #383d47;
+    display: flex;
+    flex-direction: column;
+    
+    background-color: rgba(22, 26, 33, 0.5);
+    position: relative;
+}
+
+.navigation_fixed_content_container {
+    position: fixed;
+    padding: 16px 20px;
+    top: 0;
+    left: 0;
+    width: 310px;
+    height: 100vh;
+}
+
+.navigation_fixed_content_container > div:first-child {
+    box-shadow: 1px 12px 15px -3px #000;
+    margin-bottom: 20px;
+}
+
+.navigation_fixed_content_container > div:first-child ~ ul {
+    background-color: #161b22;
+    list-style-type: none;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 1px 12px 15px -3px #000;
+    border-left: 1px solid #383d47;
+    border-right: 1px solid #383d47;
+}
+
+.navigation_fixed_content_container > div:first-child ~ ul > li {
+    height: 74px;
+    background-image: url("./../../assets/vector_lines.svg");
+    background-color: #0e1217;
+    border-bottom: 3px outset #030304;
+    border-radius: 6px;
+    margin-bottom: 21px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.navigation_fixed_content_container > div:first-child ~ ul > li > span {
+    display: inline-block;
+    padding: 14px 20px;
+    width: 90%;
+    background-color: #1c1f26;
+    color: #a8b3cf;
+    border-radius: 8px;
+    box-shadow: inset 0px -5px 0px #313686;
+}
+
+.grid_navigation_side h2 {
+    padding: 10px 0;
+    text-align: center;
+    font-size: 1.2rem;
+    color: white;
+    background: radial-gradient(
+            99.77% 100% at 31.97% 99.5%,
+            rgba(255, 255, 255, 0) 0%,
+            rgba(189, 138, 184, 0.3) 100%
+    ) #3434b9;
+    box-shadow: inset 0px -5px 0px #313686;
+    border-radius: 8px;
+}
+
+.grid_frame_side {
+    min-height: 100vh;
+}
+
+.docs_algolia_search {
+    height: 80px;
+    border-bottom: 1px solid #383d47;
+    background-color: rgba(22, 26, 33, 0.5);
+    padding: 16px 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.docs_algolia_search > div {
+    display: flex;
+}
+
+.docs_algolia_search > button,
+.docs_algolia_search > div > button {
+    padding: 0 20px;
+    border-radius: 12px;
+    background-image: linear-gradient(rgb(255, 255, 255), rgb(245, 245, 255));
+    color: black;
+}
+
+.home_page_button {
+    background: radial-gradient(
+            120.83% 120.83% at 14.14% 112.5%,
+            rgba(72, 108, 141, 0.1) 0%,
+            rgba(255, 255, 255, 0) 100%
+    ),
+    #fcfcfd;
+    box-shadow: inset 0px -6.55941px 0px #d5d6e6;
+    border-radius: 6px;
+    margin-right: 20px;
+}
+
+.ctrl_k > code {
+    box-shadow: 0 4px 11px 0 rgb(37 44 97 / 15%),
+    0 1px 3px 0 rgb(93 100 148 / 60%);
+    display: inline-block;
+    padding: 3px 5px;
+    font-size: 12px;
+    border: 1px solid rgb(214, 214, 231);
+    color: red;
+    border-radius: 4px;
+}
+
+.ctrl_k > code:first-child {
+    margin-right: 8px;
+}
+
+.algolia_search_button {
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
+    rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+    border: 1px outset white;
+}
+
+.algolia_search_button > div:first-child {
+    display: flex;
+    align-items: center;
+    margin-right: 120px;
+}
+
+.algolia_search_button > div:first-child > svg {
+    font-size: 24px;
+    margin-right: 15px;
+}
+
+.algolia_search_button > div:first-child > svg ~ span {
+    font-weight: 300;
+    font-size: 18px;
+}
+
+.frame_after_search_header {
+    height: 310px;
+    background-image: url("./../../assets/explore.png");
+    background-position: center;
+    background-size: cover;
+    padding: 20px 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-bottom: 1px solid #383d47;
+    margin-bottom: 40px;
+}
+
+.frame_after_search_header > h2 {
+    background: -webkit-linear-gradient(-70deg, #a2facf 0%, #64acff 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 72px;
+    font-weight: 530;
+    line-height: 72px;
+    color: white;
+    margin-bottom: 10px;
+}
+
+.frame_after_search_header > p {
+    font-size: 24px;
+    line-height: 36px;
+    color: #a8b3cf;
+    border: 1px solid #383d47;
+    padding: 3px 8px;
+    border-radius: 8px;
+    background-color: #2b2a33;
+    width: max-content;
+}
+
+.content_texts_footer_container {
+    min-height: 100vh;
+    position: relative;
+    padding: 40px 150px 0;
+    display: grid;
+    grid-template-rows: auto auto;
+}
+
+.docs_footer {
+    width: 100%;
+    border-top: 1px solid rgba(65, 132, 228, 0.4);
+    margin-left: auto;
+    margin-right: auto;
+    padding: 40px 0;
+    background-position: center;
+}
+
+.docs_footer h2 {
+    margin-bottom: 20px;
+    color: #58a6ff;
+}
+
+.docs_footer > div:first-child {
+    display: flex;
+    justify-content: space-between;
+}
+
+.docs_footer > div:first-child > div {
+    border-right: 1px solid #383d47;
+    border-left: 1px solid #383d47;
+    padding: 20px;
+    font-size: 1.24rem;
+    color: rgb(139, 148, 158);
+    border-radius: 22px;
+    background-color: #0e1217;
+    box-shadow: 1px 12px 15px -3px #000;
+    background-image: url("./../../assets/vector_lines.svg");
+}
+
+.docs_footer_change > div {
+    display: flex;
+    flex-direction: column;
+}
+
+.docs_footer_help > div {
+    display: flex;
+    justify-content: space-between;
+}
+
+.docs_footer_help button,
+.docs_footer_change button {
+    height: 37px;
+    color: black;
+    font-weight: 400;
+    margin-bottom: 10px;
+    background: radial-gradient(
+            120.83% 120.83% at 14.14% 112.5%,
+            rgba(72, 108, 141, 0.1) 0%,
+            rgba(255, 255, 255, 0) 100%
+    ) /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */,
+    #fcfcfd;
+    box-shadow: inset 0px -4.55941px 0px #d5d6e6;
+    border-radius: 6.07921px;
+}
+
+.docs_footer_help button {
+    width: 125px;
+}
+
+.docs_footer_help svg {
+    font-size: 18px;
+}
+
+.docs_footer_still {
+}
+
+.docs_footer_still p,
+.docs_footer_change p,
+.docs_footer_help p {
+    color: #a8b3cf;
+    border: 1px solid #383d47;
+    padding: 3px 5px;
+    border-radius: 8px;
+    background-color: #2b2a33;
+}
+
+.docs_footer_still p:first-child {
+    margin-bottom: 10px;
+}
+
+.footer_footer_footer {
+    width: 100%;
+    height: 40px;
+    margin-top: 80px;
+}
+
+.footer_footer_footer > ul {
+    display: flex;
+    justify-content: space-between;
+    list-style-type: none;
+}
+
+.footer_footer_footer > ul > li {
+    color: rgb(139, 148, 158);
+    font-size: 12px;
+}
+
+.footer_footer_footer > ul > li > a {
+    color: #fff;
+    font-size: 12px;
+    transition: all ease-in-out 0.3s;
+}
+
+.footer_footer_footer > ul > li > a:hover {
+    color: rgb(254, 210, 21);
+    text-decoration: underline;
+}
+
+.docs_main {
+    width: 100%;
+    min-height: 100vh;
+    border-radius: 22px;
+    margin-bottom: 40px;
+    box-shadow: 1px 12px 15px -3px #000;
+    border: 1px solid #383d47;
+    background-color: #0e1217;
+    background-image: url("./../../assets/vector_lines.svg");
+    padding: 20px;
+}
+
+.docs_main_head {
+    width: 180px;
+    height: 40px;
+    position: relative;
+    bottom: 60px;
+    left: 40px;
+    border-top: 1px solid #383d47;
+    border-left: 1px solid #383d47;
+    border-right: 1px solid #383d47;
+    border-bottom: 1px solid #0e1217;
+    border-top-left-radius: 14px;
+    border-top-right-radius: 14px;
+    z-index: 50;
+    background-color: #0e1217;
+    padding: 8px 15px;
+    display: flex;
+    align-items: center;
+}
+
+[class*="docs_main_head_dots"] {
+    width: 20px;
+    height: 20px;
+    border-radius: 100%;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+
+[class*="docs_main_head_dots"]:nth-child(n+2) {
+    margin-left: 10px;
+}
+
+.docs_main_head_dots_red {
+    background-color: red;
+}
+
+.docs_main_head_dots_green {
+    background-color: green;
+}
+
+.docs_main_head_dots_yellow {
+    background-color: yellow;
+}
+
+.docs_main_body > h2 {
+    font-size: 24px;
+    line-height: 36px;
+    color: #a8b3cf;
+    border: 1px solid rgb(31, 111, 235);
+    padding: 10px 8px;
+    border-radius: 8px;
+    background-color: rgba(56, 139, 253, .15);
+    position: relative;
+    top: -20px;
+}

@@ -1,0 +1,8 @@
+# configure funding yaml
+# https://docs.github.com/en/github/administering-a-repository/displaying-a-sponsor-button-in-your-repository
+# https://docs.github.com/en/github/administering-a-repository/displaying-a-sponsor-button-in-your-repository#about-funding-files
+
+
+custom: https://www.paypal.com/paypalme/yourusername
+
+

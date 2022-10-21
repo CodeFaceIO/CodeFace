@@ -1,0 +1,10 @@
+{
+  "packages": [
+    "packages/*",
+    "samples/*",
+    "extensions/*"
+  ],
+  "npmClient": "npm",
+  "useWorkspaces": true,
+  "version": "8.11.0"
+}

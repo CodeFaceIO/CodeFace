@@ -1,0 +1,111 @@
+.signin_signup_container,
+.reset_recover_container {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    background-image: url(./Home.png);
+}
+
+.signin_signup_container {
+    justify-content: flex-end;
+}
+
+.reset_recover_container {
+    justify-content: center;
+}
+
+.reset_recover_container > form {
+    width: 450px;
+    height: max-content;
+    background-color: white;
+    padding: 20px;
+    margin-top: 96px;
+    border: 1px solid black;
+    box-shadow: 1px 5px 5px -3px #000;
+}
+
+.signin_signup_container > form {
+    width: 450px;
+    height: 650px;
+    background-color: white;
+    margin-right: 225px;
+    padding: 20px;
+    margin-top: 96px;
+    border: 1px solid black;
+    box-shadow: 1px 5px 5px -3px #000;
+}
+
+.signin_signup_container > form > button,
+.reset_recover_container > form > button {
+    width: 100%;
+    height: 51px;
+    background: #111111;
+    border-radius: 16px;
+    margin-top: 36px;
+    color: white;
+}
+
+
+
+
+.github_button > svg {
+    font-size: 24px;
+}
+
+.signin_signup_container > form > h1,
+.reset_recover_container > form > h1 {
+    color: black;
+    font-weight: 900;
+    font-size: 24px;
+}
+
+.signin_signup_container > form > p,
+.reset_recover_container > form > p {
+    color: black;
+    margin-bottom: 14px;
+}
+
+.signin_signup_container > form > p:last-child {
+    padding-left: 1px;
+}
+
+.reset_password {
+    margin-top: 58px;
+    padding-left: 1px;
+}
+
+.signin_signup_container > form > p > span {
+    font-weight: 900;
+}
+
+.form_input_container {
+    margin-bottom: 15px;
+}
+
+.form_input_container > label {
+    color: black;
+    margin-bottom: 8px;
+}
+
+.form_input_container > input {
+    background: #f1f2f3;
+    border: 1px dashed #000000;
+    border-radius: 8px;
+    width: 100%;
+    height: 56px;
+    padding: 16px;
+    color: black;
+}
+
+.form_input_container > small {
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 12px;
+    letter-spacing: -0.02em;
+    color: rgba(0, 0, 0, 0.65);
+    margin-top: 16px;
+}
+
+.recover_p_content {
+    font-size: 12px;
+}
