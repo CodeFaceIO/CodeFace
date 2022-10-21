@@ -59,7 +59,6 @@
   background-color: red;
   border-radius: 8px;
   background-color: #1c1f26;
-  border: 1px solid #383d47;
 }
 
 .user_username {
@@ -132,13 +131,4 @@
   font-size: 48px;
   cursor: pointer;
   margin: 8px 10px;
-}
-
-.user_follow_container {
-  min-height: 60px;
-  background-color: #1c1f26;
-  margin: 20px 0;
-  border-radius: 8px;
-  border: 1px solid #383d47;
-  box-shadow: 0 5px 10px #000;
 }

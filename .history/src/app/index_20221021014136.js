@@ -33,7 +33,6 @@ const rootReducer = {
   features: featuresReducer,
   auth: authReducer,
   projects: projectsReducer,
-  signInController: signInControllerReducer,
 };
 
 export default rootReducer;

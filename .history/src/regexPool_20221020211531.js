@@ -22,3 +22,33 @@ export const regexPool = {
   timeRegex: /^[0-9]{2}:[0-9]{2}$/,
   dateTimeRegex: /^[0-9]{4}-[0-9]{2}-[0-9]{2} [0-9]{2}:[0-9]{2}$/,
 };
+
+import React, {useState} from 'react';
+
+const ComponentName = (props) => {
+
+const [set,setSet] = useState("")
+
+  const propsArray = Object.keys(props);
+
+  const stylesDynamic = {
+
+  };
+
+  const stylesStatic = {
+
+  };
+
+  return (
+    <div style={stylesStatic} className="component-name">
+      <h2>ComponentName</h2>
+
+      <div style={stylesDynamic}>
+        <p>ComponentName</p>
+      </div>
+    </div>
+  );
+
+};
+
+export default ComponentName;

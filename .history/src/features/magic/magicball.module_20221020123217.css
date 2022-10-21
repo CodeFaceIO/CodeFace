@@ -58,17 +58,15 @@
   justify-content: center;
   background-color: red;
   border-radius: 8px;
-  background-color: #1c1f26;
-  border: 1px solid #383d47;
 }
 
 .user_username {
   background-color: #1c1f26;
-  /* border: 1px solid #383d47;
-  border-left-color: #1c1f26; */
+  border: 1px solid #383d47;
+  border-left-color: #1c1f26;
   border-top-right-radius: 8px;
   border-bottom-right-radius: 8px;
-  /* box-shadow: 0 6px 6px -2px #00000066; */
+  box-shadow: 0 6px 6px -2px #00000066;
   color: #a8b3cf;
   padding: 10px 25px;
   width: -webkit-max-content;
@@ -85,7 +83,7 @@
   background-color: #1c1f26;
   border-radius: 8px;
   border-top-right-radius: 0;
-  /* border: 1px solid #383d47; */
+  border: 1px solid #383d47;
   padding: 10px;
 }
 
@@ -110,11 +108,11 @@
   position: absolute;
   right: 15px;
   top: 60px;
-  /* border: 1px solid #383d47; */
+  border: 1px solid #383d47;
   background-color: #1c1f26;
   border-radius: 8px;
   padding-bottom: 4px;
-  /* box-shadow: 1px 3px 3px #00000066; */
+  box-shadow: 1px 3px 3px #00000066;
 }
 
 .user_socials_img {
@@ -132,13 +130,4 @@
   font-size: 48px;
   cursor: pointer;
   margin: 8px 10px;
-}
-
-.user_follow_container {
-  min-height: 60px;
-  background-color: #1c1f26;
-  margin: 20px 0;
-  border-radius: 8px;
-  border: 1px solid #383d47;
-  box-shadow: 0 5px 10px #000;
 }

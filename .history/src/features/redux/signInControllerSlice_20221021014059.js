@@ -1,0 +1,21 @@
+/* eslint-disable no-unused-vars */
+import { createSlice } from '@reduxjs/toolkit';
+
+const initialState = {
+  error: null,
+  isCompleted: false,
+  selectedUser: {},
+};
+
+const signInControllerSlice = createSlice({
+  name: 'signin',
+  initialState,
+  reducers: {},
+  extraReducers: {},
+});
+
+export const selectSelectedUser = (state) => state.signInController.selectedUser;
+
+export const select
+
+export default signInControllerSlice.reducer;

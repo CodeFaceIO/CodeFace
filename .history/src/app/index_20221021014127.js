@@ -14,7 +14,7 @@ import commonsReducer from './../features/redux/commonsSlice';
 import featuresReducer from './../features/redux/featuresSlice';
 import authReducer from './../features/redux/authSlice';
 import projectsReducer from './../features/redux/projectsSlice';
-import signInControllerReducer from '../features/redux/signInControllerSlice';
+import signInC
 
 const rootReducer = {
   users: usersReducer,
@@ -33,7 +33,6 @@ const rootReducer = {
   features: featuresReducer,
   auth: authReducer,
   projects: projectsReducer,
-  signInController: signInControllerReducer,
 };
 
 export default rootReducer;

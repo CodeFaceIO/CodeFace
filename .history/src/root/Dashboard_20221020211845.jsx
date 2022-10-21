@@ -38,7 +38,7 @@ import HelpCenter from '../features/Support/HelpCenter';
 import SafetyCenter from '../features/Support/SafetyCenter';
 
 import ChatAppReact from './../features/common/Chat/ChatAppReact';
-import IfSignOutOrNotUserForwardBesideArena from './../features/workspace/IfSignOutOrNotUserForwardBesideArena';
+import WorkSpace from './../features/workspace/WorkSpace';
 
 const Dashboard = () => {
   const [firstName, setFirstName] = useState('');
@@ -89,7 +89,7 @@ const Dashboard = () => {
         <Route path="documentation" element={<Docs />} />
 
         {/* AFTER SIGN IN USER PROFILE */}
-        <Route path="workspace" element={<Outlet />}>
+        <Route path="workspace//" element={<Outlet />}>
           <Route path="" element={<Content />} />
           <Route path="workspace-data-fill-form" element={<WokspaceDataFillForm />} />
           <Route path="content-ui-tools" element={<ContentUITools />} />
@@ -98,7 +98,6 @@ const Dashboard = () => {
           <Route path="content-leaderboard" element={<ContentLeaderBoard />} />
           <Route path="content-random-code" element={<ContentRandomCode />} />
           <Route path="content-arena" element={<ContentArena />} />
-          <Route path="usererror/:userId" element={<IfSignOutOrNotUserForwardBesideArena />} />
         </Route>
 
         {/* LEGAL */}

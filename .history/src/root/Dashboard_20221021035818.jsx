@@ -38,7 +38,7 @@ import HelpCenter from '../features/Support/HelpCenter';
 import SafetyCenter from '../features/Support/SafetyCenter';
 
 import ChatAppReact from './../features/common/Chat/ChatAppReact';
-import IfSignOutOrNotUserForwardBesideArena from './../features/workspace/IfSignOutOrNotUserForwardBesideArena';
+import IfSignOutOrNotUserForwardBesideArena from './../features/workspace/WorkSpace';
 
 const Dashboard = () => {
   const [firstName, setFirstName] = useState('');

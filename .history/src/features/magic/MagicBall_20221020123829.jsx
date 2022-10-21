@@ -58,7 +58,9 @@ const MagicBall = () => {
               <img src={AiDailyIcon} alt="daily dev view" className={`${styles.user_socials_img}`} />
             </div>
           </div>
-          <div className={`${styles.user_follow_container}`}></div>
+          <div className={`${styles.user_follow_contai}`}>
+
+          </div>
         </>
       ) : null}
     </div>
