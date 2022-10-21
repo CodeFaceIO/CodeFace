@@ -8,14 +8,15 @@ import { selectUserById } from './../redux/usersSlice';
 
 const IfSignOutOrNotUserForwardBesideArena = () => {
   const userId = { useParams };
+  const { dynamicRouting } = routingObj;
   const selectedUser = useSelector((state) => selectUserById(state, parseInt(userId)));
 
-  const { dynamicRouting } = routingObj;
 
-  const [user, setUser] = useState(selectedUser || null);
 
   const navigate = useNavigate();
   const dispatch = useDispatch();
+
+  
 
   useEffect(() => {
     if (selectedUser) {
@@ -24,9 +25,7 @@ const IfSignOutOrNotUserForwardBesideArena = () => {
     }
   }, [selectedUser, navigate]);
 
-  return <>
-    
-  </>;
+  return <div></div>;
 };
 
 export default IfSignOutOrNotUserForwardBesideArena;

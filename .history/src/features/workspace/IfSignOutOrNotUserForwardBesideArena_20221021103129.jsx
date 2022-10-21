@@ -24,9 +24,7 @@ const IfSignOutOrNotUserForwardBesideArena = () => {
     }
   }, [selectedUser, navigate]);
 
-  return <>
-    
-  </>;
+  return <></>;
 };
 
 export default IfSignOutOrNotUserForwardBesideArena;
