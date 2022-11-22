@@ -97,7 +97,6 @@ function calendarViewCleaner() {
 const jsonConfigure = `
 {
 
-  "glyphMargin": true,
   "automaticLayout": true,
   "fontSize": 11,
   "fontFamily": "Fira Code",
@@ -128,9 +127,7 @@ const jsonConfigure = `
     "suggestFontSize": 14,
     "suggestLineHeight": 24
   },
-  "minimap": {
-    "enabled": true
-  },
+
   "quickSuggestions": {
     "enabled": true,
     "other": true,
