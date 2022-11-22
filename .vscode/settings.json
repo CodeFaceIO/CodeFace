@@ -39,5 +39,11 @@
     "prettier.requireConfig": true,
     "prettier.requirePragma": true,
     "prettier.resolveGlobalModules": true,
-    "prettier.singleQuote": true
+    "prettier.singleQuote": true,
+    "cSpell.words": [
+        "chakra",
+        "maxtop",
+        "navi",
+        "toastify"
+    ]
 }
