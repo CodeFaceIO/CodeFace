@@ -1,0 +1,11 @@
+- name: Jira issue from TODO
+  # You may pin to the exact commit or the version.
+  # uses: atlassian/gajira-todo@c7d98334964a814a6d292ecb81e0b8f762f3fe27
+  uses: atlassian/gajira-todo@v2.0.1
+  with:
+    # Key of the project
+    project: 
+    # Type of the issue to be created. Example: 'Incident'
+    issuetype: 
+    # Issue description
+    description: # optional

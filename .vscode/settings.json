@@ -17,5 +17,27 @@
         "upstream",
         "main"
     ],
-    "explorer.excludeGitIgnore": false
+    "explorer.excludeGitIgnore": false,
+    "netlify.api_token": "bkEMzp0JNDdpaeLbNQgYw_oOhr6uzXIELI3nvR7jL1c",
+    "npm.enableRunFromFolder": true,
+    "npm.runSilent": true,
+    "npm.enableTouchbar": true,
+    "npm.oldKeybindings.enable": true,
+    "npm-intellisense.packageSubfoldersIntellisense": true,
+    "npm-intellisense.scanDevDependencies": true,
+    "npm-intellisense.showBuildInLibs": true,
+    "npmSmartImporter.provideImportSuggestionsOnSelection": true,
+    "openInGitHub.requireSelectionForLines": true,
+    "path-intellisense.autoSlashAfterDirectory": true,
+    "path-intellisense.autoTriggerNextSuggestion": true,
+    "path-intellisense.extensionOnImport": true,
+    "path-intellisense.ignoreTsConfigBaseUrl": true,
+    "path-intellisense.showHiddenFiles": true,
+    "prettier.bracketSameLine": true,
+    "prettier.insertPragma": true,
+    "prettier.jsxSingleQuote": true,
+    "prettier.requireConfig": true,
+    "prettier.requirePragma": true,
+    "prettier.resolveGlobalModules": true,
+    "prettier.singleQuote": true
 }
