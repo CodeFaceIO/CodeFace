@@ -1041,6 +1041,47 @@
   transition: 0.2s ease;
 }
 
+
+
+.arena_container_main_3 {
+  display: grid;
+  height: 100vh;
+  background-color: #0e1217;
+  grid-template-columns: 48px 220px 1fr;
+  grid-template-rows: 34px 34px 1fr 0px 22px;
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+  overflow: hidden;
+  grid-template-areas:
+    'maxtop maxtop maxtop'
+    'col side navi '
+    'col side main'
+    'col side console'
+    'col statusbar statusbar';
+  transition: 0.2s ease;
+}
+
+
+.arena_container_main_4 {
+  display: grid;
+  height: 100vh;
+  background-color: #0e1217;
+  grid-template-columns: 48px 0px 1fr;
+  grid-template-rows: 34px 34px 1fr 0px 22px;
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+  overflow: hidden;
+  grid-template-areas:
+    'maxtop maxtop maxtop'
+    'col side navi '
+    'col side main'
+    'col side console'
+    'col statusbar statusbar';
+  transition: 0.2s ease;
+}
+
+
+
 .arena_maxtop {
   grid-area: maxtop;
   background-color: #0e1217;
@@ -1055,7 +1096,26 @@
   justify-content: flex-end;
   align-items: flex-start;
   padding: 20px;
+  overflow: hidden;
 }
+
+.console_controllers {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+
+
+.console_controllers > * {
+  font-size: 1.2rem;
+  color: #fff;
+  cursor: pointer;
+}
+
+.console_controllers > *:hover {
+  opacity: .8;
+}
+
 
 .arena_console,
 .arena_side {
@@ -1095,7 +1155,23 @@
   padding: 0 20px;
   overflow: hidden;
   border-top: 1px solid black;
+  position: relative;
 }
+
+
+.status_bar_absolute {
+  position: absolute;
+  right: 80px;
+}
+
+
+
+.status_bar_absolute > * {
+  font-size: 1.2rem;
+  color: #fff;
+  cursor: pointer;
+}
+
 
 .arena_work_navi {
   /* grid-area: 1 / 1 / 2 / 3; */

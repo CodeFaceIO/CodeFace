@@ -17,7 +17,7 @@ import { toast } from 'react-toastify';
 import { AiOutlineFileText, AiFillGithub } from 'react-icons/ai';
 import { VscSourceControl } from 'react-icons/vsc';
 import { useMouseDelta } from './hooks/useMouseDelta';
-
+import { FaTimes, FaTerminal } from 'react-icons/fa';
 
 const ContentArena = ({ ref, handleThemeChange }) => {
   const sideMenus = [AiOutlineFileText, AiFillGithub, VscSourceControl];
@@ -29,6 +29,7 @@ const ContentArena = ({ ref, handleThemeChange }) => {
   const [theme, setTheme] = useState('cobalt');
   const [language, setLanguage] = useState(languageOptions[0]);
   const [sideBar, setSideBar] = useState(true);
+  const [console, setConsole] = useState(true);
   const [jsonFile, setJsonFile] = useState(files['configure.json']); // files is an object with all the files
   const [githubRepos, setGithubRepos] = useState([]);
 
@@ -190,7 +191,6 @@ const ContentArena = ({ ref, handleThemeChange }) => {
   };
 
   const appUserGithubRepoConnectionHandler = (githubToken) => {
-
     const options = {
       method: 'GET',
       url: 'https://api.github.com/user/repos',
@@ -234,7 +234,17 @@ const ContentArena = ({ ref, handleThemeChange }) => {
 
   return (
     <>
-      <div className={`${sideBar ? styles.arena_container_main : styles.arena_container_main_2}`}>
+      <div
+        className={`${
+          sideBar && console
+            ? styles.arena_container_main
+            : sideBar
+            ? styles.arena_container_main_3
+            : console
+            ? styles.arena_container_main_2
+            : styles.arena_container_main_4
+        }`}
+      >
         <div className={styles.arena_maxtop}></div>
         <div className={`${styles.arena_work_navi}`}>
           <WorkspaceNav />
@@ -257,8 +267,25 @@ const ContentArena = ({ ref, handleThemeChange }) => {
         />
         <div className={`${styles.arena_console}`}>
           <div className={`${styles.console_absolute}`}></div>
+          <div className={styles.console_controllers}>
+            <FaTimes
+              onClick={() => {
+                setConsole(false);
+              }}
+            />
+          </div>
         </div>
-        <div className={`${styles.arena_status_bar}`}></div>
+        <div className={`${styles.arena_status_bar}`}>
+          <div className={`${styles.status_bar_absolute}`}>
+            {!console && (
+              <FaTerminal
+                onClick={() => {
+                  setConsole(true);
+                }}
+              />
+            )}
+          </div>
+        </div>
       </div>
     </>
   );
