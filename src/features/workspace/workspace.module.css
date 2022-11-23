@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
 
 .content_area_main_bg {
   background-image: url('./../assets/vector_lines.svg');
@@ -779,9 +780,18 @@
 .workspace_navigation_items_css {
   width: max-content;
   padding: 4px 25px;
-  border-right: 1px solid rgba(83, 82, 82, 0.38);
-  background-color: #0e1217;
+  border-right: 1px solid #383d47;
+  background-color: #1c1f26;
+  background-image: url('./../assets/vector_lines.svg');
   color: #e2b461;
+  display: flex;
+  cursor: pointer;
+}
+
+.workspace_navigation_items_css > svg{
+  color: #3fb950;
+  font-size: 1.3rem;
+  margin-left: 5px;
 }
 
 .user_profile_account_body {
@@ -1010,7 +1020,7 @@
   height: 100vh;
   background-color: #0e1217;
   grid-template-columns: 48px 220px 1fr;
-  grid-template-rows: 34px 34px 1fr 220px 22px;
+  grid-template-rows: 40px 34px 1fr 180px 28px;
   grid-column-gap: 0px;
   grid-row-gap: 0px;
   overflow: hidden;
@@ -1028,7 +1038,7 @@
   height: 100vh;
   background-color: #0e1217;
   grid-template-columns: 48px 0px 1fr;
-  grid-template-rows: 34px 34px 1fr 220px 22px;
+  grid-template-rows: 40px 34px 1fr 180px 22px;
   grid-column-gap: 0px;
   grid-row-gap: 0px;
   overflow: hidden;
@@ -1041,14 +1051,12 @@
   transition: 0.2s ease;
 }
 
-
-
 .arena_container_main_3 {
   display: grid;
   height: 100vh;
   background-color: #0e1217;
   grid-template-columns: 48px 220px 1fr;
-  grid-template-rows: 34px 34px 1fr 0px 22px;
+  grid-template-rows: 40px 34px 1fr 0px 22px;
   grid-column-gap: 0px;
   grid-row-gap: 0px;
   overflow: hidden;
@@ -1060,14 +1068,13 @@
     'col statusbar statusbar';
   transition: 0.2s ease;
 }
-
 
 .arena_container_main_4 {
   display: grid;
   height: 100vh;
   background-color: #0e1217;
   grid-template-columns: 48px 0px 1fr;
-  grid-template-rows: 34px 34px 1fr 0px 22px;
+  grid-template-rows: 40px 34px 1fr 0px 22px;
   grid-column-gap: 0px;
   grid-row-gap: 0px;
   overflow: hidden;
@@ -1080,12 +1087,90 @@
   transition: 0.2s ease;
 }
 
-
-
 .arena_maxtop {
   grid-area: maxtop;
   background-color: #0e1217;
-  border-bottom: 1px solid rgba(83, 82, 82, 0.38);
+  border-bottom: 1px solid #383d47;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+}
+
+.arena_maxtop > ul {
+  list-style: none;
+  display: flex;
+  margin-left: 10px;
+}
+
+.arena_maxtop > ul > li {
+  margin-right: 7px;
+  cursor: pointer;
+  color: #eeb879;
+  border-radius: 4px;
+  padding: 0 8px;
+  font-size: 14px;
+  font-family: 'Ubuntu', sans-serif;
+
+}
+
+.arena_maxtop > ul > li:hover {
+  background-color: #383d47;
+}
+
+.arena_maxtop > .maxtop_input {
+  display: flex;
+  width: 600px;
+  height: 28px;
+  border: 1px solid rgba(238, 184, 121, 0.25);
+  border-radius: 6px;
+  margin-left: 20px;
+  overflow: hidden;
+}
+
+.arena_maxtop > .maxtop_input > input {
+  width: 100%;
+  height: 100%;
+  border: none;
+  background-color: transparent;
+  color: white;
+  padding: 0 10px;
+  outline: none;
+  font-size: 14px;
+  color: #fcfcfd;
+  font-weight: 300;
+}
+
+.arena_maxtop > .maxtop_input > input::placeholder {
+  color: #35b27d;
+  font-size: 14px;
+  text-align: center;
+}
+
+.arena_maxtop > .maxtop_input > input:hover {
+  background-color: #08546b;
+}
+
+.arena_maxtop .toggle_panel {
+  list-style: none;
+  display: flex;
+  width: 300px;
+  justify-content:flex-end;
+}
+
+.arena_maxtop .toggle_panel >li > svg{
+  margin-left: 10px;
+  color:#787b83 ;
+  font-size: 1.4rem;
+  cursor: pointer;
+}
+
+.arena_maxtop > .maxtop_input > svg {
+  width: 20px;
+  height: 20px;
+  color: #fff;
+  margin-right: 10px;
+  cursor: pointer;
 }
 
 .arena_console {
@@ -1101,10 +1186,9 @@
 
 .console_controllers {
   position: absolute;
-  top: 20px;
-  right: 20px;
+  top: 15px;
+  right: 15px;
 }
-
 
 .console_controllers > * {
   font-size: 1.2rem;
@@ -1113,9 +1197,8 @@
 }
 
 .console_controllers > *:hover {
-  opacity: .8;
+  opacity: 0.8;
 }
-
 
 .arena_console,
 .arena_side {
@@ -1132,7 +1215,8 @@
   height: 100%;
   right: 0;
   top: 0;
-  background-color: #44484c;
+  background-color: transparent;
+  border-right: 1px solid #383d47;
   cursor: e-resize;
 }
 
@@ -1141,37 +1225,44 @@
   height: 2px;
   top: 0;
   left: 0;
-  background-color: #44484c;
+  background-color: transparent;
+  border-top: 1px solid #383d47;
   cursor: n-resize;
 }
 
 .arena_status_bar {
   grid-area: statusbar;
-  background-color: #1a2023;
+  background-color: #1c1f26;
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
   align-items: center;
   padding: 0 20px;
   overflow: hidden;
-  border-top: 1px solid black;
+  border-top: 1px solid #383d47;
   position: relative;
 }
+.status_bar_errors > ul {
+  list-style: none;
+  display: flex;
+  cursor: pointer;
+}
 
+.status_bar_errors > ul > li {
+  margin-right: 10px;
+  cursor: pointer;
+}
 
 .status_bar_absolute {
   position: absolute;
   right: 80px;
 }
 
-
-
 .status_bar_absolute > * {
   font-size: 1.2rem;
   color: #fff;
   cursor: pointer;
 }
-
 
 .arena_work_navi {
   /* grid-area: 1 / 1 / 2 / 3; */
@@ -1184,14 +1275,30 @@
 
 .arena_col {
   grid-area: col;
-  border-right: 1px solid black;
-  background-color: #1a2023;
+  border-right: 1px solid #383d47;
+  background-color: #0e1217;
+  background-image: url('./../assets/vector_lines.svg');
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.arena_col > div:last-child > svg {
+  font-size: 1.7rem;
+  color: rgb(204, 204, 204);
+  cursor: pointer;
+  margin-bottom: 10px;
+}
+
+.arena_col > div:last-child > svg:hover {
+  color: #e2b461;
 }
 
 .arena_side {
   grid-area: side;
   border-right: 1px solid black;
-  background-color: #1a2023;
+  background-color: #1c1f26;
+  background-image: url('./../assets/vector_lines.svg');
 }
 
 .arena_work_workspace_ide {
@@ -1473,6 +1580,11 @@
 }
 
 .arena_work_workspace_nav_icon > * {
-  font-size: 2rem;
+  font-size: 1.7rem;
   color: rgb(204, 204, 204);
+  cursor: pointer;
+}
+
+.arena_work_workspace_nav_icon > *:hover {
+  color: #e2b461;
 }

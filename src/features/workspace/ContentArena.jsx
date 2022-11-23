@@ -14,13 +14,34 @@ import CodeEditorWindow from './CodeEditorWindow';
 import OutputWindow from './OutputWindow';
 import axios from 'axios';
 import { toast } from 'react-toastify';
-import { AiOutlineFileText, AiFillGithub } from 'react-icons/ai';
+import { AiOutlineFileText, AiFillGithub, AiOutlineSearch } from 'react-icons/ai';
 import { VscSourceControl } from 'react-icons/vsc';
 import { useMouseDelta } from './hooks/useMouseDelta';
 import { FaTimes, FaTerminal } from 'react-icons/fa';
+import { VscExtensions } from 'react-icons/vsc';
+import { CgCommunity, CgDockBottom } from 'react-icons/cg';
+import { TbTemplate } from 'react-icons/tb';
+import { RiTeamLine } from 'react-icons/ri';
+import { VscError } from 'react-icons/vsc';
+import { MdOutlineErrorOutline, MdSettings } from 'react-icons/md';
+import { RiAccountCircleLine } from 'react-icons/ri';
+import { BiChevronDown} from 'react-icons/bi';
+import { BsLayoutSidebarInset, BsLayoutSidebar } from 'react-icons/bs';
+import { TbSquareToggleHorizontal, TbSquareToggle } from 'react-icons/tb';
+
+
+
 
 const ContentArena = ({ ref, handleThemeChange }) => {
-  const sideMenus = [AiOutlineFileText, AiFillGithub, VscSourceControl];
+  const sideMenus = [
+    AiOutlineFileText,
+    AiFillGithub,
+    VscSourceControl,
+    VscExtensions,
+    CgCommunity,
+    TbTemplate,
+    RiTeamLine,
+  ];
 
   const [code, setCode] = useState(files['script.js'].value);
   const [customInput, setCustomInput] = useState('');
@@ -32,10 +53,15 @@ const ContentArena = ({ ref, handleThemeChange }) => {
   const [console, setConsole] = useState(true);
   const [jsonFile, setJsonFile] = useState(files['configure.json']); // files is an object with all the files
   const [githubRepos, setGithubRepos] = useState([]);
-
   const renderedSideMenus = sideMenus.map((Icon, index) => {
     return (
-      <div className={styles.arena_work_workspace_nav_icon} key={index} onClick={() => setSideBar(!sideBar)}>
+      <div
+        className={styles.arena_work_workspace_nav_icon}
+        key={index}
+        onClick={() => {
+          setSideBar(!sideBar);
+        }}
+      >
         <Icon />
       </div>
     );
@@ -245,11 +271,43 @@ const ContentArena = ({ ref, handleThemeChange }) => {
             : styles.arena_container_main_4
         }`}
       >
-        <div className={styles.arena_maxtop}></div>
+        <div className={`${styles.arena_maxtop} pe-3`}>
+          <ul>
+            <li>Logo</li>
+            <li>File</li>
+            <li>Edit</li>
+            <li>Selection</li>
+            <li>View</li>
+            <li>Terminal</li>
+            <li>Help</li>
+          </ul>
+          <div className={`${styles.maxtop_input}`}>
+            <input type="search" placeholder='Search in CodeFace'/>
+            <BiChevronDown/>
+          </div>
+          <div>
+            <ul className={`${styles.toggle_panel}`}>
+              <li onClick={()=>setSideBar(!sideBar)}>
+                <TbSquareToggle/>
+                </li>
+              <li onClick={()=>setConsole(!console)}>
+                <TbSquareToggleHorizontal/>
+              </li>
+            </ul>
+          </div>
+        </div>
         <div className={`${styles.arena_work_navi}`}>
           <WorkspaceNav />
         </div>
-        <div className={`${styles.arena_col}`}>{renderedSideMenus}</div>
+        <div className={`${styles.arena_col}`}>
+          <div>
+            {renderedSideMenus}
+          </div>
+          <div>
+            <RiAccountCircleLine/>
+            <MdSettings/>
+          </div>
+        </div>
         <div className={`${styles.arena_side}`}>
           <div className={`${styles.side_absolute}`}></div>
         </div>
@@ -276,6 +334,17 @@ const ContentArena = ({ ref, handleThemeChange }) => {
           </div>
         </div>
         <div className={`${styles.arena_status_bar}`}>
+          <div className={`${styles.status_bar_errors}`}>
+            <ul>
+              <li>
+                <VscError/>
+              </li>
+              <li>
+                <MdOutlineErrorOutline/>
+              </li>
+            </ul>
+          </div>
+          <div className={`${styles.status_bar_line}`}></div>
           <div className={`${styles.status_bar_absolute}`}>
             {!console && (
               <FaTerminal
