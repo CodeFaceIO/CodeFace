@@ -1,6 +1,6 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable no-unused-vars */
-import React, { useState, useEffect, useCallback, useRef } from 'react';
+import React, { useState, useEffect } from 'react';
 import Editor from '@monaco-editor/react';
 import { MdBuild } from 'react-icons/md';
 import { Button } from '@chakra-ui/react';
@@ -16,11 +16,10 @@ import axios from 'axios';
 import { toast } from 'react-toastify';
 import { AiOutlineFileText, AiFillGithub } from 'react-icons/ai';
 import { VscSourceControl } from 'react-icons/vsc';
-import { useMouseDelta } from './hooks/useMouseDelta';
 
+const sideMenus = [AiOutlineFileText, AiFillGithub, VscSourceControl];
 
 const ContentArena = ({ ref, handleThemeChange }) => {
-  const sideMenus = [AiOutlineFileText, AiFillGithub, VscSourceControl];
 
   const [code, setCode] = useState(files['script.js'].value);
   const [customInput, setCustomInput] = useState('');
@@ -29,8 +28,7 @@ const ContentArena = ({ ref, handleThemeChange }) => {
   const [theme, setTheme] = useState('cobalt');
   const [language, setLanguage] = useState(languageOptions[0]);
   const [sideBar, setSideBar] = useState(true);
-  const [jsonFile, setJsonFile] = useState(files['configure.json']); // files is an object with all the files
-  const [githubRepos, setGithubRepos] = useState([]);
+  const [jsonFile,setJsonFile] = useState(files['configure.json']) // files is an object with all the files
 
   const renderedSideMenus = sideMenus.map((Icon, index) => {
     return (
@@ -135,21 +133,6 @@ const ContentArena = ({ ref, handleThemeChange }) => {
     }
   };
 
-  const uploadProjectToFileExplorerHandler = (e) => {
-    const files = e.target.files;
-
-    for (let i = 0; i < files.length; i++) {
-      const file = files[i];
-
-      const reader = new FileReader();
-      reader.onload = (e) => {
-        const fileContent = e.target.result;
-        setJsonFile(fileContent);
-      };
-      reader.readAsText(file);
-    }
-  };
-
   function handleThemeChange(th) {
     const theme = th;
     console.log('theme...', theme);
@@ -189,37 +172,22 @@ const ContentArena = ({ ref, handleThemeChange }) => {
     });
   };
 
-  const appUserGithubRepoConnectionHandler = (githubToken) => {
 
+
+
+
+  const appUserGithubRepoConnectionHandler = () => {
+    // get github user repos
     const options = {
       method: 'GET',
-      url: 'https://api.github.com/user/repos',
+      url: process.env.REACT_APP_GITHUB_API_URL + '/user/repos',
       headers: {
-        Authorization: 'token ' + githubToken,
+        Authorization: `token ${githubToken}`,
       },
-    };
+      
+  }
 
-    axios
-      .request(options)
-      .then(function (response) {
-        console.log('res.data', response.data);
-        const repos = response.data;
-        setGithubRepos(repos);
-      })
-      .catch((err) => {
-        let error = err.response ? err.response.data : err;
-        // get error status
-        let status = err.response.status;
-        console.log('status', status);
-        if (status === 401) {
-          console.log('unauthorized', status);
-          setGithubRepos(null);
-          showErrorToast(`Unauthorized! Please try again.`, 10000);
-        }
-        console.log('catch block...', error);
-      });
-  };
-
+  
   const onChange = (action, data) => {
     switch (action) {
       case 'code': {
@@ -240,9 +208,7 @@ const ContentArena = ({ ref, handleThemeChange }) => {
           <WorkspaceNav />
         </div>
         <div className={`${styles.arena_col}`}>{renderedSideMenus}</div>
-        <div className={`${styles.arena_side}`}>
-          <div className={`${styles.side_absolute}`}></div>
-        </div>
+        <div className={`${styles.arena_side}`}></div>
         <CodeEditorWindow
           code={code}
           onChange={onChange}
@@ -255,9 +221,7 @@ const ContentArena = ({ ref, handleThemeChange }) => {
           onSelectChange={onSelectChange}
           themeEditorNav={theme}
         />
-        <div className={`${styles.arena_console}`}>
-          <div className={`${styles.console_absolute}`}></div>
-        </div>
+        <div className={`${styles.arena_console}`}></div>
         <div className={`${styles.arena_status_bar}`}></div>
       </div>
     </>

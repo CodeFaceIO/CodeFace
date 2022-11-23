@@ -16,11 +16,15 @@ import axios from 'axios';
 import { toast } from 'react-toastify';
 import { AiOutlineFileText, AiFillGithub } from 'react-icons/ai';
 import { VscSourceControl } from 'react-icons/vsc';
-import { useMouseDelta } from './hooks/useMouseDelta';
+import {useMouseDelta} from './hooks/useMouseDelta' ; 
+
 
 
 const ContentArena = ({ ref, handleThemeChange }) => {
+
   const sideMenus = [AiOutlineFileText, AiFillGithub, VscSourceControl];
+
+
 
   const [code, setCode] = useState(files['script.js'].value);
   const [customInput, setCustomInput] = useState('');
@@ -30,7 +34,6 @@ const ContentArena = ({ ref, handleThemeChange }) => {
   const [language, setLanguage] = useState(languageOptions[0]);
   const [sideBar, setSideBar] = useState(true);
   const [jsonFile, setJsonFile] = useState(files['configure.json']); // files is an object with all the files
-  const [githubRepos, setGithubRepos] = useState([]);
 
   const renderedSideMenus = sideMenus.map((Icon, index) => {
     return (
@@ -135,20 +138,24 @@ const ContentArena = ({ ref, handleThemeChange }) => {
     }
   };
 
-  const uploadProjectToFileExplorerHandler = (e) => {
-    const files = e.target.files;
 
+  const uploadProjectToFileExplorerHandler = (e) => {
+
+    const files = e.target.files;
+    console.log('files', files);
     for (let i = 0; i < files.length; i++) {
       const file = files[i];
-
+      console.log('file', file);
       const reader = new FileReader();
       reader.onload = (e) => {
         const fileContent = e.target.result;
+        console.log('fileContent', fileContent);
         setJsonFile(fileContent);
       };
       reader.readAsText(file);
-    }
-  };
+
+
+  }
 
   function handleThemeChange(th) {
     const theme = th;
@@ -190,36 +197,15 @@ const ContentArena = ({ ref, handleThemeChange }) => {
   };
 
   const appUserGithubRepoConnectionHandler = (githubToken) => {
-
+    // get github user repos
     const options = {
       method: 'GET',
-      url: 'https://api.github.com/user/repos',
+      url: process.env.REACT_APP_GITHUB_API_URL + '/user/repos',
       headers: {
-        Authorization: 'token ' + githubToken,
+        Authorization: `token ${githubToken}`,
       },
     };
-
-    axios
-      .request(options)
-      .then(function (response) {
-        console.log('res.data', response.data);
-        const repos = response.data;
-        setGithubRepos(repos);
-      })
-      .catch((err) => {
-        let error = err.response ? err.response.data : err;
-        // get error status
-        let status = err.response.status;
-        console.log('status', status);
-        if (status === 401) {
-          console.log('unauthorized', status);
-          setGithubRepos(null);
-          showErrorToast(`Unauthorized! Please try again.`, 10000);
-        }
-        console.log('catch block...', error);
-      });
   };
-
   const onChange = (action, data) => {
     switch (action) {
       case 'code': {
@@ -240,9 +226,7 @@ const ContentArena = ({ ref, handleThemeChange }) => {
           <WorkspaceNav />
         </div>
         <div className={`${styles.arena_col}`}>{renderedSideMenus}</div>
-        <div className={`${styles.arena_side}`}>
-          <div className={`${styles.side_absolute}`}></div>
-        </div>
+        <div className={`${styles.arena_side}`}></div>
         <CodeEditorWindow
           code={code}
           onChange={onChange}
@@ -255,9 +239,7 @@ const ContentArena = ({ ref, handleThemeChange }) => {
           onSelectChange={onSelectChange}
           themeEditorNav={theme}
         />
-        <div className={`${styles.arena_console}`}>
-          <div className={`${styles.console_absolute}`}></div>
-        </div>
+        <div className={`${styles.arena_console}`}></div>
         <div className={`${styles.arena_status_bar}`}></div>
       </div>
     </>

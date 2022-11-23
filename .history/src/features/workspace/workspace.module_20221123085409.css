@@ -781,7 +781,7 @@
   padding: 4px 25px;
   border-right: 1px solid rgba(83, 82, 82, 0.38);
   background-color: #0e1217;
-  color: #e2b461;
+  color: #E2B461;
 }
 
 .user_profile_account_body {
@@ -1055,35 +1055,19 @@
   justify-content: flex-end;
   align-items: flex-start;
   padding: 20px;
+  overflow: hidden;
+  border-top: 1px outset #44484c;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
 }
+
 
 .arena_console,
 .arena_side {
-  position: relative;
+  
 }
 
-.side_absolute,
-.console_absolute {
-  position: absolute;
-}
 
-.side_absolute {
-  width: 2px;
-  height: 100%;
-  right: 0;
-  top: 0;
-  background-color: #44484c;
-  cursor: e-resize;
-}
 
-.console_absolute {
-  width: 100%;
-  height: 2px;
-  top: 0;
-  left: 0;
-  background-color: #44484c;
-  cursor: n-resize;
-}
 
 .arena_status_bar {
   grid-area: statusbar;
