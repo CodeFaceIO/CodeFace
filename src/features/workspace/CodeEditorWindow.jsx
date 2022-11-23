@@ -30,7 +30,8 @@ const CodeEditorWindow = ({
       <div
         className="d-flex"
         style={{
-          backgroundColor: '#1A2023',
+          backgroundColor: '#1c1f26',
+          borderBottom:"1px solid #383d47",
         }}
       >
         <LanguagesDropDown onSelectChange={onSelectChange} />
@@ -39,10 +40,11 @@ const CodeEditorWindow = ({
         <Button
           onClick={handleCompile}
           disabled={!code}
-          backgroundColor="#1A2023"
+          backgroundImage="linear-gradient(-180deg, rgb(99, 102, 105) 0%, rgb(82, 85, 89) 90%)"
+          color="rgb(255,255,255)"
           borderRadius="0px"
-          border="1px solid rgba(0, 0, 0, 0.38)"
           width="400px"
+          border="1px solid #383d47"
         >
           {processing ? 'Processing...' : 'Compile and Execute'}
         </Button>
