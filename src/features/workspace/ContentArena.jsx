@@ -25,23 +25,12 @@ import { RiTeamLine } from 'react-icons/ri';
 import { VscError } from 'react-icons/vsc';
 import { MdOutlineErrorOutline, MdSettings } from 'react-icons/md';
 import { RiAccountCircleLine } from 'react-icons/ri';
-import { BiChevronDown} from 'react-icons/bi';
+import { BiChevronDown } from 'react-icons/bi';
 import { BsLayoutSidebarInset, BsLayoutSidebar } from 'react-icons/bs';
 import { TbSquareToggleHorizontal, TbSquareToggle } from 'react-icons/tb';
 
-
-
-
 const ContentArena = ({ ref, handleThemeChange }) => {
-  const sideMenus = [
-    AiOutlineFileText,
-    AiFillGithub,
-    VscSourceControl,
-    VscExtensions,
-    CgCommunity,
-    TbTemplate,
-    RiTeamLine,
-  ];
+  const sideMenus = [AiOutlineFileText, AiFillGithub, VscSourceControl, VscExtensions, CgCommunity, TbTemplate, RiTeamLine];
 
   const [code, setCode] = useState(files['script.js'].value);
   const [customInput, setCustomInput] = useState('');
@@ -282,16 +271,16 @@ const ContentArena = ({ ref, handleThemeChange }) => {
             <li>Help</li>
           </ul>
           <div className={`${styles.maxtop_input}`}>
-            <input type="search" placeholder='Search in CodeFace'/>
-            <BiChevronDown/>
+            <input type="search" placeholder="Search in CodeFace" />
+            <BiChevronDown />
           </div>
           <div>
             <ul className={`${styles.toggle_panel}`}>
-              <li onClick={()=>setSideBar(!sideBar)}>
-                <TbSquareToggle/>
-                </li>
-              <li onClick={()=>setConsole(!console)}>
-                <TbSquareToggleHorizontal/>
+              <li onClick={() => setSideBar(!sideBar)}>
+                <TbSquareToggle />
+              </li>
+              <li onClick={() => setConsole(!console)}>
+                <TbSquareToggleHorizontal />
               </li>
             </ul>
           </div>
@@ -300,12 +289,10 @@ const ContentArena = ({ ref, handleThemeChange }) => {
           <WorkspaceNav />
         </div>
         <div className={`${styles.arena_col}`}>
+          <div>{renderedSideMenus}</div>
           <div>
-            {renderedSideMenus}
-          </div>
-          <div>
-            <RiAccountCircleLine/>
-            <MdSettings/>
+            <RiAccountCircleLine />
+            <MdSettings />
           </div>
         </div>
         <div className={`${styles.arena_side}`}>
@@ -337,10 +324,10 @@ const ContentArena = ({ ref, handleThemeChange }) => {
           <div className={`${styles.status_bar_errors}`}>
             <ul>
               <li>
-                <VscError/>
+                <VscError />
               </li>
               <li>
-                <MdOutlineErrorOutline/>
+                <MdOutlineErrorOutline />
               </li>
             </ul>
           </div>
