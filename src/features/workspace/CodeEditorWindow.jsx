@@ -50,12 +50,12 @@ const CodeEditorWindow = ({
         </Button>
       </div>
       <Editor
-        language={language || 'javascript'}
-        value={code || value}
-        theme={theme}
-        defaultValue="// some comment"
-        onChange={handleEditorChange}
-        options={JSON.parse(jsonFile.value)}
+       language={language || 'javascript'}
+       value={code || value}
+       theme={"vs-dark"}
+       defaultValue="// some comment"
+       onChange={handleEditorChange}
+       options={JSON.parse(jsonFile.value)}
       />
     </div>
   );
