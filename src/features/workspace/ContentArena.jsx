@@ -29,6 +29,9 @@ import { BiChevronDown } from 'react-icons/bi';
 import { BsLayoutSidebarInset, BsLayoutSidebar } from 'react-icons/bs';
 import { TbSquareToggleHorizontal, TbSquareToggle } from 'react-icons/tb';
 
+
+
+
 const ContentArena = ({ ref, handleThemeChange }) => {
   const sideMenus = [AiOutlineFileText, AiFillGithub, VscSourceControl, VscExtensions, CgCommunity, TbTemplate, RiTeamLine];
 
@@ -36,7 +39,7 @@ const ContentArena = ({ ref, handleThemeChange }) => {
   const [customInput, setCustomInput] = useState('');
   const [outputDetails, setOutputDetails] = useState(null);
   const [processing, setProcessing] = useState(null);
-  const [theme, setTheme] = useState('cobalt');
+  const [theme, setTheme] = useState('vs-dark');
   const [language, setLanguage] = useState(languageOptions[0]);
   const [sideBar, setSideBar] = useState(true);
   const [console, setConsole] = useState(true);
@@ -178,7 +181,7 @@ const ContentArena = ({ ref, handleThemeChange }) => {
   }
 
   useEffect(() => {
-    defineTheme('blackboard').then((_) => setTheme({ value: 'blackboard', label: 'Blackboard' }));
+    defineTheme('vs-dark').then((_) => setTheme({ value: 'vs-dark', label: 'vs-dark' }));
     // keep url state before refresh with handleWorkspaceComponentClick prop
   }, []);
 

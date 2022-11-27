@@ -788,7 +788,7 @@
   cursor: pointer;
 }
 
-.workspace_navigation_items_css > svg{
+.workspace_navigation_items_css > svg {
   color: #3fb950;
   font-size: 1.3rem;
   margin-left: 5px;
@@ -1030,7 +1030,8 @@
     'col side main'
     'col side console'
     'col statusbar statusbar';
-  transition: 0.2s ease;
+    transition-duration: 0.1s;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .arena_container_main_2 {
@@ -1038,7 +1039,7 @@
   height: 100vh;
   background-color: #0e1217;
   grid-template-columns: 48px 0px 1fr;
-  grid-template-rows: 40px 34px 1fr 180px 22px;
+  grid-template-rows: 40px 34px 1fr 180px 28px;
   grid-column-gap: 0px;
   grid-row-gap: 0px;
   overflow: hidden;
@@ -1048,7 +1049,8 @@
     'col side main '
     'col side console'
     'col statusbar statusbar';
-  transition: 0.2s ease;
+    transition-duration: 0.1s;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .arena_container_main_3 {
@@ -1056,7 +1058,7 @@
   height: 100vh;
   background-color: #0e1217;
   grid-template-columns: 48px 220px 1fr;
-  grid-template-rows: 40px 34px 1fr 0px 22px;
+  grid-template-rows: 40px 34px 1fr 0px 28px;
   grid-column-gap: 0px;
   grid-row-gap: 0px;
   overflow: hidden;
@@ -1066,7 +1068,8 @@
     'col side main'
     'col side console'
     'col statusbar statusbar';
-  transition: 0.2s ease;
+    transition-duration: 0.1s;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .arena_container_main_4 {
@@ -1074,7 +1077,7 @@
   height: 100vh;
   background-color: #0e1217;
   grid-template-columns: 48px 0px 1fr;
-  grid-template-rows: 40px 34px 1fr 0px 22px;
+  grid-template-rows: 40px 34px 1fr 0px 28px;
   grid-column-gap: 0px;
   grid-row-gap: 0px;
   overflow: hidden;
@@ -1084,7 +1087,8 @@
     'col side main'
     'col side console'
     'col statusbar statusbar';
-  transition: 0.2s ease;
+    transition-duration: 0.1s;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .arena_maxtop {
@@ -1094,7 +1098,6 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-
 }
 
 .arena_maxtop > ul {
@@ -1111,7 +1114,6 @@
   padding: 0 8px;
   font-size: 14px;
   font-family: 'Ubuntu', sans-serif;
-
 }
 
 .arena_maxtop > ul > li:hover {
@@ -1155,12 +1157,12 @@
   list-style: none;
   display: flex;
   width: 300px;
-  justify-content:flex-end;
+  justify-content: flex-end;
 }
 
-.arena_maxtop .toggle_panel >li > svg{
+.arena_maxtop .toggle_panel > li > svg {
   margin-left: 10px;
-  color:#787b83 ;
+  color: #787b83;
   font-size: 1.4rem;
   cursor: pointer;
 }
@@ -1275,8 +1277,8 @@
 
 .arena_col {
   grid-area: col;
-  border-right: 1px solid #383d47;
-  background-color: #0e1217;
+  border-right: 1px solid #0e1217;
+  background-color: #1c1f26;
   background-image: url('./../assets/vector_lines.svg');
   display: flex;
   flex-direction: column;
@@ -1583,6 +1585,8 @@
   font-size: 1.7rem;
   color: rgb(204, 204, 204);
   cursor: pointer;
+  display: inline-block;
+  filter: drop-shadow(14px 14px 15px rgb(0, 0, 0));
 }
 
 .arena_work_workspace_nav_icon > *:hover {
