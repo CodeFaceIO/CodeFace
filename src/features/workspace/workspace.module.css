@@ -1030,8 +1030,8 @@
     'col side main'
     'col side console'
     'col statusbar statusbar';
-    transition-duration: 0.1s;
-    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 0.1s;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .arena_container_main_2 {
@@ -1049,8 +1049,8 @@
     'col side main '
     'col side console'
     'col statusbar statusbar';
-    transition-duration: 0.1s;
-    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 0.1s;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .arena_container_main_3 {
@@ -1068,8 +1068,8 @@
     'col side main'
     'col side console'
     'col statusbar statusbar';
-    transition-duration: 0.1s;
-    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 0.1s;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .arena_container_main_4 {
@@ -1087,8 +1087,8 @@
     'col side main'
     'col side console'
     'col statusbar statusbar';
-    transition-duration: 0.1s;
-    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 0.1s;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .arena_maxtop {
@@ -1205,6 +1205,7 @@
 .arena_console,
 .arena_side {
   position: relative;
+  overflow: hidden;
 }
 
 .side_absolute,

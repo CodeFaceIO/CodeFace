@@ -28,9 +28,7 @@ import { RiAccountCircleLine } from 'react-icons/ri';
 import { BiChevronDown } from 'react-icons/bi';
 import { BsLayoutSidebarInset, BsLayoutSidebar } from 'react-icons/bs';
 import { TbSquareToggleHorizontal, TbSquareToggle } from 'react-icons/tb';
-
-
-
+import TreeView from './TreeView';
 
 const ContentArena = ({ ref, handleThemeChange }) => {
   const sideMenus = [AiOutlineFileText, AiFillGithub, VscSourceControl, VscExtensions, CgCommunity, TbTemplate, RiTeamLine];
@@ -300,6 +298,7 @@ const ContentArena = ({ ref, handleThemeChange }) => {
         </div>
         <div className={`${styles.arena_side}`}>
           <div className={`${styles.side_absolute}`}></div>
+          <TreeView />
         </div>
         <CodeEditorWindow
           code={code}
