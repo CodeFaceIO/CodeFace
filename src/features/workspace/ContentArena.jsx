@@ -15,14 +15,23 @@ import OutputWindow from './OutputWindow';
 import axios from 'axios';
 import { toast } from 'react-toastify';
 import { AiOutlineFileText, AiFillGithub, AiOutlineSearch } from 'react-icons/ai';
-import { VscSourceControl } from 'react-icons/vsc';
 import { useMouseDelta } from './hooks/useMouseDelta';
 import { FaTimes, FaTerminal } from 'react-icons/fa';
 import { VscExtensions } from 'react-icons/vsc';
 import { CgCommunity, CgDockBottom } from 'react-icons/cg';
 import { TbTemplate } from 'react-icons/tb';
 import { RiTeamLine } from 'react-icons/ri';
-import { VscError } from 'react-icons/vsc';
+import {
+  VscError,
+  VscDebug,
+  VscSearch,
+  VscAccount,
+  VscSettingsGear,
+  VscFiles,
+  VscGithubInverted,
+  VscSourceControl,
+  VscTerminalBash,
+} from 'react-icons/vsc';
 import { MdOutlineErrorOutline, MdSettings } from 'react-icons/md';
 import { RiAccountCircleLine } from 'react-icons/ri';
 import { BiChevronDown } from 'react-icons/bi';
@@ -31,7 +40,7 @@ import { TbSquareToggleHorizontal, TbSquareToggle } from 'react-icons/tb';
 import TreeView from './TreeView';
 
 const ContentArena = ({ ref, handleThemeChange }) => {
-  const sideMenus = [AiOutlineFileText, AiFillGithub, VscSourceControl, VscExtensions, CgCommunity, TbTemplate, RiTeamLine];
+  const sideMenus = [VscSearch, VscFiles, VscGithubInverted, VscSourceControl, VscExtensions, VscDebug];
 
   const [code, setCode] = useState(files['script.js'].value);
   const [customInput, setCustomInput] = useState('');
@@ -292,8 +301,8 @@ const ContentArena = ({ ref, handleThemeChange }) => {
         <div className={`${styles.arena_col}`}>
           <div>{renderedSideMenus}</div>
           <div>
-            <RiAccountCircleLine />
-            <MdSettings />
+            <VscAccount />
+            <VscSettingsGear />
           </div>
         </div>
         <div className={`${styles.arena_side}`}>
@@ -336,7 +345,7 @@ const ContentArena = ({ ref, handleThemeChange }) => {
           <div className={`${styles.status_bar_line}`}></div>
           <div className={`${styles.status_bar_absolute}`}>
             {!console && (
-              <FaTerminal
+              <VscTerminalBash
                 onClick={() => {
                   setConsole(true);
                 }}

@@ -1019,7 +1019,7 @@
   display: grid;
   height: 100vh;
   background-color: #0e1217;
-  grid-template-columns: 48px 220px 1fr;
+  grid-template-columns: 54px 220px 1fr;
   grid-template-rows: 40px 34px 1fr 180px 28px;
   grid-column-gap: 0px;
   grid-row-gap: 0px;
@@ -1038,7 +1038,7 @@
   display: grid;
   height: 100vh;
   background-color: #0e1217;
-  grid-template-columns: 48px 0px 1fr;
+  grid-template-columns: 54px 0px 1fr;
   grid-template-rows: 40px 34px 1fr 180px 28px;
   grid-column-gap: 0px;
   grid-row-gap: 0px;
@@ -1057,7 +1057,7 @@
   display: grid;
   height: 100vh;
   background-color: #0e1217;
-  grid-template-columns: 48px 220px 1fr;
+  grid-template-columns: 54px 220px 1fr;
   grid-template-rows: 40px 34px 1fr 0px 28px;
   grid-column-gap: 0px;
   grid-row-gap: 0px;
@@ -1076,7 +1076,7 @@
   display: grid;
   height: 100vh;
   background-color: #0e1217;
-  grid-template-columns: 48px 0px 1fr;
+  grid-template-columns: 54px 0px 1fr;
   grid-template-rows: 40px 34px 1fr 0px 28px;
   grid-column-gap: 0px;
   grid-row-gap: 0px;
@@ -1287,7 +1287,7 @@
 }
 
 .arena_col > div:last-child > svg {
-  font-size: 1.7rem;
+  font-size: 2rem;
   color: rgb(204, 204, 204);
   cursor: pointer;
   margin-bottom: 10px;
@@ -1583,7 +1583,7 @@
 }
 
 .arena_work_workspace_nav_icon > * {
-  font-size: 1.7rem;
+  font-size: 2rem;
   color: rgb(204, 204, 204);
   cursor: pointer;
   display: inline-block;
