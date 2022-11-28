@@ -40,11 +40,11 @@ const CodeEditorWindow = ({
         <Button
           onClick={handleCompile}
           disabled={!code}
-          backgroundImage="linear-gradient(-180deg, rgb(99, 102, 105) 0%, rgb(82, 85, 89) 90%)"
-          color="rgb(255,255,255)"
+          backgroundColor="#e2b461"
+          color="#0e1217"
           borderRadius="0px"
           width="400px"
-          border="1px solid #383d47"
+          border="1px solid #0e1217"
         >
           {processing ? 'Processing...' : 'Compile and Execute'}
         </Button>

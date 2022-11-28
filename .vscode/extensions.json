@@ -1,6 +1,3 @@
 {
-    "recommendations": [
-        "eamodio.gitlens",
-        "jheilingbrunner.vscode-gnupg-tool"
-    ]
+  "recommendations": ["eamodio.gitlens", "jheilingbrunner.vscode-gnupg-tool"]
 }
