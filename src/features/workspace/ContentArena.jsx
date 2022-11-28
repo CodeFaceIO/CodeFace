@@ -306,7 +306,7 @@ const ContentArena = ({ ref, handleThemeChange }) => {
           </div>
         </div>
         <div className={`${styles.arena_side}`}>
-          <div className={`${styles.side_absolute}`}></div>
+          {sideBar && <div className={`${styles.side_absolute}`}></div>}
           <TreeView />
         </div>
         <CodeEditorWindow
