@@ -50,6 +50,15 @@ const ContentArena = ({ ref, handleThemeChange }) => {
   const [language, setLanguage] = useState(languageOptions[0]);
   const [sideBar, setSideBar] = useState(true);
   const [console, setConsole] = useState(true);
+  const [isExplorer, setIsExploer] = useState(false);
+  const [isTerminal, setIsTerminal] = useState(false);
+  const [isSettings, setIsSettings] = useState(false);
+  const [isAccount, setIsAccount] = useState(false);
+  const [isGithub, setIsGithub] = useState(false);
+  const [isSourceControl, setIsSourceControl] = useState(false);
+  const [isExtensions, setIsExtensions] = useState(false);
+  const [isDebug, setIsDebug] = useState(false);
+  const [isSearch, setIsSearch] = useState(false);
   const [jsonFile, setJsonFile] = useState(files['configure.json']); // files is an object with all the files
   const [githubRepos, setGithubRepos] = useState([]);
   const renderedSideMenus = sideMenus.map((Icon, index) => {
@@ -59,6 +68,26 @@ const ContentArena = ({ ref, handleThemeChange }) => {
         key={index}
         onClick={() => {
           setSideBar(!sideBar);
+          switch (index) {
+            case 0:
+              setIsSearch(!isSearch);
+              break;
+            case 1:
+              setIsExploer(!isExplorer);
+              break;
+            case 2:
+              setIsGithub(!isGithub);
+              break;
+            case 3:
+              setIsSourceControl(!isSourceControl);
+              break;
+            case 4:
+              setIsExtensions(!isExtensions);
+              break;
+            case 5:
+              setIsDebug(!isDebug);
+              break;
+          }
         }}
       >
         <Icon />
@@ -307,6 +336,9 @@ const ContentArena = ({ ref, handleThemeChange }) => {
         </div>
         <div className={`${styles.arena_side}`}>
           {sideBar && <div className={`${styles.side_absolute}`}></div>}
+          <div className={`${styles.arena_side_header}`}>
+            <h1 className={`${styles.arena_side_header_text}`}></h1>
+          </div>
           <TreeView />
         </div>
         <CodeEditorWindow
@@ -358,4 +390,4 @@ const ContentArena = ({ ref, handleThemeChange }) => {
   );
 };
 
-export default ContentArena;
+export default React.memo(ContentArena);
