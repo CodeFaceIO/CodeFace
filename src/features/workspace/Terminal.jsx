@@ -1,114 +1,81 @@
-import React, { useState } from 'react';
-import { ReactTerminal } from 'react-terminal';
-import styles from './workspace.module.css';
+import Terminal from 'terminal-in-react';
+import pseudoFileSystemPlugin from 'terminal-in-react-pseudo-file-system-plugin';
+import NodeEvalPlugin from 'terminal-in-react-node-eval-plugin';
+import ViPlugin from 'terminal-in-react-vi-plugin';
 
-const Terminal = () => {
-  const [theme, setTheme] = useState('dark');
-  const [controlBar, setControlBar] = useState(true);
-  const [controlButtons, setControlButtons] = useState(true);
-  const [prompt, setPrompt] = useState('>>>');
-
-  const commands = {
-    whoami: 'jackharper',
-    cd: (directory) => `changed path to ${directory}`,
-    ls: (directory) => `listing ${directory}`,
-    cat: (file) => `reading ${file}`,
-    echo: (message) => message,
-    help: () => {
-      return (
-        <>
-          <p>whoami</p>
-          <p>cd</p>
-          <p>ls</p>
-          <p>cat</p>
-          <p>echo</p>
-        </>
-      );
-    },
-  };
-  // const commands = {
-  //     help: (
-  //       <span>
-  //         <strong>clear</strong> - clears the console. <br />
-  //         <strong>change_prompt &lt;PROMPT&gt;</strong> - Change the prompt of the
-  //         terminal. <br />
-  //         <strong>change_theme &lt;THEME&gt;</strong> - Changes the theme of the
-  //         terminal. Allowed themes - light, dark, material-light, material-dark,
-  //         material-ocean, matrix and dracula. <br />
-  //         <strong>toggle_control_bar</strong> - Hides / Display the top control
-  //         bar. <br />
-  //         <strong>toggle_control_buttons</strong> - Hides / Display the top
-  //         buttons on control bar. <br />
-  //         <strong>evaluate_math_expression &lt;EXPR&gt;</strong> - Evaluates a
-  //         mathematical expression (eg, <strong>4*4</strong>) by hitting a public
-  //         API, api.mathjs.org.
-  //       </span>
-  //     ),
-
-  //     change_prompt: (prompt) => {
-  //       setPrompt(prompt);
-  //     },
-
-  //     change_theme: (theme) => {
-  //       const validThemes = [
-  //         "light",
-  //         "dark",
-  //         "material-light",
-  //         "material-dark",
-  //         "material-ocean",
-  //         "matrix",
-  //         "dracula",
-  //       ];
-  //       if (!validThemes.includes(theme)) {
-  //         return `Theme ${theme} not valid. Try one of ${validThemes.join(", ")}`;
-  //       }
-  //       setTheme(theme);
-  //     },
-
-  //     toggle_control_bar: () => {
-  //       setControlBar(!controlBar);
-  //     },
-
-  //     toggle_control_buttons: () => {
-  //       setControlButtons(!controlButtons);
-  //     },
-
-  //     evaluate_math_expression: async (expr) => {
-  //       const response = await fetch(
-  //         `https://api.mathjs.org/v4/?expr=${encodeURIComponent(expr)}`
-  //       );
-  //       return await response.text();
-  //     },
-  //   };
-  //   const welcomeMessage = (
-  //     <span>
-  //       Type "help" for all available commands. <br />
-  //     </span>
-  //   );
+const FileSystemPlugin = pseudoFileSystemPlugin();
+const TerminalApp = () => {
+  const showMsg = () => 'Hello World';
 
   return (
-    <div className={styles.terminal}>
-      <ReactTerminal
-        //    prompt={prompt}
-        themes={{
-          mycustomtheme: {
-            themeBGColor: '#272B36',
-            themeToolbarColor: '#0e1217',
-            themeColor: '#FFFEFC',
-            themePromptColor: '#a917a8',
+    <div
+      style={{
+        height: '100%!important',
+        width: '100%!important',
+      }}
+    >
+      <Terminal
+        watchConsoleLogging
+        color="purple"
+        backgroundColor="black"
+        barColor="#0E1217"
+        style={{ fontWeight: 'bold', fontSize: '1em', width: '100%', height: '100%', minHeight: '200px%!important' }}
+        closedTitle="OOPS! You closed the window."
+        closedMessage="Click on the icon to reopen."
+        shortcuts={{
+          'win,linux': {
+            'ctrl + b': 'echo we are special',
+          },
+          win: {
+            'ctrl + a': 'echo hi windows',
+          },
+          darwin: {
+            'cmd + a': 'echo hi mac',
+          },
+          linux: {
+            'ctrl + a': 'echo hi linux',
           },
         }}
-        theme="mycustomtheme"
-        //    showControlBar={controlBar}
-        //    showControlButtons={controlButtons}
-        //    welcomeMessage={welcomeMessage}
-        commands={commands}
-        //    defaultHandler={(command, commandArguments) => {
-        //      return `${command} passed on to default handler with arguments ${commandArguments}`;
-        //    }}
+        plugins={[
+          FileSystemPlugin,
+          {
+            class: NodeEvalPlugin,
+            config: {
+              filesystem: FileSystemPlugin.displayName,
+            },
+          },
+          {
+            class: ViPlugin,
+            config: {
+              filesystem: FileSystemPlugin.displayName,
+            },
+          },
+        ]}
+        commands={{
+          'open-google': () => window.open('https://www.google.com/', '_blank'),
+          showmsg: showMsg,
+          popup: () => alert('Terminal in React'),
+          'type-text': (args, print, runCommand) => {
+            const text = args.slice(1).join(' ');
+            print('');
+            for (let i = 0; i < text.length; i += 1) {
+              setTimeout(() => {
+                runCommand(`edit-line ${text.slice(0, i + 1)}`);
+              }, 100 * i);
+            }
+          },
+        }}
+        commandPassThrough={(cmd) => `-PassedThrough:${cmd}: command not found`}
+        descriptions={{
+          'open-google': 'opens google.com',
+          showmsg: 'shows a message',
+          alert: 'alert',
+          popup: 'alert',
+        }}
+        msg="You can write anything here. Example - Hello! My name is Foo and I like Bar."
       />
     </div>
   );
 };
 
-export default Terminal;
+export default TerminalApp;

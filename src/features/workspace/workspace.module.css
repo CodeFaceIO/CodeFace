@@ -1020,7 +1020,7 @@
   height: 100vh;
   background-color: #0e1217;
   grid-template-columns: 54px 220px 1fr;
-  grid-template-rows: 40px 34px 1fr 180px 28px;
+  grid-template-rows: 40px 34px 1fr 230px 28px;
   grid-column-gap: 0px;
   grid-row-gap: 0px;
   overflow: hidden;
@@ -1039,7 +1039,7 @@
   height: 100vh;
   background-color: #0e1217;
   grid-template-columns: 54px 0px 1fr;
-  grid-template-rows: 40px 34px 1fr 180px 28px;
+  grid-template-rows: 40px 34px 1fr 230px 28px;
   grid-column-gap: 0px;
   grid-row-gap: 0px;
   overflow: hidden;
@@ -1182,13 +1182,12 @@
   flex-direction: column;
   justify-content: flex-end;
   align-items: flex-start;
-  padding: 20px;
   overflow: hidden;
 }
 
 .console_controllers {
   position: absolute;
-  top: 15px;
+  top: 8px;
   right: 15px;
 }
 
@@ -1290,11 +1289,18 @@
   font-size: 2rem;
   color: rgb(204, 204, 204);
   cursor: pointer;
-  margin-bottom: 10px;
+}
+
+.arena_col > div:last-child > svg:first-child {
+  margin-bottom: 30px;
 }
 
 .arena_col > div:last-child > svg:hover {
   color: #e2b461;
+}
+
+.arena_col > div:last-child > svg:last-child {
+  margin-top: 10px;
 }
 
 .arena_side {
@@ -1363,16 +1369,15 @@
 }
 
 .taskbar_container {
-  height: calc(100vh - 64px);
-  padding: 10px 60px 10px 16px;
+  height: calc(100vh - 33px);
+ 
   display: grid;
   grid-template-columns: 3fr 1fr;
   grid-template-rows: 1.25fr 1.25fr 2.5fr;
   grid-template-areas:
     'user calendar'
     'dashboard calendar'
-    'dashboard task';
-  grid-gap: 10px;
+    'dashboard task'; 
 }
 
 .taskbar_container > div:not(div.calendar_user) {
@@ -1383,7 +1388,7 @@
 .hello_user_taskbar {
   grid-area: user;
   background-color: #1a1f25;
-  border-radius: 16px;
+ 
   padding: 24px;
   display: flex;
   flex-direction: column;
@@ -1434,7 +1439,7 @@
 .dashboard_details {
   grid-area: dashboard;
   background-color: #1a1f25;
-  border-radius: 16px;
+ 
   padding: 4px 24px 24px;
 }
 
@@ -1454,7 +1459,7 @@
 .task_line {
   grid-area: task;
   background-color: #1a1f25;
-  border-radius: 16px;
+ 
   padding: 10px 20px;
   overflow: hidden;
 }
@@ -1592,4 +1597,44 @@
 
 .arena_work_workspace_nav_icon > *:hover {
   color: #e2b461;
+}
+.githubModalHeader{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 20px;
+  border-bottom: 1px solid #383d47;
+  width: 100%;
+}
+  .githubModalIcon{
+    font-size: 45px;
+  }
+.githubModalForm{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px 50px;
+}
+.errorMessage{
+  padding: 16px 16px;
+  margin: 0 auto;
+  margin-bottom: 8px;
+  font-size: 14px;
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 6px;
+  background-color: rgba(248,81,73,0.15);;
+border-color: rgba(248,81,73,0.4);
+color:#c9d1d9;;
+display: flex;
+align-items: center;
+justify-content: center;
+}
+.errorMessage > .errorIcon{
+  font-size: 20px;
+  margin-right: 8px;
+  margin-left: 10px;
+cursor: pointer;
+  border-radius: 15px;
+  background-color: #c9d1d9 !important;
 }

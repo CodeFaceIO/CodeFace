@@ -132,16 +132,7 @@ const ContentRandomCode = ({}) => {
           </div>
           <div className={`${styles.random_code_container_board_code}`}>
             <div className={`${styles.code_snippets_container}`}>
-              <RandomCodeItem title="sort~algorithm" />
-              <RandomCodeItem title="unique~difference" />
-              <RandomCodeItem title="euclidean~Algorithm" />
-              <RandomCodeItem title="Big~Rational" />
-              <RandomCodeItem title="knuth~MorrisPratt" />
-              <RandomCodeItem title="sort~algorithm" />
-              <RandomCodeItem title="unique~difference" />
-              <RandomCodeItem title="euclidean~Algorithm" />
-              <RandomCodeItem title="Big~Rational" />
-              <RandomCodeItem title="knuth~MorrisPratt" />
+  
             </div>
 
             <div>
