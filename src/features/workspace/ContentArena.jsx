@@ -11,16 +11,32 @@ import useKeyPress from './hooks/useKeyPress';
 import { languageOptions } from './constants/languageOptions';
 import { defineTheme } from './lib/defineTheme';
 import CodeEditorWindow from './CodeEditorWindow';
-import OutputWindow from './OutputWindow';
+import OutputWindow from './Consoled';
 import axios from 'axios';
 import { toast } from 'react-toastify';
 import { AiOutlineFileText, AiFillGithub, AiOutlineSearch } from 'react-icons/ai';
+import {GrFormClose} from 'react-icons/gr';
 import { useMouseDelta } from './hooks/useMouseDelta';
 import { FaTimes, FaTerminal } from 'react-icons/fa';
 import { VscExtensions } from 'react-icons/vsc';
 import { CgCommunity, CgDockBottom } from 'react-icons/cg';
 import { TbTemplate } from 'react-icons/tb';
 import { RiTeamLine } from 'react-icons/ri';
+import regexObject from './../../regex';
+import {
+  Modal,
+  ModalOverlay,
+  ModalContent,
+  ModalHeader,
+  ModalFooter,
+  ModalBody,
+  ModalCloseButton,
+  useDisclosure,
+  FormControl,
+  FormLabel,
+  Input,
+  useColorModeValue
+} from '@chakra-ui/react';
 import {
   VscError,
   VscDebug,
@@ -38,9 +54,19 @@ import { BiChevronDown } from 'react-icons/bi';
 import { BsLayoutSidebarInset, BsLayoutSidebar } from 'react-icons/bs';
 import { TbSquareToggleHorizontal, TbSquareToggle } from 'react-icons/tb';
 import TreeView from './TreeView';
+import Terminal from './Terminal';
 
 const ContentArena = ({ ref, handleThemeChange }) => {
   const sideMenus = [VscSearch, VscFiles, VscGithubInverted, VscSourceControl, VscExtensions, VscDebug];
+  //Github State
+  const { isOpen: isGithubOpen, onOpen: onGithubOpen, onClose: onGithubClose } = useDisclosure();
+  const [githubUsername, setGithubUsername] = useState('');
+  const [githubPassword, setGithubPassword] = useState('');
+  const [showError, setShowError] = useState(false);
+  const isGithubLoginDisabled =
+    (regexObject.emailDataTester(githubUsername) || githubUsername.length > 0) && regexObject.passwordDataTester(githubPassword);
+    const githubModalBg = useColorModeValue('red.200',"#0b111b")
+
 
   const [code, setCode] = useState(files['script.js'].value);
   const [customInput, setCustomInput] = useState('');
@@ -67,7 +93,10 @@ const ContentArena = ({ ref, handleThemeChange }) => {
         className={styles.arena_work_workspace_nav_icon}
         key={index}
         onClick={() => {
-          setSideBar(!sideBar);
+          if (!isSearch) {
+            setSideBar(!sideBar);
+          }
+
           switch (index) {
             case 0:
               setIsSearch(!isSearch);
@@ -80,6 +109,7 @@ const ContentArena = ({ ref, handleThemeChange }) => {
               break;
             case 3:
               setIsSourceControl(!isSourceControl);
+              onGithubOpen();
               break;
             case 4:
               setIsExtensions(!isExtensions);
@@ -285,6 +315,15 @@ const ContentArena = ({ ref, handleThemeChange }) => {
       }
     }
   };
+  const handleGithubLogin = () => {
+    let allGithubUsers = [];
+    
+    if (githubRepos.find((user)=>(user.email===githubUsername)||(user.login===githubUsername))) {
+      console.log('github login');
+    } else {
+      setShowError(true);
+    }
+  };
 
   return (
     <>
@@ -362,6 +401,7 @@ const ContentArena = ({ ref, handleThemeChange }) => {
               }}
             />
           </div>
+          <Terminal />
         </div>
         <div className={`${styles.arena_status_bar}`}>
           <div className={`${styles.status_bar_errors}`}>
@@ -386,6 +426,60 @@ const ContentArena = ({ ref, handleThemeChange }) => {
           </div>
         </div>
       </div>
+      <Modal  width={'300px'} isOpen={isGithubOpen} onClose={onGithubClose}>
+        <ModalOverlay />
+        <ModalContent backgroundColor={githubModalBg} padding={'20px'}>
+          {showError ? <div className={styles.errorMessage}>
+            Username or password is incorrect
+            <GrFormClose 
+            onClick={()=>{setShowError(prev=>!prev)}}  className={styles.errorIcon}  />
+            </div> : null}
+          <div className={styles.githubModalHeader}>
+            <VscGithubInverted className={styles.githubModalIcon} />
+          </div>
+          <ModalHeader mt={2} textAlign={'center'}>
+            Login With Github
+          </ModalHeader>
+          <ModalCloseButton border={'none'} variant={'ghosty'} colorScheme="red" />
+          <ModalBody padding={0}>
+            <form onSubmit={handleGithubLogin} className={styles.githubModalForm} action={''}>
+              <FormControl  id="email">
+                <FormLabel mb={4}>Username or email adress</FormLabel>
+                <Input
+                  value={githubUsername}
+                  onChange={(e) => {
+                    setGithubUsername(e.target.value);
+                  }}
+                  type="email"
+                />
+              </FormControl>
+              <FormControl id="password">
+                <FormLabel mb={4} pt={6}>Password</FormLabel>
+                <Input
+                  value={githubPassword}
+                  onChange={(e) => {
+                    setGithubPassword(e.target.value);
+                  }}
+                  type="password"
+                />
+              </FormControl>
+            </form>
+          </ModalBody>
+
+          <ModalFooter>
+            <Button
+              disabled={!isGithubLoginDisabled}
+              type="submit"
+              colorScheme="green"
+              border={'none'}
+              width={'100%'}
+              onClick={handleGithubLogin}
+            >
+              Sign in
+            </Button>
+          </ModalFooter>
+        </ModalContent>
+      </Modal>
     </>
   );
 };
