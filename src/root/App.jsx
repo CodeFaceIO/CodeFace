@@ -1,8 +1,7 @@
 /* eslint-disable no-unused-vars */
-import React, { createContext } from 'react';
+import React, { createContext, useEffect } from 'react';
 import { ChakraProvider, ColorModeProvider } from '@chakra-ui/react';
 import Dashboard from './Dashboard';
-
 
 const chakraUIThemes = {
   light: {
@@ -31,6 +30,7 @@ export const ChakraContext = createContext(chakraUIThemes);
 
 const App = () => {
   const value = chakraUIThemes.light;
+
   return (
     <ChakraContext.Provider value={value}>
       <ChakraProvider>

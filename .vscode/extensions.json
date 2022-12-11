@@ -1,5 +1,6 @@
+<<<<<<< Updated upstream
 {
-    "recommendations": [
-        "eamodio.gitlens"
-    ]
+  "recommendations": ["eamodio.gitlens", "jheilingbrunner.vscode-gnupg-tool"]
 }
+=======
+>>>>>>> Stashed changes

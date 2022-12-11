@@ -1,6 +1,6 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable no-unused-vars */
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback, useRef } from 'react';
 import Editor from '@monaco-editor/react';
 import { MdBuild } from 'react-icons/md';
 import { Button } from '@chakra-ui/react';
@@ -11,18 +11,121 @@ import useKeyPress from './hooks/useKeyPress';
 import { languageOptions } from './constants/languageOptions';
 import { defineTheme } from './lib/defineTheme';
 import CodeEditorWindow from './CodeEditorWindow';
-import OutputWindow from './OutputWindow';
+import OutputWindow from './Consoled';
 import axios from 'axios';
 import { toast } from 'react-toastify';
+import { AiOutlineFileText, AiFillGithub, AiOutlineSearch } from 'react-icons/ai';
+import {GrFormClose} from 'react-icons/gr';
+import { useMouseDelta } from './hooks/useMouseDelta';
+import { FaTimes, FaTerminal } from 'react-icons/fa';
+import { VscExtensions } from 'react-icons/vsc';
+import { CgCommunity, CgDockBottom } from 'react-icons/cg';
+import { TbTemplate } from 'react-icons/tb';
+import { RiTeamLine } from 'react-icons/ri';
+import regexObject from './../../regex';
+import {
+  Modal,
+  ModalOverlay,
+  ModalContent,
+  ModalHeader,
+  ModalFooter,
+  ModalBody,
+  ModalCloseButton,
+  useDisclosure,
+  FormControl,
+  FormLabel,
+  Input,
+  useColorModeValue
+} from '@chakra-ui/react';
+import {
+  VscError,
+  VscDebug,
+  VscSearch,
+  VscAccount,
+  VscSettingsGear,
+  VscFiles,
+  VscGithubInverted,
+  VscSourceControl,
+  VscTerminalBash,
+} from 'react-icons/vsc';
+import { MdOutlineErrorOutline, MdSettings } from 'react-icons/md';
+import { RiAccountCircleLine } from 'react-icons/ri';
+import { BiChevronDown } from 'react-icons/bi';
+import { BsLayoutSidebarInset, BsLayoutSidebar } from 'react-icons/bs';
+import { TbSquareToggleHorizontal, TbSquareToggle } from 'react-icons/tb';
+import TreeView from './TreeView';
+import Terminal from './Terminal';
 
 const ContentArena = ({ ref, handleThemeChange }) => {
-  const jsonFile = files['configure.json']; // files is an object with all the files
+  const sideMenus = [VscSearch, VscFiles, VscGithubInverted, VscSourceControl, VscExtensions, VscDebug];
+  //Github State
+  const { isOpen: isGithubOpen, onOpen: onGithubOpen, onClose: onGithubClose } = useDisclosure();
+  const [githubUsername, setGithubUsername] = useState('');
+  const [githubPassword, setGithubPassword] = useState('');
+  const [showError, setShowError] = useState(false);
+  const isGithubLoginDisabled =
+    (regexObject.emailDataTester(githubUsername) || githubUsername.length > 0) && regexObject.passwordDataTester(githubPassword);
+    const githubModalBg = useColorModeValue('red.200',"#0b111b")
+
+
   const [code, setCode] = useState(files['script.js'].value);
   const [customInput, setCustomInput] = useState('');
   const [outputDetails, setOutputDetails] = useState(null);
   const [processing, setProcessing] = useState(null);
-  const [theme, setTheme] = useState('cobalt');
+  const [theme, setTheme] = useState('vs-dark');
   const [language, setLanguage] = useState(languageOptions[0]);
+  const [sideBar, setSideBar] = useState(true);
+  const [console, setConsole] = useState(true);
+
+  const [isExplorer, setIsExploer] = useState(false);
+  const [isTerminal, setIsTerminal] = useState(false);
+  const [isAccount, setIsAccount] = useState(false);
+  const [isGithub, setIsGithub] = useState(false);
+  const [isSourceControl, setIsSourceControl] = useState(false);
+  const [isExtensions, setIsExtensions] = useState(false);
+  const [isDebug, setIsDebug] = useState(false);
+  const [isSearch, setIsSearch] = useState(false);
+
+  const [isSettings, setIsSettings] = useState(false);
+  const [jsonFile, setJsonFile] = useState(files['configure.json']); // files is an object with all the files
+  const [githubRepos, setGithubRepos] = useState([]);
+  const renderedSideMenus = sideMenus.map((Icon, index) => {
+    return (
+      <div
+        className={styles.arena_work_workspace_nav_icon}
+        key={index}
+        onClick={() => {
+          if (!isSearch) {
+            setSideBar(!sideBar);
+          }
+
+          switch (index) {
+            case 0:
+              setIsSearch(!isSearch);
+              break;
+            case 1:
+              setIsExploer(!isExplorer);
+              break;
+            case 2:
+              setIsGithub(!isGithub);
+              break;
+            case 3:
+              setIsSourceControl(!isSourceControl);
+              onGithubOpen();
+              break;
+            case 4:
+              setIsExtensions(!isExtensions);
+              break;
+            case 5:
+              setIsDebug(!isDebug);
+              break;
+          }
+        }}
+      >
+        <Icon />
+      </div>
+    );
+  });
 
   const enterPress = useKeyPress('Enter');
   const ctrlPress = useKeyPress('Control');
@@ -71,7 +174,7 @@ const ContentArena = ({ ref, handleThemeChange }) => {
       })
       .catch((err) => {
         let error = err.response ? err.response.data : err;
-        // get error status
+        // get error status\
         let status = err.response.status;
         console.log('status', status);
         if (status === 429) {
@@ -119,6 +222,21 @@ const ContentArena = ({ ref, handleThemeChange }) => {
     }
   };
 
+  const uploadProjectToFileExplorerHandler = (e) => {
+    const files = e.target.files;
+
+    for (let i = 0; i < files.length; i++) {
+      const file = files[i];
+
+      const reader = new FileReader();
+      reader.onload = (e) => {
+        const fileContent = e.target.result;
+        setJsonFile(fileContent);
+      };
+      reader.readAsText(file);
+    }
+  };
+
   function handleThemeChange(th) {
     const theme = th;
     console.log('theme...', theme);
@@ -131,7 +249,7 @@ const ContentArena = ({ ref, handleThemeChange }) => {
   }
 
   useEffect(() => {
-    defineTheme('oceanic-next').then((_) => setTheme({ value: 'oceanic-next', label: 'Oceanic Next' }));
+    defineTheme('vs-dark').then((_) => setTheme({ value: 'vs-dark', label: 'vs-dark' }));
     // keep url state before refresh with handleWorkspaceComponentClick prop
   }, []);
 
@@ -158,7 +276,35 @@ const ContentArena = ({ ref, handleThemeChange }) => {
     });
   };
 
-  // react-monaco editor config
+  const appUserGithubRepoConnectionHandler = (githubToken) => {
+    const options = {
+      method: 'GET',
+      url: 'https://api.github.com/user/repos',
+      headers: {
+        Authorization: 'token ' + githubToken,
+      },
+    };
+
+    axios
+      .request(options)
+      .then(function (response) {
+        console.log('res.data', response.data);
+        const repos = response.data;
+        setGithubRepos(repos);
+      })
+      .catch((err) => {
+        let error = err.response ? err.response.data : err;
+        // get error status
+        let status = err.response.status;
+        console.log('status', status);
+        if (status === 401) {
+          console.log('unauthorized', status);
+          setGithubRepos(null);
+          showErrorToast(`Unauthorized! Please try again.`, 10000);
+        }
+        console.log('catch block...', error);
+      });
+  };
 
   const onChange = (action, data) => {
     switch (action) {
@@ -171,12 +317,70 @@ const ContentArena = ({ ref, handleThemeChange }) => {
       }
     }
   };
+  const handleGithubLogin = () => {
+    let allGithubUsers = [];
+    
+    if (githubRepos.find((user)=>(user.email===githubUsername)||(user.login===githubUsername))) {
+      console.log('github login');
+    } else {
+      setShowError(true);
+    }
+  };
 
   return (
     <>
-      <div className={`${styles.arena_container_main}`}>
+      <div
+        className={`${
+          sideBar && console
+            ? styles.arena_container_main
+            : sideBar
+            ? styles.arena_container_main_3
+            : console
+            ? styles.arena_container_main_2
+            : styles.arena_container_main_4
+        }`}
+      >
+        <div className={`${styles.arena_maxtop} pe-3`}>
+          <ul>
+            <li>Logo</li>
+            <li>File</li>
+            <li>Edit</li>
+            <li>Selection</li>
+            <li>View</li>
+            <li>Terminal</li>
+            <li>Help</li>
+          </ul>
+          <div className={`${styles.maxtop_input}`}>
+            <input type="search" placeholder="Search in CodeFace" />
+            <BiChevronDown />
+          </div>
+          <div>
+            <ul className={`${styles.toggle_panel}`}>
+              <li onClick={() => setSideBar(!sideBar)}>
+                <TbSquareToggle />
+              </li>
+              <li onClick={() => setConsole(!console)}>
+                <TbSquareToggleHorizontal />
+              </li>
+            </ul>
+          </div>
+        </div>
         <div className={`${styles.arena_work_navi}`}>
           <WorkspaceNav />
+        </div>
+        <div className={`${styles.arena_col}`}>
+          <div>{renderedSideMenus}</div>
+          <div>
+            <VscAccount />
+            <VscSettingsGear />
+          </div>
+        </div>
+        <div className={`${styles.arena_side}`}>
+          {sideBar && <div className={`${styles.side_absolute}`}></div>}
+          <div className={`${styles.arena_side_header}`}>
+            <h1 className={`${styles.arena_side_header_text}`}></h1>
+          </div>
+          <TreeView />
         </div>
         <CodeEditorWindow
           code={code}
@@ -190,35 +394,96 @@ const ContentArena = ({ ref, handleThemeChange }) => {
           onSelectChange={onSelectChange}
           themeEditorNav={theme}
         />
-        <div className={`${styles.arena_work_aside_right}`}>
-          <h2>Options</h2>
-          <hr />
-          <p>Now you can change options below, press apply and see result in the left side editor</p>
-
-          <div
-            style={{
-              height: '400px',
-              overflow: 'hidden',
-            }}
-          >
-            <Editor
-              height="400px"
-              defaultValue={jsonFile.value}
-              defaultLanguage={jsonFile.language}
-              theme={'vs-dark'}
-              options={JSON.parse(jsonFile.value)}
+        <div className={`${styles.arena_console}`}>
+          <div className={`${styles.console_absolute}`}></div>
+          <div className={styles.console_controllers}>
+            <FaTimes
+              onClick={() => {
+                setConsole(false);
+              }}
             />
           </div>
-
-          <Button leftIcon={<MdBuild />} backgroundColor="#292B34" variant="solid" className="my-2 w-100">
-            Settings
-          </Button>
-          <hr />
-          <OutputWindow outputDetails={outputDetails} />
+          <Terminal />
+        </div>
+        <div className={`${styles.arena_status_bar}`}>
+          <div className={`${styles.status_bar_errors}`}>
+            <ul>
+              <li>
+                <VscError />
+              </li>
+              <li>
+                <MdOutlineErrorOutline />
+              </li>
+            </ul>
+          </div>
+          <div className={`${styles.status_bar_line}`}></div>
+          <div className={`${styles.status_bar_absolute}`}>
+            {!console && (
+              <VscTerminalBash
+                onClick={() => {
+                  setConsole(true);
+                }}
+              />
+            )}
+          </div>
         </div>
       </div>
+      <Modal  width={'300px'} isOpen={isGithubOpen} onClose={onGithubClose}>
+        <ModalOverlay />
+        <ModalContent backgroundColor={githubModalBg} padding={'20px'}>
+          {showError ? <div className={styles.errorMessage}>
+            Username or password is incorrect
+            <GrFormClose 
+            onClick={()=>{setShowError(prev=>!prev)}}  className={styles.errorIcon}  />
+            </div> : null}
+          <div className={styles.githubModalHeader}>
+            <VscGithubInverted className={styles.githubModalIcon} />
+          </div>
+          <ModalHeader mt={2} textAlign={'center'}>
+            Login With Github
+          </ModalHeader>
+          <ModalCloseButton border={'none'} variant={'ghosty'} colorScheme="red" />
+          <ModalBody padding={0}>
+            <form onSubmit={handleGithubLogin} className={styles.githubModalForm} action={''}>
+              <FormControl  id="email">
+                <FormLabel mb={4}>Username or email adress</FormLabel>
+                <Input
+                  value={githubUsername}
+                  onChange={(e) => {
+                    setGithubUsername(e.target.value);
+                  }}
+                  type="email"
+                />
+              </FormControl>
+              <FormControl id="password">
+                <FormLabel mb={4} pt={6}>Password</FormLabel>
+                <Input
+                  value={githubPassword}
+                  onChange={(e) => {
+                    setGithubPassword(e.target.value);
+                  }}
+                  type="password"
+                />
+              </FormControl>
+            </form>
+          </ModalBody>
+
+          <ModalFooter>
+            <Button
+              disabled={!isGithubLoginDisabled}
+              type="submit"
+              colorScheme="green"
+              border={'none'}
+              width={'100%'}
+              onClick={handleGithubLogin}
+            >
+              Sign in
+            </Button>
+          </ModalFooter>
+        </ModalContent>
+      </Modal>
     </>
   );
 };
 
-export default ContentArena;
+export default React.memo(ContentArena);

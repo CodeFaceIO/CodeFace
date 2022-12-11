@@ -1,0 +1,50 @@
+# openapi.yml react config
+openapi: 3.0.0
+info:
+  title: react config  react config
+  version: 0.0.1
+  description: react config  react config
+  termsOfService: http://swagger.io/terms/
+  contact:
+    email:
+  license:
+    name: Apache 2.0
+    url: http://www.apache.org/licenses/LICENSE-2.0.html
+servers:
+  - url: http://localhost:5001
+paths:
+  /api/v1/config:
+    get:
+      summary: react config
+      description: react config
+      operationId: getConfig
+      tags:
+        - config
+      responses:
+        '200':
+          description: react config
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Config'
+                401:
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        500:
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'        
+components:
+  schemas:
+    Config:
+      type: object
+      properties:
+        name:
+          type: string
+          description: react config
+          example: react config

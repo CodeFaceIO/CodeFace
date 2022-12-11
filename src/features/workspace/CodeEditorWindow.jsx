@@ -28,24 +28,34 @@ const CodeEditorWindow = ({
   return (
     <div className={`${styles.arena_work_workspace_ide}`}>
       <div
-        className="d-flex py-2"
+        className="d-flex"
         style={{
-          backgroundColor: '#0e1217',
+          backgroundColor: '#1c1f26',
+          borderBottom:"1px solid #383d47",
         }}
       >
         <LanguagesDropDown onSelectChange={onSelectChange} />
         <ThemeDropDown handleThemeChange={handleThemeChange} themeEditorNav={themeEditorNav} />
-        <Button onClick={handleCompile} disabled={!code} backgroundColor="#292B34" variant="solid" width="400px">
+
+        <Button
+          onClick={handleCompile}
+          disabled={!code}
+          backgroundColor="#e2b461"
+          color="#0e1217"
+          borderRadius="0px"
+          width="400px"
+          border="1px solid #0e1217"
+        >
           {processing ? 'Processing...' : 'Compile and Execute'}
         </Button>
       </div>
       <Editor
-        language={language || 'javascript'}
-        value={code || value}
-        theme={theme}
-        defaultValue="// some comment"
-        onChange={handleEditorChange}
-        options={JSON.parse(jsonFile.value)}
+       language={language || 'javascript'}
+       value={code || value}
+       theme={"vs-dark"}
+       defaultValue="// some comment"
+       onChange={handleEditorChange}
+       options={JSON.parse(jsonFile.value)}
       />
     </div>
   );

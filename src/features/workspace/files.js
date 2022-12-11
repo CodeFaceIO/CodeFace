@@ -1,153 +1,59 @@
-const someJSCodeExample = `
-
-// You can use the 'someJSCodeExample' variable in your code
-
-const calendarTable = document.getElementById("table-calendar");
-const leftButton = document.getElementById("leftButton");
-const rightButton = document.getElementById("rightButton");
-
-let maxDays = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
-let firstMonthIndexes = [26, 27, 28, 29, 30, 31].reverse();
-let allDays = [],
-  newArr = [],
-  totalArr = [],
-  calendarIndex = [],
-  allTrs = [];
-
-let counter = -1;
-let initialIndex = 0;
-
-eventListeners();
-
-function eventListeners() {
-  document.addEventListener("DOMContentLoaded", createCalendarController);
-  leftButton.addEventListener("click", previousMonthController);
-  rightButton.addEventListener("click", nextMonthController);
-}
-
-maxDays.forEach((max) => {
-  for (let i = 1; i <= max; i++) {
-    allDays.push(i);
-  }
-});
-
-for (let i = 0; i < firstMonthIndexes.length; i++) {
-  allDays.unshift(firstMonthIndexes[i]);
-  allDays.pop();
-}
-
-for (let i = 0; i < allDays.length; i++) {
-  newArr.push(allDays[i]);
-  if (newArr.length === 42) {
-    totalArr.push([...newArr]);
-    newArr = [];
-  }
-}
-
-function calendarController(paramsIndex) {
-  calendarViewCleaner();
-  calendarIndex = totalArr[paramsIndex];
-
-  let TRCounter = calendarIndex.length / 7;
-
-  for (let i = 0; i < TRCounter; i++) {
-    let tr = document.createElement("tr");
-    allTrs.push(tr);
-  }
-
-  calendarIndex.forEach((day, index) => {
-    counter++;
-    let td = document.createElement("td");
-    td.className = "rounded";
-    td.textContent = day;
-    let trustedIndex = Math.floor(counter / 7);
-    allTrs[trustedIndex].appendChild(td);
-    calendarTable.appendChild(allTrs[trustedIndex]);
-  });
-}
-
-function createCalendarController() {
-  calendarController(initialIndex);
-}
-
-function previousMonthController() {
-  initialIndex -= 1;
-
-  if (initialIndex < 0) initialIndex = 7;
-
-  calendarController(initialIndex);
-}
-
-function nextMonthController() {
-  initialIndex += 1;
-
-  if (initialIndex === 7) initialIndex = 0;
-
-  calendarController(initialIndex);
-}
-
-function calendarViewCleaner() {
-  while (calendarTable.firstElementChild !== null) {
-    calendarTable.removeChild(calendarTable.firstElementChild);
-  }
-}
-
-`;
+const someJSCodeExample = `// You can use the 'someJSCodeExample' variable in your code`;
 
 const jsonConfigure = `
 {
 
-  "glyphMargin": true,
-  "automaticLayout": true,
-  "fontSize": 11,
-  "fontFamily": "Fira Code",
-  "fontWeight": "light",
-  "lineHeight": 2,
-  "wordWrap": "on",
-  "wordWrapColumn": 120,
-  "folding": true,
-  "lineNumbersMinChars": 3,
-  "scrollBeyondLastLine": false,
-  "fixedOverflowWidgets": true,
-  "renderLineHighlight": "line",
-  "renderIndentGuides": true,
-  "renderFinalNewline": true,
-  "renderWhitespace": "none",
-  "parameterHints": {
-    "enabled": true
-  },
-  "suggest": {
-    "filterGraceful": true,
-    "snippets": "inline",
-    "localityBonus": true,
-    "shareSuggestSelections": true,
-    "showIcons": false,
-    "maxVisibleSuggestions": 12,
-    "insertMode": "insert",
-    "insertHighlight": true,
-    "suggestFontSize": 14,
-    "suggestLineHeight": 24
-  },
-  "minimap": {
-    "enabled": true
-  },
   "quickSuggestions": {
-    "enabled": true,
     "other": true,
-    "comments": true
+    "comments": false,
+    "strings": false
   },
-  "scrollbar": {
-    "verticalScrollbarSize": 0,
-    "horizontalScrollbarSize": 0,
-    "vertical": "visible",
-    "horizontal": "visible",
-    "verticalHasArrows": true,
-    "horizontalHasArrows": true,
-    "useShadows": true,
-    "arrowSize": 0
+  "quickSuggestionsDelay": 10,
+  "iconsInSuggestions": true,
+  "tabCompletion": "on",
+  "suggestOnTriggerCharacters": true,
+  "acceptSuggestionOnEnter": "smart",
+  "acceptSuggestionOnCommitCharacter": true,
+  "wordBasedSuggestions": true,
+  "suggestSelection": "recentlyUsed",
+  "suggestFilterGraceful": true,
+  "selectionHighlight": true,
+  "occurrencesHighlight": true,
+  "codeLens": true,
+  "folding": true,
+  "foldingStrategy": "auto",
+  "showFoldingControls": "mouseover",
+  "matchBrackets": true,
+  "find": {
+    "autoFindInSelection": "always"
+  },
+  "lightbulb": {
+    "enabled": true
+  },
+  "editorLightBulb.enabled": true,
+  "editor.formatOnPaste": true,
+  "editor.formatOnSave": true,
+  "editor.formatOnType": true,
+  "editor.formatOnSaveMode": "modifications",
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  },
+  "editor.codeActionsOnSaveTimeout": 1500,
+  "editor.codeActionsOnSaveTimeout": 1500,
+  "editor.codeActionsOnSave": {
+    "source.fixAll": true
+  },
+  "editor.codeActionsOnSave": {
+    "source.fixAll.tslint": true
+  },
+  "editor.codeActionsOnSave": {
+    "source.fixAll": true
+  },
+  "editor.codeActionsOnSave": {
+    "source.fixAll.stylelint": true
   }
-}
-`;
+}`;
 
 const cakejs = `
 

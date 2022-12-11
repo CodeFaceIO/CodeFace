@@ -1,21 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <link href="%PUBLIC_URL%/favicon.ico" rel="icon" />
-  <meta content="width=device-width, initial-scale=1" name="viewport" />
-  <meta content="#000000" name="theme-color" />
-  <meta
-    content="Web site created using create-react-app"
-    name="description"
-  />
-  <link href="%PUBLIC_URL%/favicon.ico" rel="apple-touch-icon" />
-  <!--
+  <head>
+    <meta charset="utf-8" />
+    <link href="%PUBLIC_URL%/favicon.ico" rel="icon" />
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <meta content="#000000" name="theme-color" />
+    <meta content="Web site created using create-react-app" name="description" />
+    <meta property="og:title" content="__OG_TITLE__" />
+    <meta property="og:description" content="__OG_DESCRIPTION__" />
+    <link href="%PUBLIC_URL%/favicon.ico" rel="apple-touch-icon" />
+    <!--
+=======
+  <head>
+    <meta charset="utf-8" />
+    <link href="%PUBLIC_URL%/favicon.ico" rel="icon" />
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <meta content="#000000" name="theme-color" />
+    <meta content="Web site created using create-react-app" name="description" />
+    <link href="%PUBLIC_URL%/favicon.ico" rel="apple-touch-icon" />
+    <!--
+>>>>>>> Stashed changes
     manifest.json provides metadata used when your web app is installed on a
     user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
   -->
-  <link href="%PUBLIC_URL%/manifest.json" rel="manifest" />
-  <!--
+    <link href="%PUBLIC_URL%/manifest.json" rel="manifest" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Material+Icons|Roboto:400,500,700|Source+Code+Pro" />
+    <!-- the styles are loaded through the CDN to speed up codesandbox demos. You'll normally want to import the `src/styles.scss` in the `src/index.tsx` instead to create custom themes -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/gh/mlaursen/react-md@5.1.4/themes/react-md.teal-pink-200-dark.min.css"
+    />
+    <!--
     Notice the use of %PUBLIC_URL% in the tags above.
     It will be replaced with the URL of the `public` folder during the build.
     Only files inside the `public` folder can be referenced from the HTML.
@@ -24,55 +39,49 @@
     work correctly both with client-side routing and a non-root public URL.
     Learn how to configure a non-root public URL by running `npm run build`.
   -->
-  <script
-    defer
-    src="https://cdn.websitepolicies.io/lib/cookieconsent/cookieconsent.min.js"
-  ></script>
-  <script>
-    window.addEventListener("load", function() {
-      window.wpcc.init({
-        border: "thin",
-        corners: "small",
-        colors: {
-          popup: {
-            background: "#222222",
-            text: "#ffffff",
-            border: "#d9baea"
+    <script defer src="https://cdn.websitepolicies.io/lib/cookieconsent/cookieconsent.min.js"></script>
+    <script>
+      window.addEventListener('load', function () {
+        window.wpcc.init({
+          border: 'thin',
+          corners: 'small',
+          colors: {
+            popup: {
+              background: '#222222',
+              text: '#ffffff',
+              border: '#d9baea',
+            },
+            button: { background: '#d9baea', text: '#000000' },
           },
-          button: { background: "#d9baea", text: "#000000" }
-        },
-        position: "bottom",
-        content: { href: "https:.//codeface.pages.dev/cookies-policy" }
+          position: 'bottom',
+          content: { href: 'https:.//codeface.pages.dev/cookies-policy' },
+        });
       });
-    });
-  </script>
-  <script>
-    (function(src, cb) {
-      var s = document.createElement("script");
-      s.setAttribute("src", src);
-      s.onload = cb;
-      (document.head || document.body).appendChild(s);
-    })(
-      "https://ucarecdn.com/libs/blinkloader/3.x/blinkloader.min.js",
-      function() {
+    </script>
+    <script>
+      (function (src, cb) {
+        var s = document.createElement('script');
+        s.setAttribute('src', src);
+        s.onload = cb;
+        (document.head || document.body).appendChild(s);
+      })('https://ucarecdn.com/libs/blinkloader/3.x/blinkloader.min.js', function () {
         window.Blinkloader.optimize({
-          pubkey: "9f8793b814feac2d02e7",
+          pubkey: '9f8793b814feac2d02e7',
           responsive: true,
           smartCompression: true,
           retina: true,
           webp: true,
           fadeIn: true,
-          lazyload: true
+          lazyload: true,
         });
-      }
-    );
-  </script>
-  <title>CodeFace</title>
-</head>
-<body>
-<noscript>You need to enable JavaScript to run this app.</noscript>
-<div id="root"></div>
-<!--
+      });
+    </script>
+    <title>CodeFace</title>
+  </head>
+  <body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="root"></div>
+    <!--
   This HTML file is a template.
   If you open it directly in the browser, you will see an empty page.
 
@@ -83,56 +92,60 @@
   To create a production bundle, use `npm run build` or `yarn build`.
 -->
 
-<script src="https://www.google.com/recaptcha/api.js"></script>
-<script src="https://www.google.com/recaptcha/api.js?render=reCAPTCHA_site_key"></script>
-<script>
-  function onClick(e) {
-    e.preventDefault();
-    grecaptcha.ready(function() {
-      grecaptcha
-        .execute("reCAPTCHA_site_key", { action: "submit" })
-        .then(function(token) {
-          // Add your logic to submit to your backend server here.
+    <script src="https://www.google.com/recaptcha/api.js"></script>
+    <script src="https://www.google.com/recaptcha/api.js?render=reCAPTCHA_site_key"></script>
+    <script>
+      function onClick(e) {
+        e.preventDefault();
+        grecaptcha.ready(function () {
+          grecaptcha.execute('reCAPTCHA_site_key', { action: 'submit' }).then(function (token) {
+            // Add your logic to submit to your backend server here.
+          });
         });
-    });
-  }
-</script>
-<script>
-  function onSubmit(token) {
-    document.getElementById("demo-form").submit();
-  }
+      }
+    </script>
+    <script>
+      function onSubmit(token) {
+        document.getElementById('demo-form').submit();
+      }
 
-  window.twttr = (function(d, s, id) {
-    var js,
-      fjs = d.getElementsByTagName(s)[0],
-      t = window.twttr || {};
-    if (d.getElementById(id)) return t;
-    js = d.createElement(s);
-    js.id = id;
-    js.src = "https://platform.twitter.com/widgets.js";
-    fjs.parentNode.insertBefore(js, fjs);
+      window.twttr = (function (d, s, id) {
+        var js,
+          fjs = d.getElementsByTagName(s)[0],
+          t = window.twttr || {};
+        if (d.getElementById(id)) return t;
+        js = d.createElement(s);
+        js.id = id;
+        js.src = 'https://platform.twitter.com/widgets.js';
+        fjs.parentNode.insertBefore(js, fjs);
 
-    t._e = [];
-    t.ready = function(f) {
-      t._e.push(f);
-    };
+        t._e = [];
+        t.ready = function (f) {
+          t._e.push(f);
+        };
 
-    return t;
-  })(document, "script", "twitter-wjs");
-</script>
+        return t;
+      })(document, 'script', 'twitter-wjs');
+    </script>
 
-<script src="https://unpkg.com/typebot-js@2.2"></script>
-<script>
-  var typebotCommands = Typebot.initBubble({
-    url: "https://viewer.typebot.io/customer-support-copy-9sq7b5w",
-    proactiveMessage: {
-      avatarUrl: "https://avatars.githubusercontent.com/u/58683199?v=4",
-      textContent: "Have any question ?",
-      delay: 0,
-    },
-    button: { color: "#383d47", iconColor: "#fff" },
-  });
-</script>
-
-</body>
+    <script src="https://unpkg.com/typebot-js@2.2"></script>
+    <script>
+      var typebotCommands = Typebot.initBubble({
+        url: 'https://viewer.typebot.io/customer-support-copy-9sq7b5w',
+        proactiveMessage: {
+          avatarUrl: 'https://avatars.githubusercontent.com/u/58683199?v=4',
+          textContent: 'Have any question ?',
+          delay: 0,
+        },
+        button: { color: '#383d47', iconColor: '#fff' },
+      });
+    </script>
+    <script src="https://replit.com/public/js/repl-auth-v2.js"></script>
+    <script type="module">
+      const user = await getUserInfo();
+    </script>
+    <script>
+      window.SERVER_DATA = __SERVER_DATA__;
+    </script>
+  </body>
 </html>

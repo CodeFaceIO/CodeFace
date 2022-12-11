@@ -1,0 +1,36 @@
+comment:"  You may pin to the exact commit or the version.
+
+steps:
+  - uses: atlassian/gajira-todo@c7d98334964a814a6d292ecb81e0b8f762f3fe27"
+    name: Jira issue from TODO
+    with:
+      jira-url: https://jira.atlassian.com/
+      # The Jira project key to use for new issues
+      jira-project-key: GAJIRA
+      # The Jira issue type to use for new issues
+      # (see https://developer.atlassian.com/cloud/jira/platform/rest/v3/api-group-issue-types/#api-rest-api-3-issuetype-get)
+      jira-issue-type: 10000
+      # The Jira priority to use for new issues
+      # (see https://developer.atlassian.com/cloud/jira/platform/rest/v3/api-group-issue-priorities/#api-rest-api-3-priority-get)
+      jira-priority: 4
+      # The Jira assignee to use for new issues
+      # (see https://developer.atlassian.com/cloud/jira/platform/rest/v3/api-group-users/#api-rest-api-3-user-get)
+      jira-assignee: 5b10ac8d82e05b22cc7d4ef5
+      # The Jira reporter to use for new issues
+      # (see https://developer.atlassian.com/cloud/jira/platform/rest/v3/api-group-users/#api-rest-api-3-user-get)
+      jira-reporter: 5b10ac8d82e05b22cc7d4ef5
+      # The Jira components to use for new issues
+      # (see https://developer.atlassian.com/cloud/jira/platform/rest/v3/api-group-components/#api-rest-api-3-component-get)
+      jira-components: 10000
+      # The Jira labels to use for new issues
+      jira-labels: todo
+      # The Jira epic link to use for new issues
+      jira-epic-link: 10000
+      # The Jira fix versions to use for new issues
+      # (see https://developer.atlassian.com/cloud/jira/platform/rest/v3/api-group-versions/#api-rest-api-3-version-get)
+      jira-fix-versions: 10000
+      # The Jira environment to use for new issues
+      jira-environment: production
+      # The Jira due date to use for new issues
+      jira-due-date: 2021-01-01
+      # The Jira summary to use for new issues

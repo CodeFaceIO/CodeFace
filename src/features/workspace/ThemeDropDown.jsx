@@ -1,18 +1,20 @@
-import React from "react";
-import Select from "react-select";
-import monacoThemes from "monaco-themes/themes/themelist";
-import { customStyles } from "./constants/customStyles";
+import React from 'react';
+import Select from 'react-select';
+import monacoThemes from 'monaco-themes/themes/themelist';
+import { customStyles } from './constants/customStyles';
 
 const ThemeDropdown = ({ handleThemeChange, theme }) => {
   return (
     <Select
+      style={{
+        borderRadius: '0px',
+      }}
       className="w-100"
       placeholder={`Select Theme`}
-      // options={languageOptions}
       options={Object.entries(monacoThemes).map(([themeId, themeName]) => ({
         label: themeName,
         value: themeId,
-        key: themeId
+        key: themeId,
       }))}
       value={theme}
       styles={customStyles}
