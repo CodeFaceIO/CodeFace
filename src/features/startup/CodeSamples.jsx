@@ -6,6 +6,9 @@ import { GiPodiumWinner } from 'react-icons/gi';
 import { FaRandom } from 'react-icons/fa';
 import { BsCodeSlash } from 'react-icons/bs';
 import TypeAnimation from 'react-type-animation';
+import CodeAutoTyping from 'react-code-auto-typing';
+import { anOldHope, atomOneDarkReasonable } from 'react-syntax-highlighter/dist/esm/styles/hljs';
+import TypewriterComponent from 'typewriter-effect';
 
 const CodeSamples = () => {
   const [mouse, setMouse] = React.useState(false);
@@ -22,15 +25,67 @@ const CodeSamples = () => {
     return params;
   };
 
+  const ceaserSnippet = `const ceaserCipher = (str, shift, decrypt = false) => {
+    const s = decrypt ? (26 - shift) % 26 : shift;
+    const n = s;
+    0 ? s : 26 + (s % 26);
+    return;
+    [...str]
+      .map((l, i) => {
+        const c = str.charCodeAt(i);
+        if (c > 65 && c < 90) return;
+        String.fromCharCode(((c - 65 + n) % 26) + 65);
+        if (c > 97 && c < 122) return;
+        String.fromCharCode(((c - 97 + n) % 26) + 97);
+        return;
+        l;
+      }).join('');
+    };`;
+
+  const fibonacci = `const fibonacci = (n) =>
+    Array.from({ length: n }).reduce(
+      (acc, val, i) => acc.concat(i > 1 ? acc[i - 1] + acc[i - 2] : i),
+      []
+    );
+  fibonacci(6); // [0, 1, 1, 2, 3, 5]   `;
+  const heapsort = `const heapsort = (arr) => {
+        const a = [...arr];
+        let l = a.length;
+        const heapify = (a, i) => {
+          const left = 2 * i + 1;
+          const right = 2 * i + 2;
+          let max = i;
+          if (left < l && a[left] > a[max]) max = left;
+      
+          if (right < l && a[right] > a[max]) max = right;
+      
+          if (max !== i) {
+            [a[max], a[i]] = [a[i], a[max]];
+            heapify(a, max);
+          }
+        };
+        for (let i = Math.floor(l / 2); i > 0; i -= 1) heapify(a, i);
+        for (i = a.length - 1; i > 0; i--) {
+          [a[0], a[i]] = [a[i], a[0]];
+          l--;
+          hepify(a, 0);
+        }
+        return a;
+      };   `;
+
   return (
     <div className={`${styles.text_content_background}`}>
       <h1 className={`${styles.code_section_header}`}>
-        <TypeAnimation
-          cursor={true}
-          className={`${styles.code_section_header}`}
-          sequence={['  Your alghoritm instructor', 4000, 'Online workspace', 4000, 'Free and Premium UI tools', 4000]}
-          wrapper="p"
-          repeat={Infinity}
+        <TypewriterComponent
+          options={{
+            strings: ['  Your alghoritm instructor', 'Online workspace', 'Free and Premium UI tools'],
+            autoStart: true,
+            delay: 75,
+            deleteSpeed: 90,
+            loop: true,
+            wrapperClassName: `${styles.typeWritterWrapper}`,
+            cursorClassName: `${styles.typeWritterCursor}`,
+          }}
         />
       </h1>
 
@@ -53,109 +108,14 @@ const CodeSamples = () => {
                   <span className={`${mouse ? 'opacity' : ''}`}>ceaser.js</span>
                 </div>
               </div>
-              <div className="ide-body">
-                <div className="ide-number">
-                  <p>1</p>
-                  <p>2</p>
-                  <p>3</p>
-                  <p>4</p>
-                  <p>5</p>
-                  <p>6</p>
-                  <p>7</p>
-                  <p>8</p>
-                  <p>9</p>
-                  <p>10</p>
-                  <p>11</p>
-                  <p>12</p>
-                  <p>13</p>
-                  <p>14</p>
-                  <p>15</p>
-                </div>
-                <div className="ide-codearea">
-                  <p>
-                    <pre className="pre-const-arrow">const&nbsp;</pre> <pre className="pre-variable">ceaserCipher&nbsp;</pre>{' '}
-                    <pre className="pre-assignment-curly">=&nbsp;</pre> <pre className="pre-assignment-curly">(</pre>
-                    <pre className="pre-parameter">{stringReturner('str, shift, decrypt = ')}</pre>{' '}
-                    <pre className="pre-variable">false</pre>
-                    <pre>)</pre> <pre className="pre-const-arrow">&nbsp; {stringReturner('=>')} &nbsp;</pre>
-                    <pre>{stringReturner('{')}</pre>
-                    <pre></pre>
-                  </p>
-                  <p>
-                    <pre className="pre-const-arrow"> const&nbsp;</pre>
-                    <pre className="js-operations">s&nbsp;</pre> <pre className="pre-assignment-curly">=&nbsp;</pre>{' '}
-                    <pre className="pre-assignment-curly">decrypt ? </pre> <pre className="pre-assignment-curly">(</pre>{' '}
-                    <pre className="pre-const-arrow"> 26 </pre> <pre className="pre-assignment-curly">- shift</pre>{' '}
-                    <pre className="pre-assignment-curly">) %</pre> <pre className="pre-const-arrow"> 26 </pre>{' '}
-                    <pre className="pre-assignment-curly"> : shift;</pre>
-                  </p>
-                  <p>
-                    <pre className="pre-const-arrow"> const</pre> <pre className="js-operations"> n </pre>{' '}
-                    <pre className="pre-assignment-curly">= s</pre> <pre className="pre-const-arrow"> 0 </pre>
-                    <pre className="pre-assignment-curly">? s :</pre>
-                    <pre className="pre-const-arrow"> 26 </pre>
-                    <pre className="pre-assignment-curly">+ (s %</pre> <pre className="pre-const-arrow"> 26</pre>
-                    <pre className="pre-assignment-curly">);</pre>
-                  </p>
-                  <p>
-                    <pre className="js-operations"> return</pre> <pre className="pre-assignment-curly">[...str]</pre>
-                  </p>
-                  <p>
-                    <pre className="pre-assignment-curly"> .</pre> <pre className="pre-variable">map</pre>{' '}
-                    <pre className="pre-assignment-curly">((</pre> <pre className="pre-assignment-curly">l, i</pre>{' '}
-                    <pre className="pre-assignment-curly">)</pre> <pre className="pre-const-arrow"> {stringReturner('=>')} </pre>{' '}
-                    <pre className="pre-assignment-curly">{stringReturner('{')}</pre>
-                  </p>
-                  <p>
-                    <pre className="pre-const-arrow"> const</pre> <pre className="js-operations"> c</pre>{' '}
-                    <pre className="pre-assignment-curly"> = </pre> <pre className="js-operations">str</pre>{' '}
-                    <pre className="pre-assignment-curly">.</pre>
-                    <pre className="pre-variable">charCodeAt</pre> <pre className="pre-assignment-curly">(i);</pre>
-                  </p>
-                  <p>
-                    <pre className="js-operations"> if</pre> <pre className="pre-assignment-curly">(c {stringReturner('>')} </pre>{' '}
-                    <pre className="pre-const-arrow">65 &&</pre>
-                    <pre className="pre-assignment-curly"> c {stringReturner('<')} </pre>{' '}
-                    <pre className="pre-const-arrow">90</pre> <pre className="pre-assignment-curly">)</pre>
-                  </p>
-                  <p>
-                    <pre className="js-operations"> return </pre> <pre className="pre-const-arrow">String</pre>{' '}
-                    <pre className="pre-assignment-curly">.</pre> <pre className="pre-variable">fromCharCode</pre>{' '}
-                    <pre className="pre-assignment-curly">(((c - </pre> <pre className="pre-const-arrow">65 </pre>{' '}
-                    <pre className="pre-assignment-curly">+ n) %</pre> <pre className="pre-const-arrow"> 26 </pre>
-                    <pre className="pre-assignment-curly">) +</pre> <pre className="pre-const-arrow"> 65</pre>{' '}
-                    <pre className="pre-assignment-curly">);</pre>
-                  </p>
-                  <p>
-                    <pre className="js-operations"> if</pre> <pre className="pre-assignment-curly">(c {stringReturner('>')} </pre>{' '}
-                    <pre className="pre-const-arrow">97 && </pre>{' '}
-                    <pre className="pre-assignment-curly">c {stringReturner('<')} </pre>{' '}
-                    <pre className="pre-const-arrow">122</pre> <pre className="pre-assignment-curly">)</pre>
-                  </p>
-                  <p>
-                    <pre className="js-operations"> return </pre> <pre className="pre-const-arrow">String</pre>{' '}
-                    <pre className="pre-assignment-curly">.</pre> <pre className="pre-variable">fromCharCode</pre>{' '}
-                    <pre className="pre-assignment-curly">(((c - </pre> <pre className="pre-const-arrow">97 </pre>{' '}
-                    <pre className="pre-assignment-curly">+ n) %</pre> <pre className="pre-const-arrow"> 26 </pre>
-                    <pre className="pre-assignment-curly">) +</pre> <pre className="pre-const-arrow"> 97</pre>{' '}
-                    <pre className="pre-assignment-curly">);</pre>
-                  </p>
-                  <p>
-                    <pre className="js-operations"> return</pre> <pre className="pre-assignment-curly"> l;</pre>
-                  </p>
-                  <p>
-                    <pre className="pre-assignment-curly"> {stringReturner('})')}</pre>
-                  </p>
-                  <p>
-                    <pre className="pre-assignment-curly"> .</pre> <pre className="pre-variable">join</pre>
-                    <pre className="pre-assignment-curly">(</pre> <pre className="string-literal">''</pre>{' '}
-                    <pre className="pre-assignment-curly">);</pre>
-                  </p>
-                  <p>
-                    <pre className="pre-assignment-curly"> {stringReturner('};')}</pre>
-                  </p>
-                </div>
-              </div>
+
+              <CodeAutoTyping
+                language="javascript"
+                className="code-snippet"
+                syntaxHighlighterProps={{ style: atomOneDarkReasonable }}
+              >
+                {ceaserSnippet}
+              </CodeAutoTyping>
             </div>
           </div>
         </AnimationOnScroll>
@@ -171,51 +131,14 @@ const CodeSamples = () => {
                   <span className={`${mouse ? 'opacity' : ''}`}>fibonacci.js</span>
                 </div>
               </div>
-              <div className="ide-body">
-                <div className="ide-number">
-                  <p>1</p>
-                  <p>2</p>
-                  <p>3</p>
-                  <p>4</p>
-                  <p>5</p>
-                  <p>6</p>
-                  <p>7</p>
-                </div>
-                <div className="ide-codearea">
-                  <p>
-                    <pre className="pre-const-arrow">const </pre> <pre className="pre-variable">fibonacci </pre>{' '}
-                    <pre className="pre-assignment-curly">= n </pre> <pre className="pre-const-arrow">{stringReturner('=>')}</pre>
-                  </p>
-                  <p>
-                    <pre className="pre-const-arrow"> Array</pre> <pre className="pre-assignment-curly">.</pre>{' '}
-                    <pre className="pre-variable">from</pre>{' '}
-                    <pre className="pre-assignment-curly">{stringReturner('({ length: n }).')}</pre>{' '}
-                    <pre className="pre-variable">reduce</pre> <pre className="pre-assignment-curly">(</pre>
-                  </p>
-                  <p>
-                    <pre className="pre-assignment-curly"> (</pre> <pre className="pre-parameter">acc, val, i</pre>{' '}
-                    <pre className="pre-assignment-curly">)</pre> <pre className="pre-const-arrow"> {stringReturner('=>')} </pre>{' '}
-                    <pre className="js-operations">acc</pre> <pre className="pre-assignment-curly">.</pre>{' '}
-                    <pre className="pre-variable">concat</pre>{' '}
-                    <pre className="pre-assignment-curly">{stringReturner('(i >')} </pre>
-                    <pre className="pre-const-arrow">1</pre> <pre className="pre-assignment-curly"> ? acc[i - </pre>{' '}
-                    <pre className="pre-const-arrow">1</pre> <pre className="pre-assignment-curly">] + acc[i - </pre>{' '}
-                    <pre className="pre-const-arrow">2</pre> <pre className="pre-assignment-curly">] : i),</pre>
-                  </p>
-                  <p>
-                    <pre className="pre-assignment-curly"> []</pre>
-                  </p>
-                  <p>
-                    <pre className="pre-assignment-curly"> ) ;</pre>
-                  </p>
-                  <p>
-                    <pre className="pre-variable">fibonacci</pre> <pre className="pre-assignment-curly">(</pre>{' '}
-                    <pre className="pre-const-arrow">6</pre>
-                    <pre className="pre-assignment-curly">);</pre>{' '}
-                    <pre className="pre-comment">{stringReturner(' // [0, 1, 1, 2, 3, 5]')}</pre>
-                  </p>
-                </div>
-              </div>
+
+              <CodeAutoTyping
+                language="javascript"
+                className="code-snippet"
+                syntaxHighlighterProps={{ style: atomOneDarkReasonable }}
+              >
+                {fibonacci}
+              </CodeAutoTyping>
             </div>
           </div>
         </AnimationOnScroll>
@@ -250,7 +173,7 @@ const CodeSamples = () => {
                   <span className={`${mouse ? 'opacity' : ''}`}>heapsort.js</span>
                 </div>
               </div>
-              <div className="ide-body">
+              {/* <div className="ide-body">
                 <div className="ide-number">
                   <p>1</p>
                   <p>2</p>
@@ -391,7 +314,14 @@ const CodeSamples = () => {
                     <pre className="pre-assignment-curly">{stringReturner('};')}</pre>
                   </p>
                 </div>
-              </div>
+              </div> */}
+              <CodeAutoTyping
+                language="javascript"
+                className="code-snippet"
+                syntaxHighlighterProps={{ style: atomOneDarkReasonable }}
+              >
+                {heapsort}
+              </CodeAutoTyping>
             </div>
           </div>
         </AnimationOnScroll>
