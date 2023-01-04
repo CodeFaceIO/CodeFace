@@ -1,29 +1,22 @@
-# Docker
-# Build a Docker image
-# https://docs.microsoft.com/azure/devops/pipelines/languages/docker
+# Node.js with webpack
+# Build a Node.js project using the webpack CLI.
+# Add steps that analyze code, save build artifacts, deploy, and more:
+# https://docs.microsoft.com/azure/devops/pipelines/languages/javascript
 
 trigger:
 - main
 
-resources:
-- repo: self
+pool:
+  vmImage: ubuntu-latest
 
-variables:
-  tag: '$(Build.BuildId)'
+steps:
+- task: NodeTool@0
+  inputs:
+    versionSpec: '10.x'
+  displayName: 'Install Node.js'
 
-stages:
-- stage: Build
-  displayName: Build image
-  jobs:
-  - job: Build
-    displayName: Build
-    pool:
-      vmImage: ubuntu-latest
-    steps:
-    - task: Docker@2
-      displayName: Build an image
-      inputs:
-        command: build
-        dockerfile: '$(Build.SourcesDirectory)/.devcontainer/Dockerfile'
-        tags: |
-          $(tag)
+- script: |
+    npm install -g webpack webpack-cli --save-dev
+    npm install
+    npx webpack --config webpack.config.js
+  displayName: 'npm install, run webpack'
