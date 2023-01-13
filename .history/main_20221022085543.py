@@ -10,9 +10,7 @@ class Developer (object) :
     def _str_(self):
         return "Skills"
 =======
-    def _str_(self) :
+    def _str_(self):
         return "Skills"
-        A = Developer('NodeJS')
-        B = Developer ('Python')
 >>>>>>> main
        
