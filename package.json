@@ -87,8 +87,13 @@
     "remark-math": "^5.1.1",
     "socket.io": "^4.5.1",
     "source-map-explorer": "^2.5.2",
+<<<<<<< HEAD
     "stream-chat": "^6.7.2",
     "stream-chat-react": "^9.1.4",
+=======
+    "stream-chat": "^8.2.1",
+    "stream-chat-react": "^10.4.3",
+>>>>>>> main
     "terminal-in-react": "^4.3.1",
     "terminal-in-react-node-eval-plugin": "^2.0.0",
     "terminal-in-react-pseudo-file-system-plugin": "^3.0.0",

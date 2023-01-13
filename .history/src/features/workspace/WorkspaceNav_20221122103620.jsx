@@ -1,4 +1,11 @@
+<<<<<<< HEAD
 <<<<<<< Updated upstream:.history/src/features/workspace/WorkspaceNav_20221122103620.jsx
+=======
+<<<<<<<< HEAD:.history/src/features/workspace/WorkspaceNav_20221122103220.jsx
+<<<<<<< Updated upstream:.history/src/features/workspace/WorkspaceNav_20221122103220.jsx
+========
+>>>>>>>> main:.history/src/features/workspace/WorkspaceNav_20221122103620.jsx
+>>>>>>> main
 /* eslint-disable no-unused-vars */
 import React, { ReactNode } from 'react';
 import {
@@ -104,7 +111,15 @@ const WorkspaceNav = () => {
   return (
     <>
       <Box backgroundColor="#0e1217" px={4}>
+<<<<<<< HEAD
         <Flex height="32px" alignItems={'center'} justifyContent={'space-between'}>
+=======
+<<<<<<<< HEAD:.history/src/features/workspace/WorkspaceNav_20221122103220.jsx
+        <Flex h={16} alignItems={'center'} justifyContent={'space-between'}>
+========
+        <Flex height="32px" alignItems={'center'} justifyContent={'space-between'}>
+>>>>>>>> main:.history/src/features/workspace/WorkspaceNav_20221122103620.jsx
+>>>>>>> main
           <IconButton
             size={'md'}
             icon={isOpen ? <CloseIcon /> : <HamburgerIcon />}
@@ -175,4 +190,8 @@ const WorkspaceNav = () => {
 
 export default WorkspaceNav;
 =======
+<<<<<<< HEAD
 >>>>>>> Stashed changes:.history/src/features/workspace/WorkspaceNav_20221015075429.jsx
+=======
+>>>>>>> Stashed changes:.history/src/features/workspace/WorkspaceNav_20221017222141.jsx
+>>>>>>> main

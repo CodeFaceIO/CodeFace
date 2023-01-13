@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 import { createSlice, createEntityAdapter, createSelector } from '@reduxjs/toolkit';
+=======
+import { createSlice, createEntityAdapter,createSelector } from '@reduxjs/toolkit';
+>>>>>>> main
 import { githubApiSlice } from './githubApiSlice';
 
 const githubAdapter = createEntityAdapter({
@@ -60,7 +64,11 @@ export const githubDataSlice = githubApiSlice.injectEndpoints({
         const data = { ids, entities };
         return githubAdapter.setAll(initialState, data);
       },
+<<<<<<< HEAD
       providesTags: ['GithubRepos'],
+=======
+        providesTags: ['GithubRepos'],
+>>>>>>> main
     }),
   }),
 });
@@ -74,6 +82,11 @@ export const {
   selectIds: selectAllIds,
 } = githubAdapter.getSelectors((state) => selectUsersData(state) ?? initialState);
 
+<<<<<<< HEAD
+=======
+ 
+
+>>>>>>> main
 export const loggedGithubUser = (state) => state.githubUsers.selectId;
 
 export const { githubUserSelected, githubUserUnselected } = githubLocalSlice.actions;

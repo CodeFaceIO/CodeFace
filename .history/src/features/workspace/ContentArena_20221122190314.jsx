@@ -219,8 +219,13 @@ const ContentArena = ({ ref, handleThemeChange }) => {
           onSelectChange={onSelectChange}
           themeEditorNav={theme}
         />
+<<<<<<<< HEAD:.history/src/features/workspace/ContentArena_20221122190314.jsx
         
 
+========
+
+
+>>>>>>>> main:.history/src/features/workspace/ContentArena_20221122185824.jsx
       </div>
     </>
   );

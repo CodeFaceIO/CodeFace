@@ -1,6 +1,12 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable no-unused-vars */
+<<<<<<< HEAD
 import React, { useState, useEffect, useRef } from 'react';
+=======
+import React, { useState, useEffect, useCallback, useRef } from 'react';
+import Editor from '@monaco-editor/react';
+import { MdBuild } from 'react-icons/md';
+>>>>>>> main
 import { Button } from '@chakra-ui/react';
 import styles from './workspace.module.css';
 import files from './files';
@@ -9,11 +15,25 @@ import useKeyPress from './hooks/useKeyPress';
 import { languageOptions } from './constants/languageOptions';
 import { defineTheme } from './lib/defineTheme';
 import CodeEditorWindow from './CodeEditorWindow';
+<<<<<<< HEAD
 import axios from 'axios';
 import { toast } from 'react-toastify';
 import { GrFormClose } from 'react-icons/gr';
 import { FaTimes, FaTerminal } from 'react-icons/fa';
 import { VscExtensions } from 'react-icons/vsc';
+=======
+import OutputWindow from './Consoled';
+import axios from 'axios';
+import { toast } from 'react-toastify';
+import { AiOutlineFileText, AiFillGithub, AiOutlineSearch } from 'react-icons/ai';
+import {GrFormClose} from 'react-icons/gr';
+import { useMouseDelta } from './hooks/useMouseDelta';
+import { FaTimes, FaTerminal } from 'react-icons/fa';
+import { VscExtensions } from 'react-icons/vsc';
+import { CgCommunity, CgDockBottom } from 'react-icons/cg';
+import { TbTemplate } from 'react-icons/tb';
+import { RiTeamLine } from 'react-icons/ri';
+>>>>>>> main
 import regexObject from './../../regex';
 import {
   Modal,
@@ -27,7 +47,11 @@ import {
   FormControl,
   FormLabel,
   Input,
+<<<<<<< HEAD
   useColorModeValue,
+=======
+  useColorModeValue
+>>>>>>> main
 } from '@chakra-ui/react';
 import {
   VscError,
@@ -40,6 +64,7 @@ import {
   VscSourceControl,
   VscTerminalBash,
 } from 'react-icons/vsc';
+<<<<<<< HEAD
 import { MdOutlineErrorOutline } from 'react-icons/md';
 import { BiChevronDown } from 'react-icons/bi';
 import { TbSquareToggleHorizontal, TbSquareToggle } from 'react-icons/tb';
@@ -49,14 +74,33 @@ import { useMouseDelta } from './hooks/useMouseDelta';
  
 const ContentArena = ({ ref, handleThemeChange }) => {
   const sideMenus = [VscSearch, VscFiles, VscGithubInverted, VscSourceControl, VscExtensions, VscDebug];
+=======
+import { MdOutlineErrorOutline, MdSettings } from 'react-icons/md';
+import { RiAccountCircleLine } from 'react-icons/ri';
+import { BiChevronDown } from 'react-icons/bi';
+import { BsLayoutSidebarInset, BsLayoutSidebar } from 'react-icons/bs';
+import { TbSquareToggleHorizontal, TbSquareToggle } from 'react-icons/tb';
+import TreeView from './TreeView';
+import Terminal from './Terminal';
+
+const ContentArena = ({ ref, handleThemeChange }) => {
+  const sideMenus = [VscSearch, VscFiles, VscGithubInverted, VscSourceControl, VscExtensions, VscDebug];
+  //Github State
+>>>>>>> main
   const { isOpen: isGithubOpen, onOpen: onGithubOpen, onClose: onGithubClose } = useDisclosure();
   const [githubUsername, setGithubUsername] = useState('');
   const [githubPassword, setGithubPassword] = useState('');
   const [showError, setShowError] = useState(false);
   const isGithubLoginDisabled =
     (regexObject.emailDataTester(githubUsername) || githubUsername.length > 0) && regexObject.passwordDataTester(githubPassword);
+<<<<<<< HEAD
   const sidebarRef = useRef(null);
   const githubModalBg = useColorModeValue('red.200', '#0b111b');
+=======
+    const githubModalBg = useColorModeValue('red.200',"#0b111b")
+
+
+>>>>>>> main
   const [code, setCode] = useState(files['script.js'].value);
   const [customInput, setCustomInput] = useState('');
   const [outputDetails, setOutputDetails] = useState(null);
@@ -65,15 +109,24 @@ const ContentArena = ({ ref, handleThemeChange }) => {
   const [language, setLanguage] = useState(languageOptions[0]);
   const [sideBar, setSideBar] = useState(true);
   const [console, setConsole] = useState(true);
+<<<<<<< HEAD
   const [isExplorer, setIsExplorer] = useState(false);
   const [isTerminal, setIsTerminal] = useState(false);
+=======
+  const [isExplorer, setIsExploer] = useState(false);
+  const [isTerminal, setIsTerminal] = useState(false);
+  const [isSettings, setIsSettings] = useState(false);
+>>>>>>> main
   const [isAccount, setIsAccount] = useState(false);
   const [isGithub, setIsGithub] = useState(false);
   const [isSourceControl, setIsSourceControl] = useState(false);
   const [isExtensions, setIsExtensions] = useState(false);
   const [isDebug, setIsDebug] = useState(false);
   const [isSearch, setIsSearch] = useState(false);
+<<<<<<< HEAD
   const [isSettings, setIsSettings] = useState(false);
+=======
+>>>>>>> main
   const [jsonFile, setJsonFile] = useState(files['configure.json']); // files is an object with all the files
   const [githubRepos, setGithubRepos] = useState([]);
   const renderedSideMenus = sideMenus.map((Icon, index) => {
@@ -82,6 +135,7 @@ const ContentArena = ({ ref, handleThemeChange }) => {
         className={styles.arena_work_workspace_nav_icon}
         key={index}
         onClick={() => {
+<<<<<<< HEAD
           [
             [isSearch, setIsSearch],
             [isExplorer, setIsExplorer],
@@ -96,12 +150,43 @@ const ContentArena = ({ ref, handleThemeChange }) => {
               arr[1](false);
             }
           });
+=======
+          if (!isSearch) {
+            setSideBar(!sideBar);
+          }
+
+          switch (index) {
+            case 0:
+              setIsSearch(!isSearch);
+              break;
+            case 1:
+              setIsExploer(!isExplorer);
+              break;
+            case 2:
+              setIsGithub(!isGithub);
+              break;
+            case 3:
+              setIsSourceControl(!isSourceControl);
+              onGithubOpen();
+              break;
+            case 4:
+              setIsExtensions(!isExtensions);
+              break;
+            case 5:
+              setIsDebug(!isDebug);
+              break;
+          }
+>>>>>>> main
         }}
       >
         <Icon />
       </div>
     );
   });
+<<<<<<< HEAD
+=======
+
+>>>>>>> main
   const enterPress = useKeyPress('Enter');
   const ctrlPress = useKeyPress('Control');
   const onSelectChange = (sl) => {
@@ -196,6 +281,12 @@ const ContentArena = ({ ref, handleThemeChange }) => {
   const uploadProjectToFileExplorerHandler = (e) => {
     const files = e.target.files;
 
+<<<<<<< HEAD
+=======
+  const uploadProjectToFileExplorerHandler = (e) => {
+    const files = e.target.files;
+
+>>>>>>> main
     for (let i = 0; i < files.length; i++) {
       const file = files[i];
 
@@ -207,6 +298,10 @@ const ContentArena = ({ ref, handleThemeChange }) => {
       reader.readAsText(file);
     }
   };
+<<<<<<< HEAD
+=======
+
+>>>>>>> main
   function handleThemeChange(th) {
     const theme = th;
     console.log('theme...', theme);
@@ -289,6 +384,16 @@ const ContentArena = ({ ref, handleThemeChange }) => {
   };
   const handleGithubLogin = () => {
     let allGithubUsers = [];
+<<<<<<< HEAD
+=======
+    
+    if (githubRepos.find((user)=>(user.email===githubUsername)||(user.login===githubUsername))) {
+      console.log('github login');
+    } else {
+      setShowError(true);
+    }
+  };
+>>>>>>> main
 
     if (githubRepos.find((user) => user.email === githubUsername || user.login === githubUsername)) {
       console.log('github login');
@@ -304,9 +409,15 @@ const ContentArena = ({ ref, handleThemeChange }) => {
     <>
       <div
         className={`${
+<<<<<<< HEAD
           (isSearch || isExplorer || isDebug || isGithub || isSourceControl || isExtensions) && console
             ? styles.arena_container_main
             : isSearch || isExplorer || isDebug || isGithub || isSourceControl || isExtensions
+=======
+          sideBar && console
+            ? styles.arena_container_main
+            : sideBar
+>>>>>>> main
             ? styles.arena_container_main_3
             : console
             ? styles.arena_container_main_2
@@ -341,7 +452,10 @@ const ContentArena = ({ ref, handleThemeChange }) => {
         <div className={`${styles.arena_work_navi}`}>
           <WorkspaceNav />
         </div>
+<<<<<<< HEAD
       
+=======
+>>>>>>> main
         <div className={`${styles.arena_col}`}>
           <div>{renderedSideMenus}</div>
           <div>
@@ -349,6 +463,7 @@ const ContentArena = ({ ref, handleThemeChange }) => {
             <VscSettingsGear />
           </div>
         </div>
+<<<<<<< HEAD
 
       
         <div  className={`${styles.arena_side}`}>
@@ -369,6 +484,12 @@ const ContentArena = ({ ref, handleThemeChange }) => {
                 ? 'Debug'
                 : ''}
             </h1>
+=======
+        <div className={`${styles.arena_side}`}>
+          {sideBar && <div className={`${styles.side_absolute}`}></div>}
+          <div className={`${styles.arena_side_header}`}>
+            <h1 className={`${styles.arena_side_header_text}`}></h1>
+>>>>>>> main
           </div>
           <TreeView />
         </div>
@@ -418,6 +539,7 @@ const ContentArena = ({ ref, handleThemeChange }) => {
           </div>
         </div>
       </div>
+<<<<<<< HEAD
       <Modal width={'300px'} isOpen={isGithubOpen} onClose={onGithubClose}>
         <ModalOverlay />
         <ModalContent backgroundColor={githubModalBg} padding={'20px'}>
@@ -432,6 +554,16 @@ const ContentArena = ({ ref, handleThemeChange }) => {
               />
             </div>
           ) : null}
+=======
+      <Modal  width={'300px'} isOpen={isGithubOpen} onClose={onGithubClose}>
+        <ModalOverlay />
+        <ModalContent backgroundColor={githubModalBg} padding={'20px'}>
+          {showError ? <div className={styles.errorMessage}>
+            Username or password is incorrect
+            <GrFormClose 
+            onClick={()=>{setShowError(prev=>!prev)}}  className={styles.errorIcon}  />
+            </div> : null}
+>>>>>>> main
           <div className={styles.githubModalHeader}>
             <VscGithubInverted className={styles.githubModalIcon} />
           </div>
@@ -441,7 +573,11 @@ const ContentArena = ({ ref, handleThemeChange }) => {
           <ModalCloseButton border={'none'} variant={'ghosty'} colorScheme="red" />
           <ModalBody padding={0}>
             <form onSubmit={handleGithubLogin} className={styles.githubModalForm} action={''}>
+<<<<<<< HEAD
               <FormControl id="email">
+=======
+              <FormControl  id="email">
+>>>>>>> main
                 <FormLabel mb={4}>Username or email adress</FormLabel>
                 <Input
                   value={githubUsername}
@@ -452,9 +588,13 @@ const ContentArena = ({ ref, handleThemeChange }) => {
                 />
               </FormControl>
               <FormControl id="password">
+<<<<<<< HEAD
                 <FormLabel mb={4} pt={6}>
                   Password
                 </FormLabel>
+=======
+                <FormLabel mb={4} pt={6}>Password</FormLabel>
+>>>>>>> main
                 <Input
                   value={githubPassword}
                   onChange={(e) => {

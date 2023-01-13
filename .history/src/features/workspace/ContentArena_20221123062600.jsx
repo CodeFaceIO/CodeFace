@@ -1,4 +1,10 @@
+<<<<<<< HEAD
+<<<<<<<< HEAD:.history/src/features/workspace/ContentArena_20221123062600.jsx
 <<<<<<< Updated upstream:.history/src/features/workspace/ContentArena_20221123062600.jsx
+========
+>>>>>>>> main:.history/src/features/workspace/ContentArena_20221123062913.jsx
+=======
+>>>>>>> main
 /* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable no-unused-vars */
 import React, { useState, useEffect } from 'react';
@@ -18,6 +24,10 @@ import { toast } from 'react-toastify';
 import { AiOutlineFileText, AiFillGithub } from 'react-icons/ai';
 import { VscSourceControl } from 'react-icons/vsc';
 
+<<<<<<< HEAD
+const sideMenus = [AiOutlineFileText, AiFillGithub, VscSourceControl];
+=======
+>>>>>>> main
 
 
 const sideMenus = [AiOutlineFileText, AiFillGithub, VscSourceControl];
@@ -174,6 +184,31 @@ const ContentArena = ({ ref, handleThemeChange }) => {
     });
   };
 
+<<<<<<< HEAD
+<<<<<<<< HEAD:.history/src/features/workspace/ContentArena_20221123062600.jsx
+========
+  // editor file explorer code sample
+
+  const fileUploadHandler = (e) => {
+    const file = e.target.files[0];
+    const reader = new FileReader();
+    reader.onload = (e) => {
+      const text = e.target.result;
+      setCode(text);
+    };
+    reader.readAsText(file);
+  };
+
+
+  return (
+    <div className={styles.arena_work_workspace} ref={ref}>
+      <div className={styles.arena_work_workspace_nav}>
+        <div className={styles.arena_work_workspace_nav_icon} onClick={() => handleWorkspaceComponentClick('editor')}>
+          <EditorIcon />
+            
+>>>>>>>> main:.history/src/features/workspace/ContentArena_20221123062913.jsx
+=======
+>>>>>>> main
 
     
   const onChange = (action, data) => {
@@ -217,5 +252,8 @@ const ContentArena = ({ ref, handleThemeChange }) => {
 };
 
 export default ContentArena;
+<<<<<<< HEAD
 =======
 >>>>>>> Stashed changes:.history/src/features/workspace/ContentArena_20221015075728.jsx
+=======
+>>>>>>> main

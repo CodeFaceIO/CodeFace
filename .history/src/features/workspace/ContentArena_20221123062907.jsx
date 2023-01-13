@@ -1,4 +1,7 @@
+<<<<<<< HEAD
 <<<<<<< Updated upstream:.history/src/features/workspace/ContentArena_20221123062907.jsx
+=======
+>>>>>>> main
 /* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable no-unused-vars */
 import React, { useState, useEffect } from 'react';
@@ -189,6 +192,15 @@ const ContentArena = ({ ref, handleThemeChange }) => {
     <div className={styles.arena_work_workspace} ref={ref}>
       <div className={styles.arena_work_workspace_nav}>
         <div className={styles.arena_work_workspace_nav_icon} onClick={() => handleWorkspaceComponentClick('editor')}>
+<<<<<<< HEAD
+=======
+<<<<<<<< HEAD:.history/src/features/workspace/ContentArena_20221123062919.jsx
+          <EditorIcon />
+        </div>
+        <div className={styles.arena_work_workspace_nav_icon} onClick={() => handleWorkspaceComponentClick('terminal')}>
+========
+>>>>>>>> main:.history/src/features/workspace/ContentArena_20221123062907.jsx
+>>>>>>> main
           
 
   const onChange = (action, data) => {
@@ -232,5 +244,8 @@ const ContentArena = ({ ref, handleThemeChange }) => {
 };
 
 export default ContentArena;
+<<<<<<< HEAD
 =======
 >>>>>>> Stashed changes:.history/src/features/workspace/ContentArena_20221016045556.jsx
+=======
+>>>>>>> main

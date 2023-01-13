@@ -1,4 +1,7 @@
+<<<<<<< HEAD
 <<<<<<< Updated upstream:.history/src/root/App_20221120190239.jsx
+=======
+>>>>>>> main
 /* eslint-disable no-unused-vars */
 import React, { createContext } from 'react';
 import { ChakraProvider, ColorModeProvider } from '@chakra-ui/react';
@@ -44,5 +47,8 @@ const App = () => {
 };
 
 export default App;
+<<<<<<< HEAD
 =======
 >>>>>>> Stashed changes:.history/src/root/App_20221015033501.jsx
+=======
+>>>>>>> main

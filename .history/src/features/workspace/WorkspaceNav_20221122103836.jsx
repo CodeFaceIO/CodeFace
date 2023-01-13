@@ -102,11 +102,18 @@ const WorkspaceNav = () => {
 
   return (
     <>
+<<<<<<<< HEAD:.history/src/features/workspace/WorkspaceNav_20221122103836.jsx
       <Box backgroundColor="#0e1217" paddingRight="32px">
         <Flex height="32px" alignItems={'center'} justifyContent={'space-between'}>
           <IconButton
             size={'sm'}
             heigh="32px"
+========
+      <Box backgroundColor="#0e1217" px={4}>
+        <Flex height="32px" alignItems={'center'} justifyContent={'space-between'}>
+          <IconButton
+            size={'sm'}
+>>>>>>>> main:.history/src/features/workspace/WorkspaceNav_20221122103646.jsx
             icon={isOpen ? <CloseIcon /> : <HamburgerIcon />}
             aria-label={'Open Menu'}
             display={{ md: 'none' }}

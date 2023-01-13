@@ -1,4 +1,7 @@
+<<<<<<< HEAD
 <<<<<<< Updated upstream:.history/src/features/workspace/ContentArena_20221122102847.jsx
+=======
+>>>>>>> main
 /* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable no-unused-vars */
 import React, { useState, useEffect } from 'react';
@@ -179,8 +182,18 @@ const ContentArena = ({ ref, handleThemeChange }) => {
         <div className={`${styles.arena_work_navi}`}>
           <WorkspaceNav />
         </div>
+<<<<<<< HEAD
         <div className={`${}`}></div>
         <div></div>
+=======
+<<<<<<<< HEAD:.history/src/features/workspace/ContentArena_20221122102906.jsx
+        <div className={`${styles.arena_col}`}></div>
+        <div className={`${styles.arena_side}`}></div>
+========
+        <div className={`${}`}></div>
+        <div></div>
+>>>>>>>> main:.history/src/features/workspace/ContentArena_20221122102847.jsx
+>>>>>>> main
         <CodeEditorWindow
           code={code}
           onChange={onChange}
@@ -225,5 +238,8 @@ const ContentArena = ({ ref, handleThemeChange }) => {
 };
 
 export default ContentArena;
+<<<<<<< HEAD
 =======
 >>>>>>> Stashed changes:.history/src/features/workspace/ContentArena_20221016045549.jsx
+=======
+>>>>>>> main

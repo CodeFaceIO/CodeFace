@@ -188,9 +188,12 @@ const ContentArena = ({ ref, handleThemeChange }) => {
     <div className={styles.arena_work_workspace} ref={ref}>
       <div className={styles.arena_work_workspace_nav}>
         <div className={styles.arena_work_workspace_nav_icon} onClick={() => handleWorkspaceComponentClick('editor')}>
+<<<<<<<< HEAD:.history/src/features/workspace/ContentArena_20221123062919.jsx
           <EditorIcon />
         </div>
         <div className={styles.arena_work_workspace_nav_icon} onClick={() => handleWorkspaceComponentClick('terminal')}>
+========
+>>>>>>>> main:.history/src/features/workspace/ContentArena_20221123062907.jsx
           
 
   const onChange = (action, data) => {

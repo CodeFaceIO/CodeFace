@@ -15,6 +15,13 @@ import featuresReducer from './../features/redux/featuresSlice';
 import authReducer from './../features/redux/authSlice';
 import projectsReducer from './../features/redux/projectsSlice';
 import signInControllerReducer from '../features/redux/signInControllerSlice';
+<<<<<<< HEAD
+=======
+import githubLocalReducer from '../features/redux/githubLocalSlice';
+import {githubApiSlice} from '../features/redux/githubApiSlice';
+import {apiSlice} from '../features/redux/apiSlice';
+import {githubDataSlice} from '../features/redux/githubLocalSlice';
+>>>>>>> main
 
 const rootReducer = {
   users: usersReducer,
@@ -34,6 +41,13 @@ const rootReducer = {
   auth: authReducer,
   projects: projectsReducer,
   signInController: signInControllerReducer,
+<<<<<<< HEAD
+=======
+  githubLocal: githubLocalReducer,
+  githubDataSlice: githubDataSlice.reducer,
+  [githubApiSlice.reducerPath]: githubApiSlice.reducer,
+  [apiSlice.reducerPath]: apiSlice.reducer,
+>>>>>>> main
 };
 
 export default rootReducer;

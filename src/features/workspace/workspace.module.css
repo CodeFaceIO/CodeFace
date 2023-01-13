@@ -1327,12 +1327,16 @@
   flex-direction: column;
   justify-content: flex-end;
   align-items: flex-start;
+<<<<<<< HEAD
   overflow: auto;
 }
 
 .arena_console > div:last-child {
   height: 289px !important;
   width: 100% !important;
+=======
+  overflow: hidden;
+>>>>>>> main
 }
 
 .console_controllers {
@@ -1486,6 +1490,7 @@
   opacity: 0.2;
   color: #fff;
   height: 100%;
+<<<<<<< HEAD
 }
 
 .arena_side_header_text {
@@ -1497,6 +1502,8 @@
   text-transform: uppercase;
   box-shadow: inset 0 -5px 0 #383d47;
   margin-bottom: 15px;
+=======
+>>>>>>> main
 }
 
 .arena_work_aside_right > h2 {
@@ -1531,14 +1538,22 @@
 
 .taskbar_container {
   height: calc(100vh - 33px);
+<<<<<<< HEAD
 
+=======
+ 
+>>>>>>> main
   display: grid;
   grid-template-columns: 3fr 1fr;
   grid-template-rows: 1.25fr 1.25fr 2.5fr;
   grid-template-areas:
     'user calendar'
     'dashboard calendar'
+<<<<<<< HEAD
     'dashboard task';
+=======
+    'dashboard task'; 
+>>>>>>> main
 }
 
 .taskbar_container > div:not(div.calendar_user) {
@@ -1549,7 +1564,11 @@
 .hello_user_taskbar {
   grid-area: user;
   background-color: #1a1f25;
+<<<<<<< HEAD
 
+=======
+ 
+>>>>>>> main
   padding: 24px;
   display: flex;
   flex-direction: column;
@@ -1600,7 +1619,11 @@
 .dashboard_details {
   grid-area: dashboard;
   background-color: #1a1f25;
+<<<<<<< HEAD
 
+=======
+ 
+>>>>>>> main
   padding: 4px 24px 24px;
 }
 
@@ -1620,7 +1643,11 @@
 .task_line {
   grid-area: task;
   background-color: #1a1f25;
+<<<<<<< HEAD
 
+=======
+ 
+>>>>>>> main
   padding: 10px 20px;
   overflow: hidden;
 }
@@ -1759,7 +1786,11 @@
 .arena_work_workspace_nav_icon > *:hover {
   color: #e2b461;
 }
+<<<<<<< HEAD
 .githubModalHeader {
+=======
+.githubModalHeader{
+>>>>>>> main
   display: flex;
   justify-content: center;
   align-items: center;
@@ -1767,16 +1798,27 @@
   border-bottom: 1px solid #383d47;
   width: 100%;
 }
+<<<<<<< HEAD
 .githubModalIcon {
   font-size: 45px;
 }
 .githubModalForm {
+=======
+  .githubModalIcon{
+    font-size: 45px;
+  }
+.githubModalForm{
+>>>>>>> main
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 20px 50px;
 }
+<<<<<<< HEAD
 .errorMessage {
+=======
+.errorMessage{
+>>>>>>> main
   padding: 16px 16px;
   margin: 0 auto;
   margin-bottom: 8px;
@@ -1784,6 +1826,7 @@
   border-style: solid;
   border-width: 1px;
   border-radius: 6px;
+<<<<<<< HEAD
   background-color: rgba(248, 81, 73, 0.15);
   border-color: rgba(248, 81, 73, 0.4);
   color: #c9d1d9;
@@ -1796,6 +1839,20 @@
   margin-right: 8px;
   margin-left: 10px;
   cursor: pointer;
+=======
+  background-color: rgba(248,81,73,0.15);;
+border-color: rgba(248,81,73,0.4);
+color:#c9d1d9;;
+display: flex;
+align-items: center;
+justify-content: center;
+}
+.errorMessage > .errorIcon{
+  font-size: 20px;
+  margin-right: 8px;
+  margin-left: 10px;
+cursor: pointer;
+>>>>>>> main
   border-radius: 15px;
   background-color: #c9d1d9 !important;
 }

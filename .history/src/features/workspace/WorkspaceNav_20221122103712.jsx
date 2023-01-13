@@ -103,7 +103,11 @@ const WorkspaceNav = () => {
   return (
     <>
       <Box backgroundColor="#0e1217" px={4}>
+<<<<<<<< HEAD:.history/src/features/workspace/WorkspaceNav_20221122103712.jsx
         <Flex height="32px" alignItems={'center'} justifyContent={'space-between'}>
+========
+        <Flex h={12} alignItems={'center'} justifyContent={'space-between'}>
+>>>>>>>> main:.history/src/features/workspace/WorkspaceNav_20221122103252.jsx
           <IconButton
             size={'sm'}
             heigh="32px"
