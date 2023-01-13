@@ -178,6 +178,8 @@ const ContentArena = ({ ref, handleThemeChange }) => {
         <div className={`${styles.arena_work_navi}`}>
           <WorkspaceNav />
         </div>
+        <div className={`${styles.arena_col}`}></div>
+        <div></div>
         <CodeEditorWindow
           code={code}
           onChange={onChange}

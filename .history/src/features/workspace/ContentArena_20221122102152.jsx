@@ -1,3 +1,7 @@
+<<<<<<< HEAD
+<<<<<<< Updated upstream:.history/src/features/workspace/ContentArena_20221122102152.jsx
+=======
+>>>>>>> main
 /* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable no-unused-vars */
 import React, { useState, useEffect } from 'react';
@@ -178,8 +182,18 @@ const ContentArena = ({ ref, handleThemeChange }) => {
         <div className={`${styles.arena_work_navi}`}>
           <WorkspaceNav />
         </div>
+<<<<<<< HEAD
         <div></div>
         <div></div>
+=======
+<<<<<<<< HEAD:.history/src/features/workspace/ContentArena_20221122104234.jsx
+        <div className={`${styles.arena_col}`}></div>
+        <div className={`${styles.arena_side}`}></div>
+========
+        <div></div>
+        <div></div>
+>>>>>>>> main:.history/src/features/workspace/ContentArena_20221122102152.jsx
+>>>>>>> main
         <CodeEditorWindow
           code={code}
           onChange={onChange}
@@ -192,7 +206,11 @@ const ContentArena = ({ ref, handleThemeChange }) => {
           onSelectChange={onSelectChange}
           themeEditorNav={theme}
         />
+<<<<<<< HEAD
         <div className={`${styles.arena_work_aside_right}`}>
+=======
+        <div className={`${styles.arena_work_aside_right}`} >
+>>>>>>> main
           <h2>Options</h2>
           <hr />
           <p>Now you can change options below, press apply and see result in the left side editor</p>
@@ -224,3 +242,8 @@ const ContentArena = ({ ref, handleThemeChange }) => {
 };
 
 export default ContentArena;
+<<<<<<< HEAD
+=======
+>>>>>>> Stashed changes:.history/src/features/workspace/ContentArena_20221016045531.jsx
+=======
+>>>>>>> main

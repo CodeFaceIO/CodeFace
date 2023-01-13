@@ -1,3 +1,7 @@
+<<<<<<< HEAD
+<<<<<<< Updated upstream:.history/src/root/App_20221120190156.jsx
+=======
+>>>>>>> main
 /* eslint-disable no-unused-vars */
 import React, { createContext } from 'react';
 import { ChakraProvider, ColorModeProvider } from '@chakra-ui/react';
@@ -38,8 +42,26 @@ const App = () => {
     //     </ColorModeProvider>
     //   </ChakraProvider>
     // </ChakraContext.Provider>
+<<<<<<< HEAD
+<<<<<<<< HEAD:.history/src/root/App_20221120190156.jsx
     <
+========
+    <>    <iframe width="100%" height="900px" src="https://replit.com/team/{team name}/{project name}"></iframe></>
+>>>>>>>> main:.history/src/root/App_20221120190237.jsx
+=======
+<<<<<<<< HEAD:.history/src/root/App_20221120190211.jsx
+    <>>    <iframe width="100%" height="900px" src="https://replit.com/team/{team name}/{project name}"></iframe>
+    </>
+========
+    <
+>>>>>>>> main:.history/src/root/App_20221120190156.jsx
+>>>>>>> main
   );
 };
 
 export default App;
+<<<<<<< HEAD
+=======
+>>>>>>> Stashed changes:.history/src/root/App_20221015033455.jsx
+=======
+>>>>>>> main

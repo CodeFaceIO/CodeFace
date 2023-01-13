@@ -1,3 +1,7 @@
+<<<<<<< HEAD
+<<<<<<< Updated upstream:.history/src/features/workspace/ContentArena_20221122102853.jsx
+=======
+>>>>>>> main
 /* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable no-unused-vars */
 import React, { useState, useEffect } from 'react';
@@ -212,7 +216,11 @@ const ContentArena = ({ ref, handleThemeChange }) => {
             />
           </div>
 
+<<<<<<< HEAD
           <Button leftIcon={<MdBuild />} backgroundColor="#292B34" variant="solid" className="my-2 w-100">
+=======
+          <Button leftIcon={<MdBuild />}  backgroundColor="#0D1117" boxShadow="0 6px 6px -2px #098c0b66"  variant="solid" className="my-2 w-100" border="none">
+>>>>>>> main
             Settings
           </Button>
           <hr />
@@ -224,3 +232,8 @@ const ContentArena = ({ ref, handleThemeChange }) => {
 };
 
 export default ContentArena;
+<<<<<<< HEAD
+=======
+>>>>>>> Stashed changes:.history/src/features/workspace/ContentArena_20221016045553.jsx
+=======
+>>>>>>> main

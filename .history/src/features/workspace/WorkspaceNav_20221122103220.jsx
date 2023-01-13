@@ -1,3 +1,10 @@
+<<<<<<< HEAD
+<<<<<<<< HEAD:.history/src/features/workspace/WorkspaceNav_20221122103220.jsx
+<<<<<<< Updated upstream:.history/src/features/workspace/WorkspaceNav_20221122103220.jsx
+========
+>>>>>>>> main:.history/src/features/workspace/WorkspaceNav_20221122103620.jsx
+=======
+>>>>>>> main
 /* eslint-disable no-unused-vars */
 import React, { ReactNode } from 'react';
 import {
@@ -103,9 +110,24 @@ const WorkspaceNav = () => {
   return (
     <>
       <Box backgroundColor="#0e1217" px={4}>
+<<<<<<< HEAD
+<<<<<<<< HEAD:.history/src/features/workspace/WorkspaceNav_20221122103220.jsx
         <Flex h={16} alignItems={'center'} justifyContent={'space-between'}>
+========
+        <Flex height="32px" alignItems={'center'} justifyContent={'space-between'}>
+>>>>>>>> main:.history/src/features/workspace/WorkspaceNav_20221122103620.jsx
           <IconButton
             size={'md'}
+=======
+<<<<<<<< HEAD:.history/src/features/workspace/WorkspaceNav_20221122103707.jsx
+        <Flex height="32px" alignItems={'center'} justifyContent={'space-between'}>
+========
+        <Flex h={16} alignItems={'center'} justifyContent={'space-between'}>
+>>>>>>>> main:.history/src/features/workspace/WorkspaceNav_20221122103220.jsx
+          <IconButton
+            size={'sm'}
+            heigh 
+>>>>>>> main
             icon={isOpen ? <CloseIcon /> : <HamburgerIcon />}
             aria-label={'Open Menu'}
             display={{ md: 'none' }}
@@ -173,3 +195,8 @@ const WorkspaceNav = () => {
 };
 
 export default WorkspaceNav;
+<<<<<<< HEAD
+=======
+>>>>>>> Stashed changes:.history/src/features/workspace/WorkspaceNav_20221017222141.jsx
+=======
+>>>>>>> main

@@ -1,8 +1,8 @@
 /* eslint-disable no-empty-pattern */
 /* eslint-disable no-unused-vars */
 import React from 'react';
-import { AiFillGithub, AiFillLinkedin, AiFillTwitterCircle } from 'react-icons/ai';
-import { SiHashnode } from 'react-icons/si';
+import { AiFillGithub, AiFillLinkedin, AiFillTwitterCircle, AiOutlineGithub } from 'react-icons/ai';
+import { SiHashnode,SlSocialLinkedin } from 'react-icons/si';
 import styles from './workspace.module.css';
 import daily from './../assets/daily.png';
 import routingObject from './../../routing';
@@ -18,6 +18,21 @@ const codeFaceContent2 =
 
 // className={`${styles.support_cart_icon}`}
 // className={`${styles.support_us_button}`}
+
+const cartItems = [
+  {
+    title: 'Github',
+    icons: <AiOutlineGithub />,
+  },
+  {
+    title: 'Twitter',
+    icons: <AiFillTwitterCircle />,
+  },
+  {
+    title: 'Linkedin',
+    icons: <AiFillLinkedin />,
+  },
+];
 
 const ContentDashboard = ({}) => {
   const { backward, dynamicRouting } = routingObject;
@@ -65,26 +80,41 @@ const ContentDashboard = ({}) => {
             <h1 onClick={() => dynamicRouting(navigate, '/documentation')}>More about features</h1>
             <p>{codeFaceContent2}</p>
             <div className={`${styles.card_github_buttons_container}`}>
-              <div className={`${styles.support_us_cart_item}`}></div>
-              <div className={`${styles.support_us_cart_item}`}></div>
-              <div className={`${styles.support_us_cart_item}`}></div>
+              {cartItems.map((item) => (
+                <div className={`${styles.support_us_cart_item}`}>
+                  <h3 className={styles.title}>{item.title}</h3>
+                  <div class={styles.bar}>
+                    <div class={styles.filledbar}></div>
+                  </div>
+                  <div class={styles.icon_box}>
+                   {item.icons}
+                  </div>
+                </div>
+              ))}
               <div className={`${styles.support_us_cart_item_buttons}`}>
-                <Button className={`${styles.support_direction}`} onClick={() => dynamicRouting(navigate, '/')}>
-                  {' '}
-                  Home{' '}
+              <div>
+              <Button className={`${styles.support_direction}`} onClick={() => dynamicRouting(navigate, '/')}>
+                  Home 
                 </Button>
+              </div>
+                <div>
                 <Button className={`${styles.support_direction}`} onClick={() => dynamicRouting(navigate, '/documentation')}>
                   Docs
                 </Button>
-                <Button className={`${styles.support_direction}`} onClick={() => dynamicRouting(navigate, '/tutorials')}>
+                </div>
+            <div>
+            <Button className={`${styles.support_direction}`} onClick={() => dynamicRouting(navigate, '/tutorials')}>
                   Tutorials
                 </Button>
-                <Button
+            </div>
+              <div>
+              <Button
                   className={`${styles.support_direction}`}
                   onClick={() => dynamicRouting(navigate, '/workspace/content-arena')}
                 >
                   Arena
                 </Button>
+              </div>
               </div>
             </div>
           </div>

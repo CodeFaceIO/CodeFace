@@ -1,3 +1,8 @@
+<<<<<<< HEAD
+<<<<<<< Updated upstream:.history/src/features/workspace/OutputWindow_20221119221208.jsx
+=======
+<<<<<<< Updated upstream:.history/src/features/workspace/OutputWindow_20221119221018.jsx
+>>>>>>> main
 /* eslint-disable no-unused-vars */
 import { position } from '@chakra-ui/system';
 import React, {useState} from 'react';
@@ -5,8 +10,16 @@ import styles from './workspace.module.css';
 import TypeAnimation from 'react-type-animation';
 import { ReactTerminal } from "react-terminal";
 
+<<<<<<< HEAD
 
 c
+=======
+<<<<<<<< HEAD:.history/src/features/workspace/OutputWindow_20221119221018.jsx
+========
+
+c
+>>>>>>>> main:.history/src/features/workspace/OutputWindow_20221119221208.jsx
+>>>>>>> main
 
 const OutputWindow = ({ outputDetails }) => {
 
@@ -39,7 +52,15 @@ const OutputWindow = ({ outputDetails }) => {
         position: 'relative',
       }}
     >
+<<<<<<< HEAD
       <ReactTerminal />                                   
+=======
+<<<<<<<< HEAD:.history/src/features/workspace/OutputWindow_20221119221018.jsx
+
+========
+      <ReactTerminal />                                   
+>>>>>>>> main:.history/src/features/workspace/OutputWindow_20221119221208.jsx
+>>>>>>> main
     </div>
   );
 };
@@ -47,6 +68,13 @@ const OutputWindow = ({ outputDetails }) => {
 export default OutputWindow;
 
 
+<<<<<<< HEAD
+=======
+<<<<<<<< HEAD:.history/src/features/workspace/OutputWindow_20221119221018.jsx
+=======
+>>>>>>> Stashed changes:.history/src/features/workspace/OutputWindow_20220925084352.jsx
+========
+>>>>>>> main
 /*
       <TypeAnimation
         cursor={false}
@@ -56,3 +84,9 @@ export default OutputWindow;
       />
       <div className="w-full">{outputDetails ? <>{getOutput()}</> : null}</div>
 */
+<<<<<<< HEAD
+=======
+>>>>>>> Stashed changes:.history/src/features/workspace/OutputWindow_20221016050806.jsx
+=======
+>>>>>>>> main:.history/src/features/workspace/OutputWindow_20221119221208.jsx
+>>>>>>> main

@@ -1,3 +1,7 @@
+<<<<<<< HEAD
+<<<<<<< Updated upstream:.history/src/features/workspace/ContentArena_20221120173123.jsx
+=======
+>>>>>>> main
 /* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable no-unused-vars */
 import React, { useState, useEffect } from 'react';
@@ -62,6 +66,10 @@ const ContentArena = ({ ref, handleThemeChange }) => {
       },
       data: formData,
     };
+<<<<<<< HEAD
+=======
+    
+>>>>>>> main
 
     axios
       .request(options)
@@ -228,3 +236,8 @@ const ContentArena = ({ ref, handleThemeChange }) => {
 };
 
 export default ContentArena;
+<<<<<<< HEAD
+=======
+>>>>>>> Stashed changes:.history/src/features/workspace/ContentArena_20221016045546.jsx
+=======
+>>>>>>> main

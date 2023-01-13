@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream:.history/src/root/App_20221120190154.jsx
 /* eslint-disable no-unused-vars */
 import React, { createContext } from 'react';
 import { ChakraProvider, ColorModeProvider } from '@chakra-ui/react';
@@ -31,14 +32,16 @@ export const ChakraContext = createContext(chakraUIThemes);
 const App = () => {
   const value = chakraUIThemes.light;
   return (
-    <ChakraContext.Provider value={value}>
-      <ChakraProvider>
-        <ColorModeProvider>
-          <Dashboard />
-        </ColorModeProvider>
-      </ChakraProvider>
-    </ChakraContext.Provider>
+    // <ChakraContext.Provider value={value}>
+    //   <ChakraProvider>
+    //     <ColorModeProvider>
+    //       <Dashboard />
+    //     </ColorModeProvider>
+    //   </ChakraProvider>
+    // </ChakraContext.Provider>
   );
 };
 
 export default App;
+=======
+>>>>>>> Stashed changes:.history/src/root/App_20221015033457.jsx

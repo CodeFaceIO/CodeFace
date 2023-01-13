@@ -1,12 +1,36 @@
+<<<<<<< HEAD
+<<<<<<< Updated upstream:.history/src/features/workspace/OutputWindow_20221119220959.jsx
 /* eslint-disable no-unused-vars */
 import { position } from '@chakra-ui/system';
 import React from 'react';
+=======
+/* eslint-disable no-unused-vars */
+import { position } from '@chakra-ui/system';
+import React, {useState} from 'react';
+>>>>>>> main
 import styles from './workspace.module.css';
 import TypeAnimation from 'react-type-animation';
 import { ReactTerminal } from "react-terminal";
 
+<<<<<<< HEAD
 
 const OutputWindow = ({ outputDetails }) => {
+=======
+<<<<<<<< HEAD:.history/src/features/workspace/OutputWindow_20221120181313.jsx
+
+
+========
+>>>>>>>> main:.history/src/features/workspace/OutputWindow_20221119220959.jsx
+
+const OutputWindow = ({ outputDetails }) => {
+
+
+  const commands = {
+    whoami: "jackharper",
+    cd: (directory) => `changed path to ${directory}`
+  };
+
+>>>>>>> main
   const getOutput = () => {
     let statusId = outputDetails?.status?.id;
 
@@ -33,6 +57,8 @@ const OutputWindow = ({ outputDetails }) => {
         position: 'relative',
       }}
     >
+<<<<<<< HEAD
+<<<<<<<< HEAD:.history/src/features/workspace/OutputWindow_20221119220959.jsx
       <TypeAnimation
         cursor={false}
         sequence={['Output...', 20000, 'Çıktı...', 20000, 'Выход...', 20000, 'Çıxış...', 20000, '输出...', 20000]}
@@ -40,8 +66,36 @@ const OutputWindow = ({ outputDetails }) => {
         repeat={Infinity}
       />
       <div className="w-full">{outputDetails ? <>{getOutput()}</> : null}</div>
+========
+      <ER
+>>>>>>>> main:.history/src/features/workspace/OutputWindow_20221119221031.jsx
+=======
+      
+>>>>>>> main
     </div>
   );
 };
 
 export default OutputWindow;
+<<<<<<< HEAD
+<<<<<<<< HEAD:.history/src/features/workspace/OutputWindow_20221119220959.jsx
+=======
+>>>>>>> Stashed changes:.history/src/features/workspace/OutputWindow_20221016050833.jsx
+========
+=======
+>>>>>>> main
+
+
+/*
+      <TypeAnimation
+        cursor={false}
+        sequence={['Output...', 20000, 'Çıktı...', 20000, 'Выход...', 20000, 'Çıxış...', 20000, '输出...', 20000]}
+        wrapper="h1"
+        repeat={Infinity}
+      />
+      <div className="w-full">{outputDetails ? <>{getOutput()}</> : null}</div>
+*/
+<<<<<<< HEAD
+>>>>>>>> main:.history/src/features/workspace/OutputWindow_20221119221031.jsx
+=======
+>>>>>>> main

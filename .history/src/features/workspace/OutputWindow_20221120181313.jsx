@@ -5,8 +5,11 @@ import styles from './workspace.module.css';
 import TypeAnimation from 'react-type-animation';
 import { ReactTerminal } from "react-terminal";
 
+<<<<<<<< HEAD:.history/src/features/workspace/OutputWindow_20221120181313.jsx
 
 
+========
+>>>>>>>> main:.history/src/features/workspace/OutputWindow_20221119220959.jsx
 
 const OutputWindow = ({ outputDetails }) => {
 

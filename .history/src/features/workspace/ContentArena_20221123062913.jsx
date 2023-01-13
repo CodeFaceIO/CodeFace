@@ -1,3 +1,14 @@
+<<<<<<< HEAD
+<<<<<<<< HEAD:.history/src/features/workspace/ContentArena_20221123062913.jsx
+<<<<<<< Updated upstream:.history/src/features/workspace/ContentArena_20221123062913.jsx
+========
+>>>>>>>> main:.history/src/features/workspace/ContentArena_20221123063005.jsx
+=======
+<<<<<<<< HEAD:.history/src/features/workspace/ContentArena_20221123062600.jsx
+<<<<<<< Updated upstream:.history/src/features/workspace/ContentArena_20221123062600.jsx
+========
+>>>>>>>> main:.history/src/features/workspace/ContentArena_20221123062913.jsx
+>>>>>>> main
 /* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable no-unused-vars */
 import React, { useState, useEffect } from 'react';
@@ -19,6 +30,12 @@ import { VscSourceControl } from 'react-icons/vsc';
 
 const sideMenus = [AiOutlineFileText, AiFillGithub, VscSourceControl];
 
+<<<<<<< HEAD
+=======
+
+const sideMenus = [AiOutlineFileText, AiFillGithub, VscSourceControl];
+
+>>>>>>> main
 const ContentArena = ({ ref, handleThemeChange }) => {
   const jsonFile = files['configure.json']; // files is an object with all the files
   const [code, setCode] = useState(files['script.js'].value);
@@ -171,6 +188,11 @@ const ContentArena = ({ ref, handleThemeChange }) => {
     });
   };
 
+<<<<<<< HEAD
+=======
+<<<<<<<< HEAD:.history/src/features/workspace/ContentArena_20221123062600.jsx
+========
+>>>>>>> main
   // editor file explorer code sample
 
   const fileUploadHandler = (e) => {
@@ -189,8 +211,32 @@ const ContentArena = ({ ref, handleThemeChange }) => {
       <div className={styles.arena_work_workspace_nav}>
         <div className={styles.arena_work_workspace_nav_icon} onClick={() => handleWorkspaceComponentClick('editor')}>
           <EditorIcon />
+<<<<<<< HEAD
+<<<<<<<< HEAD:.history/src/features/workspace/ContentArena_20221123062913.jsx
+========
+        </div>
+        <div className={styles.arena_work_workspace_nav_icon} onClick={() => handleWorkspaceComponentClick('terminal')}>
+          <TerminalIcon />  
+        </div>
+        <div className={styles.arena_work_workspace_nav_icon} onClick={() => handleWorkspaceComponentClick('fileExplorer')}>
+          <FileExplorerIcon />
+        </div>
+        <div className={styles.arena_work_workspace_nav_icon} onClick={() => handleWorkspaceComponentClick('output')}>
+          <OutputIcon />
+        </div>
+      </div>
+      <div className={styles.arena_work_workspace_content}>
+        {workspaceComponent === 'editor' && (
+          <div className={styles.arena_work_workspace_content_editor}>
+>>>>>>>> main:.history/src/features/workspace/ContentArena_20221123063005.jsx
             
 
+=======
+            
+>>>>>>>> main:.history/src/features/workspace/ContentArena_20221123062913.jsx
+
+    
+>>>>>>> main
   const onChange = (action, data) => {
     switch (action) {
       case 'code': {
@@ -232,3 +278,9 @@ const ContentArena = ({ ref, handleThemeChange }) => {
 };
 
 export default ContentArena;
+=======
+<<<<<<< HEAD
+>>>>>>> Stashed changes:.history/src/features/workspace/ContentArena_20221016045602.jsx
+=======
+>>>>>>> Stashed changes:.history/src/features/workspace/ContentArena_20221015075728.jsx
+>>>>>>> main
