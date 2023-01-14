@@ -28,18 +28,21 @@ const CodeEditorWindow = ({
   return (
     <div className={`${styles.arena_work_workspace_ide}`}>
       <div
-
         className="d-flex"
-
-        
         style={{
           backgroundColor: '#1A2023',
         }}
       >
         <LanguagesDropDown onSelectChange={onSelectChange} />
 
-        <Button onClick={handleCompile} disabled={!code} backgroundColor="#1A2023" borderRadius="0px" 
-        border="1px solid rgba(0, 0, 0, 0.38)"  width="400px">
+        <Button
+          onClick={handleCompile}
+          disabled={!code}
+          backgroundColor="#1A2023"
+          borderRadius="0px"
+          border="1px solid rgba(0, 0, 0, 0.38)"
+          width="400px"
+        >
           {processing ? 'Processing...' : 'Compile and Execute'}
         </Button>
       </div>

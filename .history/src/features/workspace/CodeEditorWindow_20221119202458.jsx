@@ -43,7 +43,6 @@ const CodeEditorWindow = ({
           border="1px solid #098c0b66"
           variant="solid"
           width="400px"
-          
         >
           {processing ? 'Processing...' : 'Compile and Execute'}
         </Button>
