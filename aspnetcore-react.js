@@ -10,7 +10,6 @@ const certificateArg = process.argv.map((arg) => arg.match(/--name=(?<value>.+)/
 const certificateName = certificateArg ? certificateArg.groups.value : process.env.npm_package_name;
 
 if (!certificateName) {
-  
   process.exit(-1);
 }
 
