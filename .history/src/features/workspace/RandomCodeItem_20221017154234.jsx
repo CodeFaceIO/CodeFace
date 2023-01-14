@@ -14,7 +14,7 @@ const RandomCodeItem = ({ title }) => {
             text="console.log(explain some code)" 
             showLineNumbers={true}
             wrapLines={true}
-            showLineNumbers={lineNumbers}
+            
             theme={solarizedDark}
             codeBlock
             />

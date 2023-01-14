@@ -31,7 +31,7 @@ const CodeEditorWindow = ({
 
         className="d-flex"
 
-        className="d-flex p-2"
+        
         style={{
           backgroundColor: '#1A2023',
         }}

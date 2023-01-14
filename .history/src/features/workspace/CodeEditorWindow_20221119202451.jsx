@@ -37,7 +37,7 @@ const CodeEditorWindow = ({
         <ThemeDropDown handleThemeChange={handleThemeChange} themeEditorNav={themeEditorNav} />
         <Button onClick={handleCompile} disabled={!code} backgroundColor="#0D1117" boxShadow="0 6px 6px -2px #098c0b66" 
             border="1px solid #098c0b66"
-        variant="solid" width="400px" border="none">
+        variant="solid" width="400px" >
           {processing ? 'Processing...' : 'Compile and Execute'}
         </Button>
       </div>
