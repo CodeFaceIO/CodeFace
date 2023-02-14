@@ -1,0 +1,50 @@
+.terminal-container {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+    background-color: black;
+    color: white;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.terminal-input-container {
+    display: flex;
+    align-items: center;
+    padding: 0.5rem;
+}
+
+.terminal-input-prompt {
+    margin-right: 0.5rem;
+}
+
+.terminal-input {
+    flex: 1;
+    border: none;
+    background-color: transparent;
+    color: white;
+    font-family: inherit;
+    font-size: inherit;
+    outline: none;
+}
+
+.terminal-output-container {
+    flex: 1;
+    overflow-y: auto;
+    padding: 0.5rem;
+}
+
+.terminal-output-line {
+    white-space: pre-wrap;
+}
+
+.terminal-output-line.prompt {
+    font-weight: bold;
+}
+
+.terminal-output-line.error {
+    color: red;
+}

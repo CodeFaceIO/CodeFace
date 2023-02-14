@@ -1,0 +1,95 @@
+.debug_section {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 300px;
+    background-color: #1e1e1e;
+    z-index: 100;
+    overflow-y: auto;
+}
+
+.debug_section h3 {
+    padding: 16px;
+    margin: 0;
+    font-size: 18px;
+    font-weight: bold;
+    color: #fff;
+    background-color: #333;
+    border-bottom: 1px solid #444;
+}
+
+.debug_section ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.debug_section li {
+    padding: 8px 16px;
+    border-bottom: 1px solid #444;
+    color: #fff;
+}
+
+.debug_section li:last-child {
+    border-bottom: none;
+}
+
+.debug_section .debug_error {
+    color: #f00;
+}
+
+.debug_section .debug_warning {
+    color: #ff0;
+}
+
+.debug_section .debug_log {
+    color: #0f0;
+}
+
+.debug_section .debug_info {
+    color: #00f;
+}
+
+.debug_section .debug_group {
+    margin-bottom: 16px;
+    border: 1px solid #444;
+    border-radius: 4px;
+}
+
+.debug_section .debug_group .debug_group_header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 8px 16px;
+    background-color: #333;
+    cursor: pointer;
+}
+
+.debug_section .debug_group .debug_group_header h4 {
+    margin: 0;
+    font-size: 16px;
+    color: #fff;
+}
+
+.debug_section .debug_group .debug_group_header .debug_group_arrow {
+    color: #fff;
+}
+
+.debug_section .debug_group .debug_group_header .debug_group_arrow_open {
+    transform: rotate(90deg);
+}
+
+.debug_section .debug_group .debug_group_content {
+    padding: 8px 16px;
+    display: none;
+}
+
+.debug_section .debug_group .debug_group_content ul {
+    margin-top: 8px;
+    margin-bottom: 0;
+}
+
+.debug_section .debug_group .debug_group_content li {
+    padding: 4px 0;
+}
