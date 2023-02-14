@@ -1,9 +1,13 @@
-import { useState, useEffect } from 'react';
+import { useEffect, useState } from 'react';
 
 const VsCodeIdeFrame = () => {
   const [vsCodeSessions, setVsCodeSessions] = useState([]);
   const [activeSession, setActiveSession] = useState(null);
 
+  const fetchUserAccessToken = async () => {
+    let user = await fetch('https://localhost:8080');
+    return await user.json();
+  };
   useEffect(() => {
     async function loadVsCodeSessions() {
       const userAccessToken = await fetchUserAccessToken(); // fetch the user's access token from your backend
@@ -71,24 +75,25 @@ const VsCodeIdeFrame = () => {
     }
   }
 
-  if (vsCodeSessions.length === 0) {
-    return <div>Loading...</div>;
-  }
+  // if (vsCodeSessions.length === 0) {
+  //   return <div>Loading...</div>;
+  // }
 
   return (
     <div>
-      <ul>
-        {vsCodeSessions.map((session) => (
-          <li key={session.id}>
-            <button onClick={() => setActiveSession(session)}>Switch to session {session.id}</button>
-          </li>
-        ))}
-        <li>
-          <button onClick={createVsCodeSession}>Create new session</button>
-        </li>
-      </ul>
-      {activeSession && <iframe src={activeSession.uri} width="100%" height="100%"></iframe>}
-      <CodeEditor onSave={saveCode} />
+      {/*<ul>*/}
+      {/*	{vsCodeSessions.map(( session ) => (*/}
+      {/*		<li key={session.id}>*/}
+      {/*			<button onClick={() => setActiveSession(session)}>Switch to session {session.id}</button>*/}
+      {/*		</li>*/}
+      {/*	))}*/}
+      {/*	<li>*/}
+      {/*		<button onClick={createVsCodeSession}>Create new session</button>*/}
+      {/*	</li>*/}
+      {/*</ul>*/}
+      {/*{activeSession &&}*/}
+      <iframe src={'https://vscode.dev/'} allow="fullscreen"></iframe>
+      {/*<CodeEditor onSave={saveCode} />*/}
     </div>
   );
 };
@@ -107,3 +112,5 @@ function CodeEditor({ onSave }) {
     </div>
   );
 }
+
+export default VsCodeIdeFrame;
