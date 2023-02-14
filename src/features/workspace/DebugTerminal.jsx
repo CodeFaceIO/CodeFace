@@ -1,5 +1,4 @@
-import { useState } from 'react';
-import styles from './terminal.module.css';
+import { useEffect, useState } from 'react';
 
 const DebugTerminal = () => {
   const [inputValue, setInputValue] = useState('');
@@ -51,7 +50,7 @@ const DebugTerminal = () => {
     </div>
   );
 };
-
+export default DebugTerminal;
 const debugCommand = (input) => {
   // This is the function that handles the debug command.
   // Modify it as needed to implement your debugging functionality.

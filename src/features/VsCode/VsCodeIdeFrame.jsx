@@ -1,9 +1,15 @@
-import { useState, useEffect } from 'react';
+/* eslint-disable no-unused-vars */
+/* eslint-disable jsx-a11y/iframe-has-title */
+import { useEffect, useState } from 'react';
 
 const VsCodeIdeFrame = () => {
   const [vsCodeSessions, setVsCodeSessions] = useState([]);
   const [activeSession, setActiveSession] = useState(null);
 
+  const fetchUserAccessToken = async () => {
+    let user = await fetch('https://localhost:8080');
+    return await user.json();
+  };
   useEffect(() => {
     async function loadVsCodeSessions() {
       const userAccessToken = await fetchUserAccessToken(); // fetch the user's access token from your backend
@@ -77,18 +83,19 @@ const VsCodeIdeFrame = () => {
 
   return (
     <div>
-      <ul>
-        {vsCodeSessions.map((session) => (
-          <li key={session.id}>
-            <button onClick={() => setActiveSession(session)}>Switch to session {session.id}</button>
-          </li>
-        ))}
-        <li>
-          <button onClick={createVsCodeSession}>Create new session</button>
-        </li>
-      </ul>
-      {activeSession && <iframe src={activeSession.uri} width="100%" height="100%"></iframe>}
-      <CodeEditor onSave={saveCode} />
+      {/*<ul>*/}
+      {/*	{vsCodeSessions.map(( session ) => (*/}
+      {/*		<li key={session.id}>*/}
+      {/*			<button onClick={() => setActiveSession(session)}>Switch to session {session.id}</button>*/}
+      {/*		</li>*/}
+      {/*	))}*/}
+      {/*	<li>*/}
+      {/*		<button onClick={createVsCodeSession}>Create new session</button>*/}
+      {/*	</li>*/}
+      {/*</ul>*/}
+      {/*{activeSession &&}*/}
+      <iframe src={'https://vscode.dev/'} allow="fullscreen"></iframe>
+      {/*<CodeEditor onSave={saveCode} />*/}
     </div>
   );
 };
@@ -102,8 +109,10 @@ function CodeEditor({ onSave }) {
 
   return (
     <div>
-      <textarea value={code} onChange={(event) => setCode(event.target.value)}></textarea>
+      <textarea value={code} onChange={(event) => setCode(event.target.value)} ></textarea>
       <button onClick={handleSave}>Save code</button>
     </div>
   );
 }
+
+export default VsCodeIdeFrame;
