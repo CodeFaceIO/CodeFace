@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DdlMappings">
+    <mapping uuid="8ae38d40-1b4a-410d-8f99-61960caf2383" name="codeface Mapping">
+      <data-sources db="175e569b-960e-4858-9070-55140c22eb61" />
+      <scope>
+        <node kind="database" qname="CodeFace" />
+      </scope>
+    </mapping>
+  </component>
+</project>
