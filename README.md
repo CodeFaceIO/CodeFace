@@ -1,8 +1,5 @@
 # CodeFace && CodeFace challenges for developers
 
-
-
-
 ```txt
 
 CodeFace is a platform that offers developers a unique set of challenges to improve their algorithmic skills. Our platform uses AI-generated challenges to keep the experience fresh and unpredictable, and offers real-time competitions where users can compete against each other in pairs or as a group. We also support multiple programming languages to attract a wider range of users and make our platform more inclusive.
@@ -20,7 +17,6 @@ In addition to traditional algorithm challenges, we offer challenges that allow 
 ```
 
 ```md
-
 1. Features
 2. AI-generated challenges
 3. Real-time competitions
