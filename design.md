@@ -1,5 +1,3 @@
-
-
 **User Table**
 
 ```
@@ -97,7 +95,7 @@
 | user\_id | int | Foreign key to the user table (indicating the user who created the snippet) |
 ```
 
-**User\_Challenges Table**
+**User_Challenges Table**
 
 ```
 | Column Name | Data Type | Description |
