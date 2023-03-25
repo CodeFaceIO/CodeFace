@@ -1,0 +1,75 @@
+{
+  "id": 1234,
+  "title": "Introduction to Algorithms",
+  "url": "https://www.udemy.com/introduction-to-algorithms",
+  "headline": "Learn the fundamentals of algorithms and their role in computer programming.",
+  "description": "In this course, you will learn about the basics of algorithms and how they are used in computer programming. We will cover topics such as sorting algorithms, searching algorithms, and graph algorithms. By the end of the course, you will have a solid understanding of the most common algorithms used in programming.",
+  "author": {
+    "name": "John Doe",
+    "url": "https://www.udemy.com/user/john-doe/"
+  },
+  "image": {
+    "url": "https://www.udemy.com/course-image.jpg",
+    "width": 480,
+    "height": 270
+  },
+  "rating": {
+    "value": 4.5,
+    "count": 1000
+  },
+  "price": {
+    "currency": "USD",
+    "value": 49.99
+  },
+  "duration": "4.5 hours",
+  "level": "Beginner",
+  "language": "English",
+  "lectures": [
+    {
+      "id": 1,
+      "title": "Introduction to Algorithms",
+      "duration": "15 minutes",
+      "video_url": "https://www.udemy.com/video/123456"
+    },
+    {
+      "id": 2,
+      "title": "Sorting Algorithms",
+      "duration": "30 minutes",
+      "video_url": "https://www.udemy.com/video/123457"
+    },
+    {
+      "id": 3,
+      "title": "Searching Algorithms",
+      "duration": "45 minutes",
+      "video_url": "https://www.udemy.com/video/123458"
+    },
+    {
+      "id": 4,
+      "title": "Graph Algorithms",
+      "duration": "60 minutes",
+      "video_url": "https://www.udemy.com/video/123459"
+    }
+  ],
+  "reviews": [
+    {
+      "id": 1,
+      "rating": 5,
+      "text": "This course is amazing! I learned so much about algorithms and the instructor is great.",
+      "date": "2022-01-01",
+      "user": {
+        "name": "Alice Smith",
+        "url": "https://www.udemy.com/user/alice-smith/"
+      }
+    },
+    {
+      "id": 2,
+      "rating": 4,
+      "text": "Good course, but some parts were a bit too advanced for me.",
+      "date": "2022-01-15",
+      "user": {
+        "name": "Bob Jones",
+        "url": "https://www.udemy.com/user/bob-jones/"
+      }
+    }
+  ]
+}
