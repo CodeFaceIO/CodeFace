@@ -1,0 +1,28 @@
+{
+    "name": "Bubble Sort",
+    "description": "A simple sorting algorithm that repeatedly steps through the list, compares adjacent elements and swaps them if they are in the wrong order.",
+    "input": [
+        {
+            "name": "list",
+            "type": "array",
+            "description": "The list to be sorted"
+        }
+    ],
+    "output": {
+        "type": "array",
+        "description": "The sorted list"
+    },
+    "steps": [
+        "Compare the first and second elements of the list. If they are in the wrong order, swap them.",
+        "Move to the next pair of adjacent elements and repeat step 1 until the end of the list is reached.",
+        "Repeat steps 1-2 until no more swaps are needed."
+    ],
+    "complexity": {
+        "time": "O(n^2)",
+        "space": "O(1)"
+    },
+    "code": {
+        "language": "python",
+        "source": "https://github.com/example/bubble-sort/blob/main/bubble_sort.py"
+    }
+}
