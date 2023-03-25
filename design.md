@@ -1,6 +1,4 @@
-> design database for me web app named codeface specialities are these: github google sign in simple sign in sign up number verification users code challenges 13type code challenges user 0can store sode snippets also alghoritms with explanations video tutorials and workspace for projects
 
-Sure, I can help you design a database for your web app named "Codeface". Based on your specialities, here's an initial database schema:
 
 **User Table**
 
