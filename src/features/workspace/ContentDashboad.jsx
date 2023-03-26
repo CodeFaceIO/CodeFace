@@ -2,7 +2,7 @@
 /* eslint-disable no-unused-vars */
 import React from 'react';
 import { AiFillGithub, AiFillLinkedin, AiFillTwitterCircle, AiOutlineGithub } from 'react-icons/ai';
-import { SiHashnode,SlSocialLinkedin } from 'react-icons/si';
+import { SiHashnode, SlSocialLinkedin } from 'react-icons/si';
 import styles from './workspace.module.css';
 import daily from './../assets/daily.png';
 import routingObject from './../../routing';
@@ -86,35 +86,33 @@ const ContentDashboard = ({}) => {
                   <div class={styles.bar}>
                     <div class={styles.filledbar}></div>
                   </div>
-                  <div class={styles.icon_box}>
-                   {item.icons}
-                  </div>
+                  <div class={styles.icon_box}>{item.icons}</div>
                 </div>
               ))}
               <div className={`${styles.support_us_cart_item_buttons}`}>
-              <div>
-              <Button className={`${styles.support_direction}`} onClick={() => dynamicRouting(navigate, '/')}>
-                  Home 
-                </Button>
-              </div>
                 <div>
-                <Button className={`${styles.support_direction}`} onClick={() => dynamicRouting(navigate, '/documentation')}>
-                  Docs
-                </Button>
+                  <Button className={`${styles.support_direction}`} onClick={() => dynamicRouting(navigate, '/')}>
+                    Home
+                  </Button>
                 </div>
-            <div>
-            <Button className={`${styles.support_direction}`} onClick={() => dynamicRouting(navigate, '/tutorials')}>
-                  Tutorials
-                </Button>
-            </div>
-              <div>
-              <Button
-                  className={`${styles.support_direction}`}
-                  onClick={() => dynamicRouting(navigate, '/workspace/content-arena')}
-                >
-                  Arena
-                </Button>
-              </div>
+                <div>
+                  <Button className={`${styles.support_direction}`} onClick={() => dynamicRouting(navigate, '/documentation')}>
+                    Docs
+                  </Button>
+                </div>
+                <div>
+                  <Button className={`${styles.support_direction}`} onClick={() => dynamicRouting(navigate, '/tutorials')}>
+                    Tutorials
+                  </Button>
+                </div>
+                <div>
+                  <Button
+                    className={`${styles.support_direction}`}
+                    onClick={() => dynamicRouting(navigate, '/workspace/content-arena')}
+                  >
+                    Arena
+                  </Button>
+                </div>
               </div>
             </div>
           </div>

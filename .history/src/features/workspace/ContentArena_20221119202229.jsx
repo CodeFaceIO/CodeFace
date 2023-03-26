@@ -212,7 +212,14 @@ const ContentArena = ({ ref, handleThemeChange }) => {
             />
           </div>
 
-          <Button leftIcon={<MdBuild />}  backgroundColor="#0D1117" boxShadow="0 6px 6px -2px #098c0b66"  variant="solid" className="my-2 w-100" border="none">
+          <Button
+            leftIcon={<MdBuild />}
+            backgroundColor="#0D1117"
+            boxShadow="0 6px 6px -2px #098c0b66"
+            variant="solid"
+            className="my-2 w-100"
+            border="none"
+          >
             Settings
           </Button>
           <hr />

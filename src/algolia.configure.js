@@ -13,19 +13,22 @@ export const algolia = {
       .catch((err) => console.log(err));
   },
 
-  get :(search)=>{
+  get: (search) => {
     index.search(search).then(({ hits }) => {
-        setUsers(hits);
-      });
-  },
-  
-  update : (data) =>{
-    index.partialUpdateObjects(data).then((response) => {
-        console.log(response);
-      }).catch((err) => console.log(err));
+      setUsers(hits);
+    });
   },
 
-  delete : (id) =>{
-    index.deleteObject(id).then(() => {});     
-  }
+  update: (data) => {
+    index
+      .partialUpdateObjects(data)
+      .then((response) => {
+        console.log(response);
+      })
+      .catch((err) => console.log(err));
+  },
+
+  delete: (id) => {
+    index.deleteObject(id).then(() => {});
+  },
 };
