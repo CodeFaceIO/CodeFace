@@ -1,17 +1,18 @@
-import React, { useEffect, useState } from "react";
-import CallToActionWithIllustration from "./CallToActionWithIllustration";
-import SmallWithLogoLeft from "./../common/Footer/SmallWithLogoLeft";
-import CodeSamples from "./CodeSamples";
-import PricingPlan from "./PricingPlan";
-import Features from "./Features";
-import StupidTeam from "./StupidTeam";
-import styles from "./code.module.css";
+import React, { useEffect, useState } from 'react';
+import CallToActionWithIllustration from './CallToActionWithIllustration';
+import SmallWithLogoLeft from './../common/Footer/SmallWithLogoLeft';
+import CodeSamples from './CodeSamples';
+import OurProjects from './OurProjects';
+import Features from './Features';
+import StupidTeam from './StupidTeam';
+import styles from './code.module.css';
+import Subscribe from './Subscribe ';
 
 const StartUp = () => {
   const [navLight, setNavLight] = useState(false);
 
   useEffect(() => {
-    window.addEventListener("scroll", () => {
+    window.addEventListener('scroll', () => {
       if (window.scrollY > 123) {
         setNavLight(true);
       } else {
@@ -26,7 +27,8 @@ const StartUp = () => {
       <CodeSamples />
       <Features />
       <StupidTeam />
-      <PricingPlan />
+      <OurProjects />
+      <Subscribe />
       <SmallWithLogoLeft />
     </div>
   );

@@ -6,10 +6,15 @@ class Developer (object) :
         return Developer (skills)
         
         
+<<<<<<< HEAD
+    def _str_(self):
+        return "Skills"
+=======
     def _str_(self) :
         return "Skills"
         A = Developer('NodeJS')
         B = Developer ('Python')
+>>>>>>> main
        
        
 

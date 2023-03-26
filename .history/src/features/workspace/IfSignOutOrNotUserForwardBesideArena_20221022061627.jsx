@@ -20,14 +20,24 @@ const IfSignOutOrNotUserForwardBesideArena = () => {
 
   return (
     <Box textAlign="center" py={10} px={6} height="100vh">
-      <Heading display="inline-block" as="h2" size="2xl" bgGradient="linear(to-r, teal.400, teal.600)" backgroundClip="text"  border="1px solid #383d47" width="max-content" padding="10px 25px" border>
-      OOOPS!
+      <Heading
+        display="inline-block"
+        as="h2"
+        size="2xl"
+        bgGradient="linear(to-r, teal.400, teal.600)"
+        backgroundClip="text"
+        border="1px solid #383d47"
+        width="max-content"
+        padding="10px 25px"
+      >
+        OOOPS!
       </Heading>
       <Text fontSize="22px" mt={3} mb={2}>
-      Arena is disabled
+        Arena is disabled
       </Text>
       <Text color="#383d47" mb={6}>
-        For enable Arena, please sign in or sign up <br /> after that you must complete profile setup then you can access to Arena.
+        For enable Arena, please sign in or sign up <br /> after that you must complete profile setup then you can access to
+        Arena.
       </Text>
 
       <Button

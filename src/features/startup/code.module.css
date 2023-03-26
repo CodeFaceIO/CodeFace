@@ -1,13 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Rubik+Moonrocks&family=Source+Code+Pro:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
-
-/*
-* Prefixed by https://autoprefixer.github.io
-* PostCSS: v8.4.14,
-* Autoprefixer: v10.4.7
-* Browsers: last 4 version
-*/
-
+@import url('https://fonts.googleapis.com/css2?family=Fredericka+the+Great&display=swap');
 .code_module_container {
+  background-color: #0e1217;
   background-image: url('./../assets/vector_lines.svg');
 }
 
@@ -79,8 +73,7 @@
   border-radius: 12px;
   border-color: transparent;
   color: white;
-  background: radial-gradient(99.77% 100% at 31.97% 99.5%, rgba(255, 255, 255, 0) 0%, rgba(189, 138, 184, 0.3) 100%)
-    #3434b9;
+  background: radial-gradient(99.77% 100% at 31.97% 99.5%, rgba(255, 255, 255, 0) 0%, rgba(189, 138, 184, 0.3) 100%) #3434b9;
   box-shadow: inset 0px -5px 0px #313686;
 }
 
@@ -94,6 +87,8 @@
 
 .header_class {
   background-image: url(./../assets/lastmain2.png);
+  background-position: center;
+  background-size: cover;
   height: 100vh;
 }
 
@@ -277,7 +272,7 @@
   color: white;
   border: 1px solid #383d47;
   border-radius: 32px;
-  background-color: #0e1217;
+  background-color: #1c1f26;
 }
 
 .features_item:nth-child(6) {
@@ -294,8 +289,8 @@
 }
 
 .features_item:hover {
-  -webkit-box-shadow: 0 0 30px 1px rgba(0, 255, 117, 0.3);
-  box-shadow: 0 0 30px 1px rgba(0, 255, 117, 0.3);
+  /*-webkit-box-shadow: 0 0 30px 1px rgba(0, 255, 117, 0.3);*/
+  box-shadow: 0 0 30px 1px #3e3ab8;
 }
 
 .features_item:nth-child(even) svg {
@@ -342,14 +337,14 @@
 
 .stupid_container > div {
   width: 1320px;
-  display: grid;
-  grid-template-columns: repeat(2, 600px);
-  justify-content: center;
-  grid-gap: 40px;
+  height: 550px;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid #383d47;
 }
 
 .teamCard {
-  border-radius: 32px;
+  /* border-radius: 32px; */
   cursor: pointer;
   padding: 10px;
   overflow: hidden;
@@ -467,7 +462,7 @@
   letter-spacing: -0.36px;
   line-height: 72px;
   font-size: 72px;
-  font-weight: bold;
+  font-weight: 500;
   width: 100%;
   margin-left: auto;
   margin-right: auto;
@@ -476,6 +471,7 @@
   text-align: center;
   margin-bottom: 100px;
   color: #d74cf6;
+  font-family: Fredericka the Great, cursive !important;
 }
 
 .code_section_header_away_team {
@@ -487,13 +483,11 @@
   line-height: 72px;
   font-size: 72px;
   font-weight: 530px;
-  width: 100%;
   margin-left: auto;
   margin-right: auto;
   padding: 50px 0;
-  border-radius: 16px;
-  text-align: center;
   color: #d74cf6;
+  font-family: Fredericka the Great, cursive !important;
 }
 
 .code_section_header_heropage {
@@ -510,13 +504,14 @@
 
 .code_section_body {
   font-size: clamp(2rem, 2.5vw, 4.5rem);
-  font-weight: 800;
+  font-weight: 500;
   line-height: 76px;
   text-align: center;
   color: #ffb979;
-  padding:20px;
+  padding: 20px;
   border-radius: 16px;
   height: max-content;
+  font-family: Fredericka the Great, cursive !important;
 }
 
 .code_section_body > span {
@@ -639,4 +634,111 @@
 }
 
 @media only screen and (max-width: 1536px) {
+}
+
+.teamCard {
+  width: 420px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* height: 350px; */
+  /* background-color: #1c1f26; */
+}
+
+.teamCard:first-child {
+  border-bottom-right-radius: 30px;
+  border-bottom: 1px solid #383d47;
+  border-right: 1px solid #383d47;
+  background-color: #161b22;
+  background-image: url('./../assets/vector_lines.svg');
+}
+.teamCard:nth-child(3) {
+  border-bottom-left-radius: 30px;
+  border-bottom: 1px solid #383d47;
+  border-left: 1px solid #383d47;
+  background-color: #161b22;
+  background-image: url('./../assets/vector_lines.svg');
+}
+.teamCard:nth-child(4) {
+  border-top-right-radius: 30px;
+  border-top: 1px solid #383d47;
+  border-right: 1px solid #383d47;
+  background-color: #161b22;
+  background-image: url('./../assets/vector_lines.svg');
+}
+
+.teamCard:last-child {
+  border-top-left-radius: 30px;
+  border-top: 1px solid #383d47;
+  border-left: 1px solid #383d47;
+  background-color: #161b22;
+  background-image: url('./../assets/vector_lines.svg');
+}
+
+.teamCard:nth-child(2) {
+  grid-area: 1 / 2 / 3 / 3;
+  border: 1px solid rgba(255, 255, 235, 0.25);
+  border-radius: 30px;
+  background-color: #161b22;
+  background-image: url('./../assets/vector_lines.svg');
+}
+
+.teamCard__img:not(.teamCard:nth-child(2) > .teamCard__img) {
+  width: 300px;
+  height: 300px;
+  border-radius: 150px;
+  box-shadow: 0 5px 10px #000;
+  background-color: #1c1f26;
+  background-position: center;
+  background-size: cover;
+  border: 1px solid #383d47;
+}
+
+.our_other_apps {
+  width: 100%;
+  padding-top: 50px;
+  padding-bottom: 55px;
+}
+.our_other_apps > h3 {
+  font-family: Fredericka the Great, cursive !important;
+  text-align: center;
+  font-size: 50px;
+  margin-bottom: 80px;
+}
+.our_other_apps > div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.reactEasy,
+.modernSchool {
+  transition: transform 0.3s ease;
+  padding: 50px;
+  margin: 0 !important;
+}
+.reactEasy > img,
+.modernSchool > img {
+  border-radius: 12px;
+  box-shadow: 0 5px 10px rgb(0 0 0 / 25%);
+  border: 2px solid #383d47;
+
+  cursor: pointer;
+}
+.reactEasy:hover,
+.modernSchool:hover {
+  transform: scale(1.1);
+}
+.reactEasy > p,
+.modernSchool > p {
+  font-family: Fredericka the Great, cursive !important;
+  text-align: center;
+  font-size: 35px;
+  margin-bottom: 30px;
+  text-transform: uppercase;
+}
+.reactEasy > p {
+  color: #3434b9;
+}
+.modernSchool > p {
+  color: #f20050;
 }

@@ -1,3 +1,7 @@
+<<<<<<< HEAD
+<<<<<<< Updated upstream:.history/src/features/workspace/ContentArena_20221122185824.jsx
+=======
+>>>>>>> main
 /* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable no-unused-vars */
 import React, { useState, useEffect } from 'react';
@@ -219,11 +223,26 @@ const ContentArena = ({ ref, handleThemeChange }) => {
           onSelectChange={onSelectChange}
           themeEditorNav={theme}
         />
+<<<<<<< HEAD
 
 
+=======
+<<<<<<<< HEAD:.history/src/features/workspace/ContentArena_20221122190314.jsx
+        
+
+========
+
+
+>>>>>>>> main:.history/src/features/workspace/ContentArena_20221122185824.jsx
+>>>>>>> main
       </div>
     </>
   );
 };
 
 export default ContentArena;
+<<<<<<< HEAD
+=======
+>>>>>>> Stashed changes:.history/src/features/workspace/ContentArena_20221016050034.jsx
+=======
+>>>>>>> main

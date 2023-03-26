@@ -9,15 +9,14 @@ const RandomCodeItem = ({ title }) => {
     <>
       <div className={`${styles.card_IDE}`}>
         <div className={`${styles.code_item_IDE_body}`}>
-          <CopyBlock 
-            language="javascript" 
-            text="console.log(explain some code)" 
+          <CopyBlock
+            language="javascript"
+            text="console.log(explain some code)"
             showLineNumbers={true}
             wrapLines={true}
-            showLineNumbers={lineNumbers}
             theme={solarizedDark}
             codeBlock
-            />
+          />
         </div>
         <div>
           <button>Explain</button>

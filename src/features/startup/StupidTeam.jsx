@@ -1,56 +1,33 @@
-import React from "react";
-import styles from "./code.module.css";
-import "react-alice-carousel/lib/alice-carousel.css";
-import StupidItem from "./StupidItem";
+import React from 'react';
+import styles from './code.module.css';
+import 'react-alice-carousel/lib/alice-carousel.css';
+import StupidItem from './StupidItem';
+import Terminal from 'react-animated-term';
+import 'react-animated-term/dist/react-animated-term.css';
 
+const spinner = ['⠋', '⠙', '⠹', '⠸', '⠼', '⠴', '⠦', '⠧', '⠇', '⠏'];
 const ourTeam = [
   {
-    name: "Ibrahim",
-    surname: "Ibrahimli",
-    username: "@ibrahim",
-    projects: "4",
-    
-    image: "https://picsum.photos/160/160"
+    text: 'node team.js',
+    cmd: true,
+    delay: 80,
   },
   {
-    name: "Ugurlu",
-    surname: "Murquzov",
-    username: "@ugurlu",
-    projects: "8",
-    
-    image: "https://picsum.photos/160/160"
+    text: '✔ Ugurlu Murquzov,\n✔ Yusif Hasanov,\n✔ Samir Hasanov,\n✔ Tural Xaneliyev,\n',
+    cmd: false,
+    repeat: true,
+    repeatCount: 5,
+    frames: spinner.map(function (spinner) {
+      return {
+        text: spinner + ' Loading app',
+        delay: 40,
+      };
+    }),
   },
   {
-    name: "Nail",
-    surname: "Ismayilov",
-    username: "@nail",
-    projects: "3",
-    
-    image: "https://picsum.photos/160/160"
+    text: '',
+    cmd: true,
   },
-  {
-    name: "Mehemmed",
-    surname: "Serkerli",
-    username: "@mehemmed",
-    projects: "1",
-    image: "https://picsum.photos/160/160"
-  },
-  {
-    name: "Yusif",
-    surname: "Hesenov",
-    username: "@yusif",
-    projects: "5",
-    
-    image: "https://picsum.photos/160/160"
-  },
-  {
-    name: "Nabi",
-    surname: "Huseynov",
-    username: "@nabi",
-    projects: "6",
-    
-    image: "https://picsum.photos/160/160"
-  }
 ];
 
 const StupidTeam = () => {
@@ -60,9 +37,10 @@ const StupidTeam = () => {
         CodeFace team <br /> support you in every condition
       </h2>
       <div>
-        {ourTeam.map((team) => {
-          return <StupidItem team={team} />;
-        })}
+        {/*{ourTeam.map((team) => {*/}
+        {/*  return <StupidItem team={team} />;*/}
+        {/*})}*/}
+        <Terminal lines={ourTeam} interval={80} />
       </div>
     </div>
   );

@@ -19,8 +19,12 @@ import {VscSourceControl} from 'react-icons/vsc';
 
 
 const sideMenus = [
+<<<<<<<< HEAD:.history/src/features/workspace/ContentArena_20221122151736.jsx
   AiOutlineFileText,
   AiF
+========
+  Ai
+>>>>>>>> main:.history/src/features/workspace/ContentArena_20221122151725.jsx
 ]
 
 const ContentArena = ({ ref, handleThemeChange }) => {

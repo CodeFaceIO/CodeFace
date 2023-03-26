@@ -194,7 +194,14 @@
 
 .feature_explanation_IDE
   > div
-  div:not(.card_github_buttons_container, .card_github_buttons_container > div, .github_icon_container) {
+  div:not(
+    .card_github_buttons_container,
+    .card_github_buttons_container > div,
+    .github_icon_container,
+    .bar,
+    .filledbar,
+    .icon_box
+  ) {
   padding: 20px;
   border-radius: 25px;
   height: 100%;
@@ -249,28 +256,110 @@
 
 .card_github_buttons_container {
   display: flex;
-  justify-content: space-between;
   align-items: center;
   overflow: hidden;
+  padding-left: 25px;
   height: calc(100% - 310px);
 }
 
 .support_us_cart_item {
   width: 24%;
-  height: 100%;
-  border: 1px solid #383d47;
-  border-radius: 12px;
-  padding: 23px;
+  height: 80%;
   display: flex;
-  flex-direction: column;
   align-items: center;
-  justify-content: space-between;
-  background: linear-gradient(135deg, #0e1217 50%, #fff 500%);
+  flex-direction: column;
+  background-color: #161B22;
+  border-radius: 20px;
+  box-shadow: -1rem 0 3rem #000;
+  /*   margin-left: -50px; */
+  transition: 0.4s ease-out;
+  position: relative;
+  left: 0px;
+  padding: 25px;
+  border: 1px solid #383d47;
+}
+.support_us_cart_item:not(:first-child) {
+  margin-left: -50px;
+}
+
+.support_us_cart_item:hover {
+  transform: translateY(-20px);
+  transition: 0.4s ease-out;
+}
+.support_us_cart_item:hover ~ .support_us_cart_item {
+  position: relative;
+  left: 50px;
+  transition: 0.4s ease-out;
+}
+.title {
+  color: rgb(169, 171, 179);
+  text-transform: uppercase;
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.bar {
+  width: 100%;
+  height: 3px !important;
+  border-radius: 3px;
+  background-color: #2e3033;
+}
+
+.filledbar {
+  z-index: 3;
+  width: 0px;
+  height: 3px !important;
+  background: rgb(0, 154, 217);
+  background: linear-gradient(90deg, rgba(0, 154, 217, 1) 0%, rgba(217, 147, 0, 1) 65%, rgba(255, 186, 0, 1) 100%);
+  transition: 0.6s ease-out;
+}
+
+.support_us_cart_item:hover .filledbar {
+  width: 100%;
+  transition: 0.4s ease-out;
+}
+
+.icon_box > svg {
+  font-size: 5rem;
+  transition: 0.2s ease-in;
+  color: #383d47;
+  margin-top: 60px;
+}
+
+.support_us_cart_item:hover .icon_box > svg {
+  color: #fff;
+  transition: 0.2s ease-in;
+  cursor: pointer;
+  font-size: 5.5rem;
+  margin-top: 75px;
+  box-shadow: 1px 12px 15px -3px #000;
+  border: 1px solid #383d47;
+  border-radius: 40px;
+  transform: rotate(360deg);
+  padding: 20px;
+  display: inline-block;
+  width: 120px;
+  height: 120px;
+  animation-name: icon-color;
+  animation-delay: 0.2s;
+  animation-duration: 0.3s;
+  animation-fill-mode: forwards;
+  animation-iteration-count: 1;
+}
+
+@keyframes icon-color {
+  from {
+    box-shadow: 1px 12px 15px -3px #000;
+  }
+  to {
+    box-shadow: 1px 12px 15px -3px #fff;
+  }
 }
 
 .support_us_cart_item_buttons {
-  width: 24%;
-  height: 100%;
+  height: 80%;
+  width: 35%;
   background-color: #0e1217;
   border-radius: 12px;
   display: grid;
@@ -278,9 +367,10 @@
   grid-template-rows: repeat(2, 1fr);
   overflow: hidden;
   align-content: stretch;
-  grid-gap: 2px;
+  grid-gap: 6px;
+  padding:20px 15px;
 }
-
+ 
 .support_cart_header {
   color: #a8b3cf;
 }
@@ -312,18 +402,74 @@
   color: white;
   background-color: transparent !important;
 }
-
-.support_direction {
-  width: 100%;
+ 
+ 
+ 
+.support_direction{
+  all: unset;
+  width: 100% !important;
   height: 100% !important;
-  border: none;
-  background-color: white !important;
-  color: black;
-  text-transform: uppercase;
-  font-size: 2rem;
-  font-weight: 600;
+  font-size: 16px;
+  background-color: #28282D;
+  position: relative;
+  color: #f0f0f0;
+  cursor: pointer;
+  z-index: 1;
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+ 
+  border-radius: 20px !important;
+}
+ 
+.support_direction::after,
+.support_direction::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  z-index: -99999;
+  transition: all .4s;
 }
 
+.support_direction::before {
+  transform: translate(0%, 0%);
+  width: 100%;
+  height: 100%;
+  background: #28282d;
+ 
+  top: 0;
+  overflow: hidden;
+}
+
+.support_direction::after {
+  transform: translate(10px, 10px);
+  width: 35px;
+  height: 35px;
+  background: #ffffff15;
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+ 
+  right: 10px;
+  bottom: 0;
+}
+
+ 
+
+.support_direction:hover::after {
+ 
+  transform: translate(0, 0);
+  width: 100%;
+  height: 100%;
+}
+
+ 
+ 
 .hash_score_side > h1 ~ p ~ div > button {
   width: 47%;
   height: 40px;
@@ -336,7 +482,6 @@
   background-image: linear-gradient(-180deg, #494c50, #494c5090) !important;
   font-weight: 600;
   text-transform: uppercase;
-  border: 1px solid rgba(205, 217, 229, 0.1);
   border-radius: 7px;
 }
 
@@ -1182,7 +1327,16 @@
   flex-direction: column;
   justify-content: flex-end;
   align-items: flex-start;
+<<<<<<< HEAD
+  overflow: auto;
+}
+
+.arena_console > div:last-child {
+  height: 289px !important;
+  width: 100% !important;
+=======
   overflow: hidden;
+>>>>>>> main
 }
 
 .console_controllers {
@@ -1336,6 +1490,20 @@
   opacity: 0.2;
   color: #fff;
   height: 100%;
+<<<<<<< HEAD
+}
+
+.arena_side_header_text {
+  text-align: center;
+  padding: 27px 0;
+  background-color: #0e1217;
+  font-size: 1rem;
+  color: white;
+  text-transform: uppercase;
+  box-shadow: inset 0 -5px 0 #383d47;
+  margin-bottom: 15px;
+=======
+>>>>>>> main
 }
 
 .arena_work_aside_right > h2 {
@@ -1370,14 +1538,22 @@
 
 .taskbar_container {
   height: calc(100vh - 33px);
+<<<<<<< HEAD
+
+=======
  
+>>>>>>> main
   display: grid;
   grid-template-columns: 3fr 1fr;
   grid-template-rows: 1.25fr 1.25fr 2.5fr;
   grid-template-areas:
     'user calendar'
     'dashboard calendar'
+<<<<<<< HEAD
+    'dashboard task';
+=======
     'dashboard task'; 
+>>>>>>> main
 }
 
 .taskbar_container > div:not(div.calendar_user) {
@@ -1388,7 +1564,11 @@
 .hello_user_taskbar {
   grid-area: user;
   background-color: #1a1f25;
+<<<<<<< HEAD
+
+=======
  
+>>>>>>> main
   padding: 24px;
   display: flex;
   flex-direction: column;
@@ -1439,7 +1619,11 @@
 .dashboard_details {
   grid-area: dashboard;
   background-color: #1a1f25;
+<<<<<<< HEAD
+
+=======
  
+>>>>>>> main
   padding: 4px 24px 24px;
 }
 
@@ -1459,7 +1643,11 @@
 .task_line {
   grid-area: task;
   background-color: #1a1f25;
+<<<<<<< HEAD
+
+=======
  
+>>>>>>> main
   padding: 10px 20px;
   overflow: hidden;
 }
@@ -1598,7 +1786,11 @@
 .arena_work_workspace_nav_icon > *:hover {
   color: #e2b461;
 }
+<<<<<<< HEAD
+.githubModalHeader {
+=======
 .githubModalHeader{
+>>>>>>> main
   display: flex;
   justify-content: center;
   align-items: center;
@@ -1606,16 +1798,27 @@
   border-bottom: 1px solid #383d47;
   width: 100%;
 }
+<<<<<<< HEAD
+.githubModalIcon {
+  font-size: 45px;
+}
+.githubModalForm {
+=======
   .githubModalIcon{
     font-size: 45px;
   }
 .githubModalForm{
+>>>>>>> main
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 20px 50px;
 }
+<<<<<<< HEAD
+.errorMessage {
+=======
 .errorMessage{
+>>>>>>> main
   padding: 16px 16px;
   margin: 0 auto;
   margin-bottom: 8px;
@@ -1623,6 +1826,20 @@
   border-style: solid;
   border-width: 1px;
   border-radius: 6px;
+<<<<<<< HEAD
+  background-color: rgba(248, 81, 73, 0.15);
+  border-color: rgba(248, 81, 73, 0.4);
+  color: #c9d1d9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.errorMessage > .errorIcon {
+  font-size: 20px;
+  margin-right: 8px;
+  margin-left: 10px;
+  cursor: pointer;
+=======
   background-color: rgba(248,81,73,0.15);;
 border-color: rgba(248,81,73,0.4);
 color:#c9d1d9;;
@@ -1635,6 +1852,7 @@ justify-content: center;
   margin-right: 8px;
   margin-left: 10px;
 cursor: pointer;
+>>>>>>> main
   border-radius: 15px;
   background-color: #c9d1d9 !important;
 }

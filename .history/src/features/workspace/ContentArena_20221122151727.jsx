@@ -18,10 +18,14 @@ import {AiOutlineFileText,AiFillGithub} from 'react-icons/ai'
 import {VscSourceControl} from 'react-icons/vsc';
 
 
+<<<<<<<< HEAD:.history/src/features/workspace/ContentArena_20221122151727.jsx
 const sideMenus = [
   AiOutlineFileText
   
 ]
+========
+const sideM
+>>>>>>>> main:.history/src/features/workspace/ContentArena_20221122151719.jsx
 
 const ContentArena = ({ ref, handleThemeChange }) => {
   const jsonFile = files['configure.json']; // files is an object with all the files

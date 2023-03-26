@@ -1,0 +1,68 @@
+{
+  "user_id": 12345,
+  "username": "example_user",
+  "email": "user@example.com",
+  "avatar": "https://example.com/avatar.png",
+  "github_username": "example_github_user",
+  "github_repos": [
+    {
+      "repo_name": "example_repo_1",
+      "repo_url": "https://github.com/example_user/example_repo_1",
+      "stars": 50,
+      "forks": 20,
+      "last_updated": "2022-03-20T10:00:00Z"
+    },
+    {
+      "repo_name": "example_repo_2",
+      "repo_url": "https://github.com/example_user/example_repo_2",
+      "stars": 100,
+      "forks": 30,
+      "last_updated": "2022-03-22T08:00:00Z"
+    }
+  ],
+  "challenge_scores": [
+    {
+      "challenge_name": "example_challenge_1",
+      "challenge_url": "https://www.codewars.com/kata/example-challenge-1",
+      "score": 8,
+      "completed_on": "2022-03-18T14:00:00Z"
+    },
+    {
+      "challenge_name": "example_challenge_2",
+      "challenge_url": "https://www.codewars.com/kata/example-challenge-2",
+      "score": 6,
+      "completed_on": "2022-03-20T12:00:00Z"
+    }
+  ],
+  "tutorials": [
+    {
+      "tutorial_name": "example_tutorial_1",
+      "tutorial_url": "https://example.com/example-tutorial-1",
+      "completed": true,
+      "completed_on": "2022-03-19T16:00:00Z"
+    },
+    {
+      "tutorial_name": "example_tutorial_2",
+      "tutorial_url": "https://example.com/example-tutorial-2",
+      "completed": false
+    }
+  ],
+  "snippets": [
+    {
+      "snippet_name": "example_snippet_1",
+      "snippet_code": "console.log('Hello World!');",
+      "language": "JavaScript",
+      "created_on": "2022-03-21T10:00:00Z",
+      "updated_on": "2022-03-21T12:00:00Z",
+      "tags": ["example_tag_1", "example_tag_2"]
+    },
+    {
+      "snippet_name": "example_snippet_2",
+      "snippet_code": "print('Hello World!')",
+      "language": "Python",
+      "created_on": "2022-03-22T08:00:00Z",
+      "updated_on": "2022-03-22T10:00:00Z",
+      "tags": ["example_tag_3"]
+    }
+  ]
+}

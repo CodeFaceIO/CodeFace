@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 {
     "workbench.colorCustomizations": {
         "editor.lineHighlightBackground": "#1073cf2d",
@@ -49,3 +50,5 @@
     "reshiftscanner.analytics.consentGiven": true,
     "snyk.advanced.organization": "a026e0e4-e7a1-4a19-a49f-3d9e9a0751bc"
 }
+=======
+>>>>>>> Stashed changes

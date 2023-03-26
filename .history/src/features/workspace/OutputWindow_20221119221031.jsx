@@ -1,3 +1,8 @@
+<<<<<<< HEAD
+<<<<<<< Updated upstream:.history/src/features/workspace/OutputWindow_20221119221031.jsx
+=======
+<<<<<<< Updated upstream:.history/src/features/workspace/OutputWindow_20221119220959.jsx
+>>>>>>> main
 /* eslint-disable no-unused-vars */
 import { position } from '@chakra-ui/system';
 import React from 'react';
@@ -33,12 +38,33 @@ const OutputWindow = ({ outputDetails }) => {
         position: 'relative',
       }}
     >
+<<<<<<< HEAD
       <ER
+=======
+<<<<<<<< HEAD:.history/src/features/workspace/OutputWindow_20221119220959.jsx
+      <TypeAnimation
+        cursor={false}
+        sequence={['Output...', 20000, 'Çıktı...', 20000, 'Выход...', 20000, 'Çıxış...', 20000, '输出...', 20000]}
+        wrapper="h1"
+        repeat={Infinity}
+      />
+      <div className="w-full">{outputDetails ? <>{getOutput()}</> : null}</div>
+========
+      <ER
+>>>>>>>> main:.history/src/features/workspace/OutputWindow_20221119221031.jsx
+>>>>>>> main
     </div>
   );
 };
 
 export default OutputWindow;
+<<<<<<< HEAD
+=======
+<<<<<<<< HEAD:.history/src/features/workspace/OutputWindow_20221119220959.jsx
+=======
+>>>>>>> Stashed changes:.history/src/features/workspace/OutputWindow_20221016050833.jsx
+========
+>>>>>>> main
 
 
 /*
@@ -50,3 +76,9 @@ export default OutputWindow;
       />
       <div className="w-full">{outputDetails ? <>{getOutput()}</> : null}</div>
 */
+<<<<<<< HEAD
+=======
+>>>>>>> Stashed changes:.history/src/features/workspace/OutputWindow_20221016050826.jsx
+=======
+>>>>>>>> main:.history/src/features/workspace/OutputWindow_20221119221031.jsx
+>>>>>>> main

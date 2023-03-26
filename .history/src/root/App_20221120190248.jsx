@@ -38,7 +38,10 @@ const App = () => {
     //     </ColorModeProvider>
     //   </ChakraProvider>
     // </ChakraContext.Provider>
+<<<<<<<< HEAD:.history/src/root/App_20221120190248.jsx
     <>    <iframe width="100%" height="900px" src="https://replit.com/team/{team name}/{project name}"></iframe></>
+========
+>>>>>>>> main:.history/src/root/App_20221120190154.jsx
   );
 };
 

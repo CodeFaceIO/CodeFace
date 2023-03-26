@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Merienda&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@100;200;300;400;500;700;800&family=Roboto:wght@300;400;500;700;900&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Fredericka+the+Great&display=swap');
 * {
   margin: 0;
   padding: 0;
@@ -922,6 +922,10 @@ button:hover .play {
   padding-top: 20px;
   padding-bottom: 20px;
 }
+.gAcuTz {
+  max-height: 150px;
+  overflow: scroll;
+}
 
 @media only screen and (max-width: 640px) {
   .dashboard {
@@ -1127,7 +1131,11 @@ button:hover .play {
 
 .react-calendar {
   width: 100% !important;
+<<<<<<< HEAD
+
+=======
  
+>>>>>>> main
   height: 100%;
   color: #00ff75;
   background: #1a1f25 !important;
@@ -1160,5 +1168,45 @@ button:hover .play {
 }
 
 .lite-badge {
-  display: none!important;
+  display: none !important;
+}
+
+.terminal-base {
+  height: 289px !important;
+  min-height: 289px !important;
+  max-height: 289px !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  min-width: 100% !important;
+}
+
+.terminal-base > div {
+  margin-top: 65px !important;
+}
+
+.terminal-base > div,
+.terminal-base > div > div {
+  width: 100% !important;
+  max-width: 100% !important;
+  min-width: 100% !important;
+}
+
+.terminal-base > div > div:last-child {
+  height: 230px;
+}
+
+.Typist > pre {
+  background-color: transparent !important;
+}
+
+.Typewriter {
+  text-align: center;
+  margin: 60px 0;
+}
+
+.Typewriter > * {
+  font-size: 4rem;
+  font-family: Fredericka the Great, cursive !important;
+  color: #e2e8f0 !important;
+  font-weight: 500;
 }

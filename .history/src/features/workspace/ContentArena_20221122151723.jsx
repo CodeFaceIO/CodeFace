@@ -1,3 +1,7 @@
+<<<<<<< HEAD
+<<<<<<< Updated upstream:.history/src/features/workspace/ContentArena_20221122151723.jsx
+=======
+>>>>>>> main
 /* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable no-unused-vars */
 import React, { useState, useEffect } from 'react';
@@ -19,6 +23,13 @@ import {VscSourceControl} from 'react-icons/vsc';
 
 
 const sideMenus = [
+<<<<<<< HEAD
+=======
+<<<<<<<< HEAD:.history/src/features/workspace/ContentArena_20221122151734.jsx
+  AiOutlineFileText,
+========
+>>>>>>>> main:.history/src/features/workspace/ContentArena_20221122151723.jsx
+>>>>>>> main
   
 ]
 
@@ -235,3 +246,8 @@ const ContentArena = ({ ref, handleThemeChange }) => {
 };
 
 export default ContentArena;
+<<<<<<< HEAD
+=======
+>>>>>>> Stashed changes:.history/src/features/workspace/ContentArena_20221016045608.jsx
+=======
+>>>>>>> main
