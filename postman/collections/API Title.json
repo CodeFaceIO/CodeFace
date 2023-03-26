@@ -1,68 +1,60 @@
 {
-	"info": {
-		"_postman_id": "36df1d52-e1e0-4728-853a-39c44667e291",
-		"name": "API Title",
-		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_uid": "25525151-36df1d52-e1e0-4728-853a-39c44667e291"
-	},
-	"item": [
-		{
-			"name": "test",
-			"item": [
-				{
-					"name": "/test",
-					"id": "339b3439-73bf-400e-bd8f-d71e3063b516",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "{{baseUrl}}/test",
-							"host": [
-								"{{baseUrl}}"
-							],
-							"path": [
-								"test"
-							]
-						}
-					},
-					"response": [
-						{
-							"id": "5160895f-98f3-4fa3-b113-e73f3ea9c609",
-							"name": "OK",
-							"originalRequest": {
-								"method": "GET",
-								"header": [],
-								"url": {
-									"raw": "{{baseUrl}}/test",
-									"host": [
-										"{{baseUrl}}"
-									],
-									"path": [
-										"test"
-									]
-								}
-							},
-							"status": "OK",
-							"code": 200,
-							"_postman_previewlanguage": "text",
-							"header": [],
-							"cookie": [],
-							"body": null
-						}
-					]
-				}
-			],
-			"id": "0d2f375f-897d-4bac-8686-90e7e92ff56f"
-		}
-	],
-	"variable": [
-		{
-			"id": "08de15fd-eeb8-4aad-9aa6-775a5f4774c3",
-			"key": "baseUrl",
-			"value": "https://api.server.test/v1"
-		}
-	]
+  "info": {
+    "_postman_id": "36df1d52-e1e0-4728-853a-39c44667e291",
+    "name": "API Title",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_uid": "25525151-36df1d52-e1e0-4728-853a-39c44667e291"
+  },
+  "item": [
+    {
+      "name": "test",
+      "item": [
+        {
+          "name": "/test",
+          "id": "339b3439-73bf-400e-bd8f-d71e3063b516",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/test",
+              "host": ["{{baseUrl}}"],
+              "path": ["test"]
+            }
+          },
+          "response": [
+            {
+              "id": "5160895f-98f3-4fa3-b113-e73f3ea9c609",
+              "name": "OK",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{baseUrl}}/test",
+                  "host": ["{{baseUrl}}"],
+                  "path": ["test"]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "text",
+              "header": [],
+              "cookie": [],
+              "body": null
+            }
+          ]
+        }
+      ],
+      "id": "0d2f375f-897d-4bac-8686-90e7e92ff56f"
+    }
+  ],
+  "variable": [
+    {
+      "id": "08de15fd-eeb8-4aad-9aa6-775a5f4774c3",
+      "key": "baseUrl",
+      "value": "https://api.server.test/v1"
+    }
+  ]
 }
